@@ -23,7 +23,7 @@ A simple, mobile-friendly multi-cluster timetable app with Cluster (A–V) & Sec
 
 ## 🌐 Live App
 
-👉 **[Open Live App on GitHub Pages](https://navaneeth860.github.io/Timetable/)**
+👉 **[Open Live App on GitHub Pages](https://navaneeth860.github.io/Timetable)**
 
 ## 🖥️ How It Works
 
