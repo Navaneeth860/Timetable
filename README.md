@@ -1,11 +1,13 @@
 # 📚 College Timetable
 
 A simple, mobile-friendly multi-cluster timetable app with Cluster (A–V) & Section selection, offline PWA support, and real-time class tracking.
+A simple, mobile-friendly multi-cluster timetable app with Cluster (A–E) & Section selection, offline PWA support, and real-time class tracking.
 
 ## ✨ Features
 
 - 📅 Automatically opens on **today's timetable**
 - 🏫 Select **Cluster (A–V)** and **Section** (saves automatically locally)
+- 🏫 Select **Cluster (A–E)** and **Section** (saves automatically locally)
 - 📍 Displays **Room / Lab** numbers and 👨‍🏫 **Teacher / Faculty** names for each slot
 - ⏰ Real-time class timings, live countdown, break indicators (Tea/Lunch), and **LIVE NOW** pill
 - 🚀 **Coming Soon!! Skill Lab** placeholder view for sections currently being updated
@@ -49,6 +51,7 @@ Includes complete 3rd Semester 2026–27 timetable data for:
 - **Cluster B**: Sections `3B1 [3D]`, `3B2 [3G]`, `3B3 [3N]`, `3B4 [3Q]`, `3B5 [3V]`
 - **Cluster D**: Sections `3D1 [3B]`, `3D2 [3I]`, `3D3 [3L]`, `3D4 [3S]`, `3D5 [3U]`
 - Placeholder/Coming Soon support for Clusters A, C, E, F, G, H... through V.
+- Placeholder/Coming Soon support for Clusters A, C, and E.
 
 ## 🛠️ Tech Stack
 
