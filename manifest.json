@@ -1,6 +1,6 @@
 {
-  "name": "Section B Timetable",
-  "short_name": "Timetable B",
+  "name": "College Timetable",
+  "short_name": "Timetable",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

@@ -1,32 +1,691 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="description" content="B.Tech CSE Section B daily timetable"><link rel="manifest" href="manifest.json"><title>Timetable B</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="description" content="B.Tech CSE Daily Timetable with Cluster & Section Selection"><link rel="manifest" href="manifest.json"><title>College Timetable</title>
 <style>
 :root{color-scheme:light dark;--bg:#f5f7fb;--card:#fff;--text:#111827;--muted:#667085;--line:#e5e7eb;--accent:#2563eb;--accent-soft:#dbeafe;--live:#16a34a;--live-soft:#dcfce7;--next:#d97706;--next-soft:#fef3c7}
 @media(prefers-color-scheme:dark){:root{--bg:#0b1020;--card:#151b2d;--text:#f8fafc;--muted:#a8b0c2;--line:#2b344a;--accent:#60a5fa;--accent-soft:#1e3a5f;--live:#4ade80;--live-soft:#153b26;--next:#fbbf24;--next-soft:#49351a}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}main{max-width:560px;margin:auto;padding:20px 14px 28px}.top{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}h1{font-size:24px;margin:0;letter-spacing:-.4px}.subtitle{color:var(--muted);font-size:13px;margin-top:4px}.today{background:var(--accent-soft);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;white-space:nowrap}.today.live-badge{background:var(--live-soft);color:var(--live);border-color:var(--live)}.today.break-badge{background:var(--next-soft);color:var(--next);border-color:var(--next)}.days{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}button{font:inherit}.day{min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--text);font-weight:700;cursor:pointer}.day.active{background:var(--accent);color:white;border-color:var(--accent)}.day.today-day:not(.active){outline:2px solid var(--accent);outline-offset:1px}.today-jump{display:none;width:100%;margin:0 0 12px;min-height:40px;border:1px solid var(--accent);border-radius:11px;background:var(--accent-soft);color:var(--text);font-weight:800;cursor:pointer}.today-jump.visible{display:block}.status{display:none;margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.status.visible{display:block}.status-main{display:flex;justify-content:space-between;align-items:center;gap:10px}.status-label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.5px}.status-title{font-size:14px;font-weight:800;margin-top:2px}.countdown{font-size:14px;font-weight:900;white-space:nowrap}.status.live .countdown{color:var(--live)}.status.next .countdown,.status.break .countdown{color:var(--next)}.date{color:var(--muted);font-size:12px;margin:0 2px 10px}.classes{display:grid;gap:10px}.class{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:stretch}.time{padding:13px 4px;color:var(--muted);font-size:12px;font-weight:700;text-align:center}.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;transition:.2s}.card.live{border:2px solid var(--live);box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 14%,transparent);transform:translateY(-1px)}.card.next{border-color:var(--next);box-shadow:0 0 0 2px color-mix(in srgb,var(--next) 10%,transparent)}.class.done .card,.class.done .time{opacity:.58}.break-row{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:center}.break-row .time{padding:10px 4px}.break-card{border:1px dashed var(--next);border-radius:12px;background:var(--next-soft);color:var(--next);padding:10px 14px;font-size:12px;font-weight:800;text-align:center}.subject{font-weight:800;line-height:1.25;padding-right:76px}.code{color:var(--muted);font-size:11px;margin-top:5px}.type,.contact-hour{display:inline-block;margin-top:8px;padding:3px 7px;border-radius:999px;font-size:10px;font-weight:900}.type{background:var(--accent-soft)}.contact-hour{margin-left:5px;background:var(--next-soft);color:var(--next)}.live-pill,.next-pill{position:absolute;top:11px;right:11px;display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;font-size:9px;font-weight:900;letter-spacing:.3px}.live-pill{background:var(--live-soft);color:var(--live)}.next-pill{background:var(--next-soft);color:var(--next)}.live-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:p 1.4s ease-in-out infinite}@keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}.empty{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:26px 16px;text-align:center;color:var(--muted)}.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:11px;line-height:1.5}@media(max-width:360px){main{padding-left:10px;padding-right:10px}.days{gap:4px}.day{font-size:12px}.class,.break-row{grid-template-columns:70px 1fr}.time{font-size:11px}.subject{padding-right:70px}.live-pill,.next-pill{right:8px}.countdown{font-size:12px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}main{max-width:560px;margin:auto;padding:20px 14px 28px}.top{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}h1{font-size:24px;margin:0;letter-spacing:-.4px}.subtitle{color:var(--muted);font-size:13px;margin-top:4px;font-weight:600}.today{background:var(--accent-soft);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;white-space:nowrap}.today.live-badge{background:var(--live-soft);color:var(--live);border-color:var(--live)}.today.break-badge{background:var(--next-soft);color:var(--next);border-color:var(--next)}
+.selectors{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.select-group{display:flex;flex-direction:column;gap:4px}
+.select-group label{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+select{width:100%;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:13px;font-weight:700;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 10px center;background-size:14px;padding-right:28px}
+select:focus{border-color:var(--accent)}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}button{font:inherit}.day{min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--text);font-weight:700;cursor:pointer}.day.active{background:var(--accent);color:white;border-color:var(--accent)}.day.today-day:not(.active){outline:2px solid var(--accent);outline-offset:1px}.today-jump{display:none;width:100%;margin:0 0 12px;min-height:40px;border:1px solid var(--accent);border-radius:11px;background:var(--accent-soft);color:var(--text);font-weight:800;cursor:pointer}.today-jump.visible{display:block}.status{display:none;margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.status.visible{display:block}.status-main{display:flex;justify-content:space-between;align-items:center;gap:10px}.status-label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.5px}.status-title{font-size:14px;font-weight:800;margin-top:2px}.countdown{font-size:14px;font-weight:900;white-space:nowrap}.status.live .countdown{color:var(--live)}.status.next .countdown,.status.break .countdown{color:var(--next)}.date{color:var(--muted);font-size:12px;margin:0 2px 10px}.classes{display:grid;gap:10px}.class{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:stretch}.time{padding:13px 4px;color:var(--muted);font-size:12px;font-weight:700;text-align:center}.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;transition:.2s}.card.live{border:2px solid var(--live);box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 14%,transparent);transform:translateY(-1px)}.card.next{border-color:var(--next);box-shadow:0 0 0 2px color-mix(in srgb,var(--next) 10%,transparent)}.class.done .card,.class.done .time{opacity:.58}.break-row{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:center}.break-row .time{padding:10px 4px}.break-card{border:1px dashed var(--next);border-radius:12px;background:var(--next-soft);color:var(--next);padding:10px 14px;font-size:12px;font-weight:800;text-align:center}.subject{font-weight:800;line-height:1.25;padding-right:76px}.code{color:var(--muted);font-size:11px;margin-top:4px}.type{display:inline-block;margin-top:8px;padding:3px 7px;border-radius:999px;font-size:10px;font-weight:900;background:var(--accent-soft)}.live-pill,.next-pill{position:absolute;top:11px;right:11px;display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;font-size:9px;font-weight:900;letter-spacing:.3px}.live-pill{background:var(--live-soft);color:var(--live)}.next-pill{background:var(--next-soft);color:var(--next)}.live-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:p 1.4s ease-in-out infinite}@keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}.empty{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:28px 16px;text-align:center;color:var(--muted)}.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:11px;line-height:1.5}@media(max-width:360px){main{padding-left:10px;padding-right:10px}.days{gap:4px}.day{font-size:12px}.class,.break-row{grid-template-columns:70px 1fr}.time{font-size:11px}.subject{padding-right:70px}.live-pill,.next-pill{right:8px}.countdown{font-size:12px}}
 </style></head>
 <body><main>
-<div class="top"><div><h1 id="title">Today's Timetable</h1><div class="subtitle">B.Tech CSE · Section B</div></div><div class="today" id="todayBadge">Today</div></div>
-<div class="days" id="days" aria-label="Choose a day"></div><button type="button" class="today-jump" id="todayJump">↩ Back to Today</button>
+<div class="top">
+  <div>
+    <h1 id="title">Today's Timetable</h1>
+    <div class="subtitle" id="subtitle">Select Cluster & Section</div>
+  </div>
+  <div class="today" id="todayBadge">Today</div>
+</div>
+
+<div class="selectors">
+  <div class="select-group">
+    <label for="clusterSelect">Cluster</label>
+    <select id="clusterSelect"></select>
+  </div>
+  <div class="select-group">
+    <label for="sectionSelect">Section</label>
+    <select id="sectionSelect"></select>
+  </div>
+</div>
+
+<div class="days" id="days" aria-label="Choose a day"></div>
+<button type="button" class="today-jump" id="todayJump">↩ Back to Today</button>
 <div class="status" id="status" aria-live="polite"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
-<div class="date" id="dateLabel"></div><section class="classes" id="classes" aria-live="polite"></section><div class="footer">Based on the uploaded 3rd Semester 2026–27 timetable for Section B.</div>
+<div class="date" id="dateLabel"></div>
+<section class="classes" id="classes" aria-live="polite"></section>
+<div class="footer">Based on 3rd Semester 2026–27 timetable.</div>
 </main>
+
 <script>
-const timetable={
-Monday:[["09:05–10:45","Data Structures and Algorithms","CSD201B","Room C-407"],["11:15–12:55","Indian Constitution, Human Rights and Professional Ethics","LAN201B","CSE B / Faculty B"],["12:55–01:45","Data Structures and Algorithms","CSD201B","Room C-407"],["02:30–04:10","Discrete Mathematics","CSD208B","Room C-407"],["04:10–05:00","Software Development Fundamental","CSD203B","Room C-407"]],
-Tuesday:[["09:05–09:55","Logic Design","CSD202B","Room C-407"],["09:55–10:45","Probability and Statistics","MTE301B","Room C-407"],["11:15–12:55","Logic Design Lab / Programming Paradigms Lab / Software Development Fundamentals Lab","CSD202B / CSD207B / CSC203B","B3-A103A / B1-A103C / B2-A103E"],["12:55–01:45","Discrete Mathematics","CSD208B","Room C-407"],["02:30–04:10","Data Structures and Algorithms Lab","CSD201B","B3-A103D"],["04:10–05:00","Foundation Mathematics-1","—","Room C-407"]],
-Wednesday:[["09:05–10:45","Logic Design","CSD202B","Room C-407"],["11:15–12:55","Logic Design Lab / Programming Paradigms Lab / Software Development Fundamentals Lab","CSD202B / CSD207B / CSC203B","B2-A103A / B3-A103C / B1-A103E"],["02:30–04:10","Software Development Fundamental","CSD203B","Room C-407"],["04:10–05:00","Programming Paradigms","CSD207B","Room C-407"]],
-Thursday:[["09:05–10:45","Data Structures and Algorithms Lab","CSD201B","B2-A103D"],["11:15–12:55","Probability and Statistics","MTE301B","Room C-407"],["12:55–01:45","Data Structures and Algorithms","CSD201B","Room C-407"],["02:30–03:20","Programming Paradigms","CSD207B","Room C-407"],["04:10–05:00","Foundation Mathematics-1","—","Room C-407"]],
-Friday:[["09:05–09:55","Programming Paradigms","CSD207B","Room C-407"],["09:55–10:45","Probability and Statistics","MTE301B","Room C-407"],["11:15–12:55","Logic Design Lab / Programming Paradigms Lab / Software Development Fundamentals Lab","CSD202B / CSD207B / CSC203B","B3-A103A / B1-A103C / B2-A103E"],["12:55–01:45","Discrete Mathematics","CSD208B","Room C-407"],["03:20–04:10","Data Structures and Algorithms Lab","CSD201B","B1-A103G"]],Saturday:[]};
-const order=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],short={Monday:"Mon",Tuesday:"Tue",Wednesday:"Wed",Thursday:"Thu",Friday:"Fri",Saturday:"Sat"};const breaks=[["10:45","11:15","Tea Break"],["01:45","02:30","Lunch Break"]];
-const contactHours={Monday:new Set([2,4]),Tuesday:new Set([0]),Wednesday:new Set([3]),Thursday:new Set(),Friday:new Set(),Saturday:new Set()};
-const dayEl=document.getElementById("days"),classesEl=document.getElementById("classes"),titleEl=document.getElementById("title"),dateEl=document.getElementById("dateLabel"),badgeEl=document.getElementById("todayBadge"),statusEl=document.getElementById("status"),statusLabelEl=document.getElementById("statusLabel"),statusTitleEl=document.getElementById("statusTitle"),countdownEl=document.getElementById("countdown"),todayJumpEl=document.getElementById("todayJump");let selectedDay;
-function todayName(){return new Intl.DateTimeFormat("en-IN",{weekday:"long"}).format(new Date())}function formatDate(){return new Intl.DateTimeFormat("en-IN",{day:"numeric",month:"short",year:"numeric"}).format(new Date())}function toMinutes(v){const[h,m]=v.split(":").map(Number);return(h<=5?h+12:h)*60+m}function parseRange(t){const[a,b]=t.split("–");return[toMinutes(a),toMinutes(b)]}function isToday(d){return d===todayName()}function nowMin(){const n=new Date();return n.getHours()*60+n.getMinutes()+n.getSeconds()/60}
-function liveIndex(list,d){if(!isToday(d))return-1;const n=nowMin();return list.findIndex(([t])=>{const[s,e]=parseRange(t);return n>=s&&n<e})}function nextIndex(list,d){if(!isToday(d))return-1;const n=nowMin();return list.findIndex(([t])=>parseRange(t)[0]>n)}function status(list,d){if(!isToday(d))return null;const n=nowMin(),li=liveIndex(list,d);if(li>=0){const[t,s]=list[li];return{kind:"live",label:"Live now",title:s,target:parseRange(t)[1],prefix:"Ends in "}}const br=breaks.find(([s,e])=>n>=toMinutes(s)&&n<toMinutes(e));if(br)return{kind:"break",label:br[2],title:"Enjoy your break",target:toMinutes(br[1]),prefix:"Ends in "};const ni=nextIndex(list,d);if(ni>=0){const[t,s]=list[ni];return{kind:"next",label:"Next class",title:s,target:parseRange(t)[0],prefix:"Starts in "}}return{kind:"done",label:"Day complete",title:"No more classes today",target:null,prefix:""}}
-function duration(sec){sec=Math.max(0,Math.ceil(sec));const h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;return h?`${h}h ${m}m`:m?`${m}m ${s}s`:`${s}s`}function updateStatus(list,d){const x=status(list,d);if(!x){statusEl.className="status";return}statusEl.className=`status visible ${x.kind}`;statusLabelEl.textContent=x.label;statusTitleEl.textContent=x.title;countdownEl.textContent=x.target===null?"✓":x.prefix+duration((x.target-nowMin())*60)}function addBreak(b){const[s,e,l]=b,i=document.createElement("div");i.className="break-row";i.innerHTML=`<div class="time">${s}–${e}</div><div class="break-card">☕ ${l}</div>`;classesEl.appendChild(i)}
-function render(d,scroll=false){selectedDay=d;const today=todayName(),viewToday=d===today,list=timetable[d]||[],li=liveIndex(list,d),ni=nextIndex(list,d),st=status(list,d);titleEl.textContent=viewToday?"Today's Timetable":d+" Timetable";badgeEl.textContent=li>=0?"● LIVE NOW":st?.kind==="break"?"☕ BREAK":viewToday?"TODAY":"VIEWING";badgeEl.classList.toggle("live-badge",li>=0);badgeEl.classList.toggle("break-badge",li<0&&st?.kind==="break");dateEl.textContent=viewToday?formatDate():"Tap a day above to switch";todayJumpEl.classList.toggle("visible",!viewToday);dayEl.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.day===d));classesEl.innerHTML="";updateStatus(list,d);if(!list.length){classesEl.innerHTML='<div class="empty"><strong>No classes scheduled</strong><br><span>Enjoy your day! 🎉</span></div>';return}list.forEach(([t,s,c,r],i)=>{const el=document.createElement("article"),live=i===li,next=i===ni&&li<0,done=viewToday&&!live&&parseRange(t)[1]<=nowMin();el.className=`class${live?" live":""}${done?" done":""}`;const type=s.includes("Lab")?"LAB":"CLASS",contact=contactHours[d]?.has(i)?'<span class="contact-hour">CONTACT HOUR</span>':"";el.innerHTML=`<div class="time">${t}</div><div class="card${live?" live":""}${next?" next":""}"><div class="subject">${s}</div><div class="code">${c}</div><div class="code">📍 ${r}</div><span class="type">${type}</span>${contact}${live?'<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>':next?'<span class="next-pill">NEXT</span>':""}</div>`;classesEl.appendChild(el);const end=parseRange(t)[1],b=breaks.find(([bs,be])=>toMinutes(bs)===end);if(b)addBreak(b);if(i<list.length-1){const nextStart=parseRange(list[i+1][0])[0];const gapBreak=breaks.find(([bs,be])=>toMinutes(bs)>=end&&toMinutes(be)<=nextStart&&!breaks.some(([pbs])=>toMinutes(pbs)===end));if(gapBreak)addBreak(gapBreak)}});if(scroll&&li>=0)setTimeout(()=>classesEl.children[li]?.scrollIntoView({behavior:"smooth",block:"center"}),150)}
-order.forEach(d=>{const b=document.createElement("button");b.type="button";b.className="day";b.dataset.day=d;b.textContent=short[d];if(d===todayName())b.classList.add("today-day");b.onclick=()=>render(d);dayEl.appendChild(b)});todayJumpEl.onclick=()=>render(todayName(),true);const initial=order.includes(todayName())?todayName():"Monday";render(initial,true);setInterval(()=>{if(selectedDay===todayName())render(selectedDay)},1000);
-</script><script>if("serviceWorker"in navigator&&(location.protocol==="https:"||location.hostname==="localhost"))navigator.serviceWorker.register("./sw.js").catch(()=>{});</script>
-</body></html>
+const DATA = {
+  B: {
+    "3B1 [3D]": {
+      Monday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","201","Dr. Rajashi Chatterjee"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","606","Dr. Naresh E"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","606","Prof. Vanishree"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","606","Dr. H S Guruprasad"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Tuesday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","206","Dr. Rajashi Chatterjee"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","PG6015","Dr. Naresh E"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","PG6015","Dr. H S Guruprasad"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Wednesday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","201","Prof. Vanishree"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","603","Dr. H S Guruprasad"],
+        ["11:15–12:10","Database Management Systems","26CS3IPDBM","603","Dr. Naresh E"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","603","Prof. Mahalakshmi Manasa P"],
+        ["02:00–02:55","DMS-T","26MA3BSDMS","210","Dr. Rajashi Chatterjee"],
+        ["02:55–03:50","DMS-T","26MA3BSDMS","210","Dr. Rajashi Chatterjee"],
+        ["03:50–05:40","DIP-MATH(A)","","",""]
+      ],
+      Thursday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","207","Prof. Vanishree"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","ASE CR 2","Prof. Mahalakshmi Manasa P"],
+        ["11:15–12:10","Database Management Systems","26CS3IPDBM","ASE CR 2","Dr. Naresh E"],
+        ["12:10–01:05","Discrete Mathematics and Statistics","26MA3BSDMS","ASE CR 2","Dr. Rajashi Chatterjee"]
+      ],
+      Friday: [
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","206","Prof. Mahalakshmi Manasa P"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","206","Prof. Vanishree"],
+        ["11:15–12:10","Data Structures","26CS3IPDST","207","Dr. H S Guruprasad"]
+      ],
+      Saturday: []
+    },
+    "3B2 [3G]": {
+      Monday: [
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","PG6015","Dr. Naresh E"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","209","Dr. H S Guruprasad"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","209","Prof. Sowmya T"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","209","Prof. Prashant Koparde"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Tuesday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","201","Dr. Ambika Hejib"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","7F-MBA-CR2","Dr. H S Guruprasad"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","7F-MBA-CR2","Prof. Sowmya T"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","7F-MBA-CR2","Prof. Prashant Koparde"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Wednesday: [
+        ["08:55–09:50","Data Structures","26CS3IPDST","208","Dr. H S Guruprasad"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","201","Dr. Naresh E"],
+        ["11:15–12:10","DMS-T","26MA3BSDMS","201","Dr. Ambika Hejib"],
+        ["12:10–01:05","DMS-T","26MA3BSDMS","201","Dr. Ambika Hejib"],
+        ["03:50–05:40","DIP-MATH(A)","","",""]
+      ],
+      Thursday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","208","Prof. Sowmya T"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","213","Prof. Prashant Koparde"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","213","Dr. H S Guruprasad"],
+        ["02:00–02:55","Discrete Mathematics and Statistics","26MA3BSDMS","206","Dr. Ambika Hejib"]
+      ],
+      Friday: [
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","207","Dr. Naresh E"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","213","Prof. Sowmya T"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","213","Prof. Prashant Koparde"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","213","Dr. Naresh E"],
+        ["02:00–02:55","Discrete Mathematics and Statistics","26MA3BSDMS","213","Dr. Ambika Hejib"]
+      ],
+      Saturday: []
+    },
+    "3B3 [3N]": {
+      Monday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","206","Dr. Shivraj D L"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","PG6015","Prof. Pallavi C V"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","PG6015","Dr. Shubha Rao"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","PG6015","Prof. Prajwala Gowda P Patil"]
+      ],
+      Tuesday: [
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","208","Prof. Prajwala Gowda P Patil"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","201","Prof. Sowmya T"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","201","Dr. Shubha Rao"]
+      ],
+      Wednesday: [
+        ["08:00–08:55","Database Management Systems","26CS3IPDBM","206","Prof. Prajwala Gowda P Patil"],
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","206","Prof. Sowmya T"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","PG6015","Dr. Shubha Rao"],
+        ["11:15–12:10","Discrete Mathematics and Statistics","26MA3BSDMS","PG6015","Dr. Shivraj D L"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","PG6015","Prof. Pallavi C V"],
+        ["03:50–04:45","DIP-MATH(B)","","",""],
+        ["04:45–05:40","DIP-MATH(B)","","",""]
+      ],
+      Thursday: [
+        ["08:00–09:50","DMS-T","26MA3BSDMS","209","Dr. Shivraj D L"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","206","Prof. Sowmya T"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","206","Prof. Pallavi C V"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Friday: [
+        ["08:00–08:55","Discrete Mathematics and Statistics","26MA3BSDMS","201","Dr. Shivraj D L"],
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","201","Prof. Prajwala Gowda P Patil"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","214","Prof. Pallavi C V"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","214","Dr. Shubha Rao"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","214","Prof. Sowmya T"]
+      ],
+      Saturday: []
+    },
+    "3B4 [3Q]": {
+      Monday: [
+        ["08:00–09:50","DMS-T","26MA3BSDMS","207","Ms. Rashmi S M"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","201","Prof. Prajwala Gowda P Patil"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","201","Prof. Madhavi R P"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","201","Prof. Pallavi C V"]
+      ],
+      Tuesday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","206","Ms. Rashmi S M"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","206","Prof. Madhavi R P"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","206","Prof. Pallavi C V"]
+      ],
+      Wednesday: [
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","207","Prof. Mahalakshmi Manasa P"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","206","Prof. Pallavi C V"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","206","Prof. Madhavi R P"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","206","Prof. Prajwala Gowda P Patil"]
+      ],
+      Thursday: [
+        ["08:00–08:55","Object Oriented Programming","26CS3PCOOP","201","Prof. Mahalakshmi Manasa P"],
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","201","Prof. Prajwala Gowda P Patil"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","602","Prof. Pallavi C V"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","602","Prof. Madhavi R P"],
+        ["12:10–01:05","Discrete Mathematics and Statistics","26MA3BSDMS","602","Ms. Rashmi S M"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Friday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","201","Ms. Rashmi S M"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","201","Prof. Mahalakshmi Manasa P"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","201","Prof. Madhavi R P"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","201","Prof. Prajwala Gowda P Patil"],
+        ["03:50–05:40","DIP-MATH(B)","","",""]
+      ],
+      Saturday: []
+    },
+    "3B5 [3V]": {
+      Monday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","208","Prof. Vanishree"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","206","Prof. Sreevidya B S"],
+        ["11:15–12:10","Database Management Systems","26CS3IPDBM","206","Prof. Shravya G Gowda"],
+        ["12:10–01:05","Discrete Mathematics and Statistics","26MA3BSDMS","206","Dr. Shivraj D L"]
+      ],
+      Tuesday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","209","Prof. Vanishree"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","215","Prof. Prashant Koparde"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","215","Prof. Shravya G Gowda"]
+      ],
+      Wednesday: [
+        ["08:00–08:55","Object Oriented Programming","26CS3PCOOP","209","Prof. Prashant Koparde"],
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","209","Prof. Shravya G Gowda"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","213","Prof. Sreevidya B S"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","213","Prof. Vanishree"],
+        ["02:00–03:50","DMS-T","26MA3BSDMS","206","Dr. Shivraj D L"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Thursday: [
+        ["08:00–08:55","Data Structures","26CS3IPDST","215","Prof. Sreevidya B S"],
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","215","Prof. Prashant Koparde"],
+        ["10:20–11:15","Discrete Mathematics and Statistics","26MA3BSDMS","201","Dr. Shivraj D L"]
+      ],
+      Friday: [
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","208","Prof. Shravya G Gowda"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","215","Prof. Sreevidya B S"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","215","Prof. Vanishree"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","215","Prof. Prashant Koparde"],
+        ["02:00–02:55","Discrete Mathematics and Statistics","26MA3BSDMS","214","Dr. Shivraj D L"],
+        ["03:50–05:40","DIP-MATH(B)","","",""]
+      ],
+      Saturday: []
+    }
+  },
+  D: {
+    "3D1 [3B]": {
+      Monday: [
+        ["08:00–08:55","Data Structures","26CS3IPDST","209","Prof. Rashmi K B"],
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","209","Dr. Chandrakala G Raju"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","210","Prof. Rashmi K B"],
+        ["11:15–12:10","Database Management Systems","26CS3IPDBM","210","Prof. Antara C"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","210","Prof. Sneha P"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Tuesday: [
+        ["08:00–09:50","DMS-T","26MA3BSDMS","PG-EI1","Dr. Umesha V"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","213","Prof. Rashmi K B"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","213","Prof. Sneha P"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Wednesday: [
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","213","Dr. Umesha V"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","PG-EI1","Prof. Antara C"],
+        ["11:15–12:10","Data Structures","26CS3IPDST","PG-EI1","Prof. Rashmi K B"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","PG-EI1","Dr. Chandrakala G Raju"],
+        ["03:50–05:40","DIP-MATH(A)","","",""]
+      ],
+      Thursday: [
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","214","Prof. Antara C"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","210","Prof. Sneha P"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","210","Dr. Chandrakala G Raju"],
+        ["02:00–02:55","Discrete Mathematics and Statistics","26MA3BSDMS","210","Dr. Umesha V"]
+      ],
+      Friday: [
+        ["08:00–08:55","Database Management Systems","26CS3IPDBM","210","Prof. Antara C"],
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","210","Prof. Sneha P"],
+        ["10:20–11:15","Discrete Mathematics and Statistics","26MA3BSDMS","210","Dr. Umesha V"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","210","Dr. Chandrakala G Raju"]
+      ],
+      Saturday: []
+    },
+    "3D2 [3I]": {
+      Monday: [
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","214","Prof. Antara R C"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","214","Prof. Sneha P"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","214","Dr. Chandrakala G Raju"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","214","Prof. Rashmi K B"],
+        ["02:00–02:55","Discrete Mathematics and Statistics","26MA3BSDMS","214","Dr. Umesha V"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Tuesday: [
+        ["08:00–08:55","Database Management Systems","26CS3IPDBM","215","Prof. Antara R C"],
+        ["08:55–09:50","Data Structures","26CS3IPDST","215","Prof. Rashmi K B"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","214","Prof. Sneha P"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","214","Dr. Chandrakala G Raju"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Wednesday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","210","Prof. Sneha P"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","210","Dr. Chandrakala G Raju"],
+        ["11:15–12:10","DMS-T","26MA3BSDMS","210","Dr. Umesha V"],
+        ["12:10–01:05","DMS-T","26MA3BSDMS","210","Dr. Umesha V"],
+        ["03:50–04:45","DIP-MATH(A)","","",""]
+      ],
+      Thursday: [
+        ["08:00–08:55","Data Structures","26CS3IPDST","210","Prof. Rashmi K B"],
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","210","Dr. Umesha V"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","214","Prof. Antara R C"]
+      ],
+      Friday: [
+        ["08:00–08:55","Discrete Mathematics and Statistics","26MA3BSDMS","PG-EI1","Dr. Umesha V"],
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","PG-EI1","Dr. Chandrakala G Raju"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","PG-EI1","Prof. Antara R C"],
+        ["11:15–12:10","Data Structures","26CS3IPDST","PG-EI1","Prof. Rashmi K B"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","PG-EI1","Prof. Sneha P"]
+      ],
+      Saturday: []
+    },
+    "3D3 [3L]": {
+      Monday: [
+        ["08:00–08:55","Data Structures","26CS3IPDST","215","Prof. Radhika A D"],
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","215","Dr. Divyashree B K"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","215","Prof. Birajdar Priyanka Ashok"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","215","Ms. Srushti C S"]
+      ],
+      Tuesday: [
+        ["08:00–08:55","Database Management Systems","26CS3IPDBM","605","Prof. Birajdar Priyanka Ashok"],
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","605","Prof. Mayanka Gupta"],
+        ["11:15–12:10","Data Structures","26CS3IPDST","PG-7001","Prof. Radhika A D"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","PG-7001","Ms. Srushti C S"],
+        ["02:00–03:50","DMS-T","26MA3BSDMS","214","Dr. Divyashree B K"]
+      ],
+      Wednesday: [
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","215","Prof. Mayanka Gupta"],
+        ["11:15–12:10","Data Structures","26CS3IPDST","215","Prof. Radhika A D"],
+        ["12:10–01:05","Object Oriented Programming","26CS3PCOOP","215","Ms. Srushti C S"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Thursday: [
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","213","Prof. Mayanka Gupta"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","604","Ms. Srushti C S"],
+        ["11:15–12:10","Database Management Systems","26CS3IPDBM","604","Prof. Birajdar Priyanka Ashok"],
+        ["12:10–01:05","Discrete Mathematics and Statistics","26MA3BSDMS","604","Dr. Divyashree B K"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Friday: [
+        ["08:00–08:55","Object Oriented Programming","26CS3PCOOP","213","Ms. Srushti C S"],
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","213","Prof. Mayanka Gupta"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","217","Prof. Radhika A D"],
+        ["11:15–12:10","Discrete Mathematics and Statistics","26MA3BSDMS","217","Dr. Divyashree B K"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","","Prof. Birajdar Priyanka Ashok"],
+        ["03:50–05:40","DIP-MATH(A)","","",""]
+      ],
+      Saturday: []
+    },
+    "3D4 [3S]": {
+      Monday: [
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","213","Ms. Srushti C S"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","213","Prof. Radhika A D"],
+        ["11:15–12:10","Database Management Systems","26CS3IPDBM","213","Prof. Birajdar Priyanka Ashok"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","213","Prof. Vagdevi V"]
+      ],
+      Tuesday: [
+        ["08:00–08:55","Discrete Mathematics and Statistics","26MA3BSDMS","210","Ms. Rashmi S M"],
+        ["08:55–09:50","Object Oriented Programming","26CS3PCOOP","210","Ms. Srushti C S"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","ASE-CR2","Prof. Vagdevi V"]
+      ],
+      Wednesday: [
+        ["08:00–08:55","Object Oriented Programming","26CS3PCOOP","214","Ms. Srushti C S"],
+        ["08:55–09:50","Data Structures","26CS3IPDST","214","Prof. Radhika A D"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","7F MEL-CR1","Prof. Birajdar Priyanka Ashok"],
+        ["11:15–12:10","DMS-T","26MA3BSDMS","7F MEL-CR1","Ms. Rashmi S M"],
+        ["12:10–01:05","DMS-T","26MA3BSDMS","7F MEL-CR1","Ms. Rashmi S M"],
+        ["03:50–05:40","DIP-MATH(B)","","",""]
+      ],
+      Thursday: [
+        ["08:00–08:55","Database Management Systems","26CS3IPDBM","PG-EI1","Prof. Birajdar Priyanka Ashok"],
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","PG-EI1","Ms. Rashmi S M"],
+        ["10:20–11:15","Digital Logic and Computer Organization","26CS3PCDLC","PG-EI1","Prof. Vagdevi V"],
+        ["12:10–01:05","Data Structures","26CS3IPDST","PG-EI1","Prof. Radhika A D"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Friday: [
+        ["08:00–08:55","Discrete Mathematics and Statistics","26MA3BSDMS","214","Ms. Rashmi S M"],
+        ["08:55–09:50","Data Structures","26CS3IPDST","214","Prof. Radhika A D"],
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","508","Prof. Birajdar Priyanka Ashok"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","508","Ms. Srushti C S"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","508","Prof. Vagdevi V"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Saturday: []
+    },
+    "3D5 [3U]": {
+      Monday: [
+        ["08:00–08:55","Object Oriented Programming","26CS3PCOOP","210","Prof. Varshini J K"],
+        ["08:55–09:50","Database Management Systems","26CS3IPDBM","210","Prof. Varsha"],
+        ["10:20–11:15","Discrete Mathematics and Statistics","26MA3BSDMS","PG-EI1","Dr. Chaitra V"],
+        ["11:15–12:10","Object Oriented Programming","26CS3PCOOP","PG-EI1","Prof. Varshini J K"],
+        ["12:10–01:05","Database Management Systems","26CS3IPDBM","PG-EI1","Prof. Varsha"]
+      ],
+      Tuesday: [
+        ["08:00–08:55","Database Management Systems","26CS3IPDBM","207","Prof. Varsha"],
+        ["08:55–09:50","Data Structures","26CS3IPDST","207","Prof. Nanditha R M"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","207","Prof. Varshini J K"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","204","Prof. Vagdevi V"],
+        ["02:00–03:50","DMS-T","26MA3BSDMS","215","Dr. Chaitra V"]
+      ],
+      Wednesday: [
+        ["08:00–08:55","Data Structures","26CS3IPDST","603","Prof. Nanditha R M"],
+        ["08:55–09:50","Discrete Mathematics and Statistics","26MA3BSDMS","603","Dr. Chaitra V"],
+        ["10:20–11:15","Object Oriented Programming","26CS3PCOOP","214","Prof. Varshini J K"],
+        ["11:15–12:10","Digital Logic and Computer Organization","26CS3PCDLC","214","Prof. Vagdevi V"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Thursday: [
+        ["10:20–11:15","Database Management Systems","26CS3IPDBM","304","Prof. Varsha"],
+        ["11:15–12:10","Data Structures","26CS3IPDST","304","Prof. Nanditha R M"],
+        ["12:10–01:05","Digital Logic and Computer Organization","26CS3PCDLC","304","Prof. Vagdevi V"],
+        ["03:50–04:45","DIP-MATH(B)","","",""]
+      ],
+      Friday: [
+        ["08:00–08:55","Object Oriented Programming","26CS3PCOOP","215","Prof. Varshini J K"],
+        ["08:55–09:50","Digital Logic and Computer Organization","26CS3PCDLC","215","Prof. Vagdevi V"],
+        ["10:20–11:15","Data Structures","26CS3IPDST","ASE CR 2","Prof. Nanditha R M"],
+        ["02:00–02:55","Discrete Mathematics and Statistics","26MA3BSDMS","215","Dr. Chaitra V"],
+        ["03:50–05:40","DIP-MATH(B)","","",""]
+      ],
+      Saturday: []
+    }
+  }
+};
+
+const ALL_CLUSTERS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V"];
+const order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const short = {Monday: "Mon", Tuesday: "Tue", Wednesday: "Wed", Thursday: "Thu", Friday: "Fri", Saturday: "Sat"};
+const breaks = [["09:50", "10:20", "Tea Break"], ["01:05", "02:00", "Lunch Break"]];
+
+let currentCluster = localStorage.getItem("timetable_cluster") || "B";
+let currentSection = localStorage.getItem("timetable_section") || "3B1 [3D]";
+let selectedDay;
+
+const clusterEl = document.getElementById("clusterSelect");
+const sectionEl = document.getElementById("sectionSelect");
+const dayEl = document.getElementById("days");
+const classesEl = document.getElementById("classes");
+const titleEl = document.getElementById("title");
+const subtitleEl = document.getElementById("subtitle");
+const dateEl = document.getElementById("dateLabel");
+const badgeEl = document.getElementById("todayBadge");
+const statusEl = document.getElementById("status");
+const statusLabelEl = document.getElementById("statusLabel");
+const statusTitleEl = document.getElementById("statusTitle");
+const countdownEl = document.getElementById("countdown");
+const todayJumpEl = document.getElementById("todayJump");
+
+function initSelectors() {
+  clusterEl.innerHTML = "";
+  ALL_CLUSTERS.forEach(cl => {
+    const opt = document.createElement("option");
+    opt.value = cl;
+    opt.textContent = `Cluster ${cl}` + (DATA[cl] ? "" : " (Coming Soon)");
+    if (cl === currentCluster) opt.selected = true;
+    clusterEl.appendChild(opt);
+  });
+
+  updateSectionOptions();
+}
+
+function updateSectionOptions() {
+  sectionEl.innerHTML = "";
+  const clusterData = DATA[currentCluster];
+  
+  if (clusterData) {
+    const sections = Object.keys(clusterData);
+    sections.forEach(sec => {
+      const opt = document.createElement("option");
+      opt.value = sec;
+      opt.textContent = sec;
+      if (sec === currentSection) opt.selected = true;
+      sectionEl.appendChild(opt);
+    });
+    if (!sections.includes(currentSection)) {
+      currentSection = sections[0];
+      localStorage.setItem("timetable_section", currentSection);
+    }
+  } else {
+    // Missing cluster placeholder sections
+    const placeholderSections = [`3${currentCluster}1`, `3${currentCluster}2`, `3${currentCluster}3`];
+    placeholderSections.forEach(sec => {
+      const opt = document.createElement("option");
+      opt.value = sec;
+      opt.textContent = sec;
+      if (sec === currentSection) opt.selected = true;
+      sectionEl.appendChild(opt);
+    });
+    if (!placeholderSections.includes(currentSection)) {
+      currentSection = placeholderSections[0];
+      localStorage.setItem("timetable_section", currentSection);
+    }
+  }
+}
+
+clusterEl.onchange = (e) => {
+  currentCluster = e.target.value;
+  localStorage.setItem("timetable_cluster", currentCluster);
+  updateSectionOptions();
+  render(selectedDay || todayName());
+};
+
+sectionEl.onchange = (e) => {
+  currentSection = e.target.value;
+  localStorage.setItem("timetable_section", currentSection);
+  render(selectedDay || todayName());
+};
+
+function todayName() { return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); }
+function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
+
+function toMinutes(v) {
+  if(!v) return 0;
+  const [h, m] = v.split(":").map(Number);
+  return (h <= 5 ? h + 12 : h) * 60 + m;
+}
+
+function parseRange(t) {
+  if (!t || !t.includes("–")) return [0, 0];
+  const [a, b] = t.split("–");
+  return [toMinutes(a), toMinutes(b)];
+}
+
+function isToday(d) { return d === todayName(); }
+function nowMin() { const n = new Date(); return n.getHours() * 60 + n.getMinutes() + n.getSeconds() / 60; }
+
+function getTimetable(d) {
+  return DATA[currentCluster]?.[currentSection]?.[d] || null;
+}
+
+function liveIndex(list, d) {
+  if (!isToday(d) || !list) return -1;
+  const n = nowMin();
+  return list.findIndex(([t]) => {
+    const [s, e] = parseRange(t);
+    return s > 0 && n >= s && n < e;
+  });
+}
+
+function nextIndex(list, d) {
+  if (!isToday(d) || !list) return -1;
+  const n = nowMin();
+  return list.findIndex(([t]) => {
+    const [s] = parseRange(t);
+    return s > n;
+  });
+}
+
+function status(list, d) {
+  if (!isToday(d) || !list || !list.length) return null;
+  const n = nowMin();
+  const li = liveIndex(list, d);
+  if (li >= 0) {
+    const [t, s] = list[li];
+    return { kind: "live", label: "Live now", title: s, target: parseRange(t)[1], prefix: "Ends in " };
+  }
+  const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
+  if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+  const ni = nextIndex(list, d);
+  if (ni >= 0) {
+    const [t, s] = list[ni];
+    return { kind: "next", label: "Next class", title: s, target: parseRange(t)[0], prefix: "Starts in " };
+  }
+  return { kind: "done", label: "Day complete", title: "No more classes today", target: null, prefix: "" };
+}
+
+function duration(sec) {
+  sec = Math.max(0, Math.ceil(sec));
+  const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+  return h ? `${h}h ${m}m` : m ? `${m}m ${s}s` : `${s}s`;
+}
+
+function updateStatus(list, d) {
+  const x = status(list, d);
+  if (!x) { statusEl.className = "status"; return; }
+  statusEl.className = `status visible ${x.kind}`;
+  statusLabelEl.textContent = x.label;
+  statusTitleEl.textContent = x.title;
+  countdownEl.textContent = x.target === null ? "✓" : x.prefix + duration((x.target - nowMin()) * 60);
+}
+
+function addBreak(b) {
+  const [s, e, l] = b, i = document.createElement("div");
+  i.className = "break-row";
+  i.innerHTML = `<div class="time">${s}–${e}</div><div class="break-card">☕ ${l}</div>`;
+  classesEl.appendChild(i);
+}
+
+function render(d, scroll = false) {
+  selectedDay = d;
+  const today = todayName();
+  const viewToday = d === today;
+  const list = getTimetable(d);
+  
+  subtitleEl.textContent = `Cluster ${currentCluster} · ${currentSection}`;
+  titleEl.textContent = viewToday ? "Today's Timetable" : d + " Timetable";
+
+  const li = liveIndex(list, d);
+  const ni = nextIndex(list, d);
+  const st = status(list, d);
+
+  badgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
+  badgeEl.classList.toggle("live-badge", li >= 0);
+  badgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
+
+  dateEl.textContent = viewToday ? formatDate() : "Tap a day above to switch";
+  todayJumpEl.classList.toggle("visible", !viewToday);
+  dayEl.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.day === d));
+  classesEl.innerHTML = "";
+  updateStatus(list, d);
+
+  if (list === null) {
+    classesEl.innerHTML = `
+      <div class="empty">
+        <div style="font-size:36px;margin-bottom:8px">🚀</div>
+        <strong style="font-size:16px;color:var(--text)">Coming Soon!! Skill Lab</strong><br>
+        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for Cluster ${currentCluster} - ${currentSection} will be updated shortly!</span>
+      </div>`;
+    return;
+  }
+
+  if (!list.length) {
+    classesEl.innerHTML = `
+      <div class="empty">
+        <strong>No classes scheduled</strong><br>
+        <span>Enjoy your day! 🎉</span>
+      </div>`;
+    return;
+  }
+
+  list.forEach(([t, s, c, r, tr], i) => {
+    const el = document.createElement("article");
+    const live = i === li;
+    const next = i === ni && li < 0;
+    const [startMin, endMin] = parseRange(t);
+    const done = viewToday && !live && endMin > 0 && endMin <= nowMin();
+
+    el.className = `class${live ? " live" : ""}${done ? " done" : ""}`;
+
+    const sLower = (s || "").toLowerCase();
+    const typeStr = sLower.includes("lab") ? "LAB" : sLower.includes("dms-t") ? "TUTORIAL" : sLower.includes("dip-math") ? "DIP MATH" : "CLASS";
+
+    const codeHtml = c ? `<div class="code">📘 ${c}</div>` : "";
+    const roomHtml = r ? `<div class="code">📍 Room ${r}</div>` : "";
+    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${tr}</div>` : "";
+
+    el.innerHTML = `
+      <div class="time">${t}</div>
+      <div class="card${live ? " live" : ""}${next ? " next" : ""}">
+        <div class="subject">${s || "Class"}</div>
+        ${codeHtml}
+        ${roomHtml}
+        ${teacherHtml}
+        <span class="type">${typeStr}</span>
+        ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
+      </div>`;
+    classesEl.appendChild(el);
+
+    const end = endMin;
+    const b = breaks.find(([bs]) => toMinutes(bs) === end);
+    if (b) addBreak(b);
+    if (i < list.length - 1) {
+      const nextStart = parseRange(list[i + 1][0])[0];
+      const gapBreak = breaks.find(([bs, be]) => toMinutes(bs) >= end && toMinutes(be) <= nextStart && !breaks.some(([pbs]) => toMinutes(pbs) === end));
+      if (gapBreak) addBreak(gapBreak);
+    }
+  });
+
+  if (scroll && li >= 0) {
+    setTimeout(() => classesEl.children[li]?.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
+  }
+}
+
+initSelectors();
+
+order.forEach(d => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "day";
+  b.dataset.day = d;
+  b.textContent = short[d];
+  if (d === todayName()) b.classList.add("today-day");
+  b.onclick = () => render(d);
+  dayEl.appendChild(b);
+});
+
+todayJumpEl.onclick = () => render(todayName(), true);
+
+const initial = order.includes(todayName()) ? todayName() : "Monday";
+render(initial, true);
+
+setInterval(() => {
+  if (selectedDay === todayName()) render(selectedDay);
+}, 1000);
+</script>
+<script>
+if("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+</script>
+</body>
+</html>
