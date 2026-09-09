@@ -1,0 +1,3969 @@
+{
+  "CSE": {
+    "3B1 [3D]": {
+      "Monday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Dr. Rajashi Chatterjee",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "606",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "606",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "606",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "206",
+          "faculty": "Dr. Rajashi Chatterjee",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG6015",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG6015",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "201",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "603",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "603",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "603",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Rajashi Chatterjee",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "02:55–03:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Rajashi Chatterjee",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "207",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "ASE CR 2",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "ASE CR 2",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "ASE CR 2",
+          "faculty": "Dr. Rajashi Chatterjee",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "206",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "206",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "207",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3B2 [3G]": {
+      "Monday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG6015",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "209",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "209",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "209",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Dr. Ambika Hejib",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "7F-MBA-CR2",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "7F-MBA-CR2",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "7F-MBA-CR2",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "208",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "201",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Dr. Ambika Hejib",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Dr. Ambika Hejib",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "208",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "213",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "213",
+          "faculty": "Dr. H S Guruprasad",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "206",
+          "faculty": "Dr. Ambika Hejib",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "207",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "213",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "213",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "213",
+          "faculty": "Dr. Naresh E",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "213",
+          "faculty": "Dr. Ambika Hejib",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3B3 [3N]": {
+      "Monday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "206",
+          "faculty": "Dr. Shivraj D L",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG6015",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "PG6015",
+          "faculty": "Dr. Shubha Rao",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG6015",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "208",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "201",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "201",
+          "faculty": "Dr. Shubha Rao",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "206",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "206",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "PG6015",
+          "faculty": "Dr. Shubha Rao",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "PG6015",
+          "faculty": "Dr. Shivraj D L",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG6015",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        },
+        {
+          "time": "04:45–05:40",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:00–09:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "209",
+          "faculty": "Dr. Shivraj D L",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "206",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "206",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Dr. Shivraj D L",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "201",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "214",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "214",
+          "faculty": "Dr. Shubha Rao",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "214",
+          "faculty": "Prof. Sowmya T",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3B4 [3Q]": {
+      "Monday": [
+        {
+          "time": "08:00–09:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "207",
+          "faculty": "Ms. Rashmi S M",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "201",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "201",
+          "faculty": "Prof. Madhavi R P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "201",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "206",
+          "faculty": "Ms. Rashmi S M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "206",
+          "faculty": "Prof. Madhavi R P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "206",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "207",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "206",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "206",
+          "faculty": "Prof. Madhavi R P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "206",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "201",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "201",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "602",
+          "faculty": "Prof. Pallavi C V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "602",
+          "faculty": "Prof. Madhavi R P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "602",
+          "faculty": "Ms. Rashmi S M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Ms. Rashmi S M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "201",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "201",
+          "faculty": "Prof. Madhavi R P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "201",
+          "faculty": "Prof. Prajwala Gowda P Patil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3B5 [3V]": {
+      "Monday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "208",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "206",
+          "faculty": "Prof. Sreevidya B S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "206",
+          "faculty": "Prof. Shravya G Gowda",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "206",
+          "faculty": "Dr. Shivraj D L",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "209",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "215",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "215",
+          "faculty": "Prof. Shravya G Gowda",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "209",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "209",
+          "faculty": "Prof. Shravya G Gowda",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "213",
+          "faculty": "Prof. Sreevidya B S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "213",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–03:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "206",
+          "faculty": "Dr. Shivraj D L",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "215",
+          "faculty": "Prof. Sreevidya B S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "215",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "201",
+          "faculty": "Dr. Shivraj D L",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "208",
+          "faculty": "Prof. Shravya G Gowda",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "215",
+          "faculty": "Prof. Sreevidya B S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "215",
+          "faculty": "Prof. Vanishree",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "215",
+          "faculty": "Prof. Prashant Koparde",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "214",
+          "faculty": "Dr. Shivraj D L",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3D1 [3B]": {
+      "Monday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "209",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "209",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "210",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "210",
+          "faculty": "Prof. Antara C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "210",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:00–09:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "PG-EI1",
+          "faculty": "Dr. Umesha V",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "213",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "213",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "213",
+          "faculty": "Dr. Umesha V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Antara C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "PG-EI1",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "214",
+          "faculty": "Prof. Antara C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "210",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "210",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Umesha V",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "210",
+          "faculty": "Prof. Antara C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "210",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Umesha V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "210",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3D2 [3I]": {
+      "Monday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "214",
+          "faculty": "Prof. Antara R C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "214",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "214",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "214",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "214",
+          "faculty": "Dr. Umesha V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "215",
+          "faculty": "Prof. Antara R C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "215",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "214",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "214",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "210",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "210",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Umesha V",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Umesha V",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "210",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Dr. Umesha V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "214",
+          "faculty": "Prof. Antara R C",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "PG-EI1",
+          "faculty": "Dr. Umesha V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "PG-EI1",
+          "faculty": "Dr. Chandrakala G Raju",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Antara R C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Rashmi K B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Sneha P",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3D3 [3L]": {
+      "Monday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "215",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "215",
+          "faculty": "Dr. Divyashree B K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "215",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "215",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "605",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "605",
+          "faculty": "Prof. Mayanka Gupta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG-7001",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "PG-7001",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–03:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "214",
+          "faculty": "Dr. Divyashree B K",
+          "type": "tutorial",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "215",
+          "faculty": "Prof. Mayanka Gupta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "215",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "215",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "213",
+          "faculty": "Prof. Mayanka Gupta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "604",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "604",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "604",
+          "faculty": "Dr. Divyashree B K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "213",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "213",
+          "faculty": "Prof. Mayanka Gupta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "217",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "217",
+          "faculty": "Dr. Divyashree B K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(A)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3D4 [3S]": {
+      "Monday": [
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "213",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "213",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "213",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "213",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "210",
+          "faculty": "Ms. Rashmi S M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "210",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "ASE-CR2",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "214",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "214",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "7F MEL-CR1",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "7F MEL-CR1",
+          "faculty": "Ms. Rashmi S M",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "7F MEL-CR1",
+          "faculty": "Ms. Rashmi S M",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "PG-EI1",
+          "faculty": "Ms. Rashmi S M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "214",
+          "faculty": "Ms. Rashmi S M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "214",
+          "faculty": "Prof. Radhika A D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "508",
+          "faculty": "Prof. Birajdar Priyanka Ashok",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "508",
+          "faculty": "Ms. Srushti C S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "508",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    },
+    "3D5 [3U]": {
+      "Monday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "210",
+          "faculty": "Prof. Varshini J K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "210",
+          "faculty": "Prof. Varsha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "PG-EI1",
+          "faculty": "Dr. Chaitra V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Varshini J K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "PG-EI1",
+          "faculty": "Prof. Varsha",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "207",
+          "faculty": "Prof. Varsha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "207",
+          "faculty": "Prof. Nanditha R M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "207",
+          "faculty": "Prof. Varshini J K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "204",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–03:50",
+          "subject": "DMS-T",
+          "course_code": "26MA3BSDMS",
+          "venue": "215",
+          "faculty": "Dr. Chaitra V",
+          "type": "tutorial",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "603",
+          "faculty": "Prof. Nanditha R M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "603",
+          "faculty": "Dr. Chaitra V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "214",
+          "faculty": "Prof. Varshini J K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "214",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "10:20–11:15",
+          "subject": "Database Management Systems",
+          "course_code": "26CS3IPDBM",
+          "venue": "304",
+          "faculty": "Prof. Varsha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15–12:10",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "304",
+          "faculty": "Prof. Nanditha R M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–01:05",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "304",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–04:45",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
+          "venue": "215",
+          "faculty": "Prof. Varshini J K",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "215",
+          "faculty": "Prof. Vagdevi V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
+          "venue": "ASE CR 2",
+          "faculty": "Prof. Nanditha R M",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "02:00–02:55",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "215",
+          "faculty": "Dr. Chaitra V",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "03:50–05:40",
+          "subject": "DIP-MATH(B)",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "dip math",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    }
+  },
+  "ECE": {
+    "ECE-S3-3A": {
+      "Monday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-304",
+          "faculty": "Dr. Maligi Anantha Sunil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-304",
+          "faculty": "Prof. Rahul R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-301",
+          "faculty": "Dr. Harish V Mekali",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (A1-KV, A2-SKU, A3-APP) / DSD Lab (A4-SB, A5-PMK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "A1-A3: First Floor PG Block EIE Dept; A4-A5: Lab-305 / A1-A3: Lab-306; A4-A5: First Floor PG Block EEE Dept",
+          "faculty": "Dr. K Vijayalakshmi / Dr. Harish V Mekali",
+          "type": "lab",
+          "groups": "A1-KV, A2-SKU, A3-APP (AEC) | A4-SB, A5-PMK (DSD)"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-303",
+          "faculty": "Dr. Harish V Mekali",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-303",
+          "faculty": "K Poornima Kamath",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-306",
+          "faculty": "Dr. Maligi Anantha Sunil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-306",
+          "faculty": "Prof. Rahul R",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-304",
+          "faculty": "Prof. Rahul R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-304",
+          "faculty": "Prof. Rahul R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Dr. K Vijayalakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-306",
+          "faculty": "K Poornima Kamath",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-306",
+          "faculty": "Dr. Maligi Anantha Sunil",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Dr. K Vijayalakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Dr. K Vijayalakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-302",
+          "faculty": "Dr. Harish V Mekali",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (A4-KV, A5-ARK) / DSD Lab (A1-RJG, A2-JMS, A3-MPS)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "A4-A5: Lab-305 / A1-A3: Lab-306",
+          "faculty": "Dr. K Vijayalakshmi / Dr. Harish V Mekali",
+          "type": "lab",
+          "groups": "A4-KV, A5-ARK (AEC) | A1-RJG, A2-JMS, A3-MPS (DSD)"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "TCE Lab (A1-APP, A2-AK, A3-SKU, A4-ED, A5-LS)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "A1-APP, A2-AK, A3-SKU, A4-ED, A5-LS"
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-306",
+          "faculty": "K Poornima Kamath",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Dr. K Vijayalakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-302",
+          "faculty": "Prof. Rahul R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Verilog Lab (A1-SK, A2-RCR, A3-KPK, A4-KB, A5-NSR)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "A1-SK, A2-RCR, A3-KPK, A4-KB, A5-NSR"
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,ST,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,NKC,SBB,SS,BHT – L&T"
+        }
+      ]
+    },
+    "ECE-S3-3B": {
+      "Monday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-307",
+          "faculty": "Shrinivas B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-307",
+          "faculty": "Dr. Beena Ullala Mata B N",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-303",
+          "faculty": "Dr. Rangaswamy",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Verilog Lab (B1-JP, B2-KPK, B3-PJ, B4-NSR, B5-KB)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "B1-JP, B2-KPK, B3-PJ, B4-NSR, B5-KB"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Dr. S Kumuda",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-306",
+          "faculty": "Shrinivas B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-305",
+          "faculty": "Shrisha M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-305",
+          "faculty": "Dr. Rangaswamy",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Dr. S Kumuda",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-306",
+          "faculty": "Dr. Rangaswamy",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-303",
+          "faculty": "Shrisha M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (B1-KV, B2-HRA, B3-JRK) / DSD Lab (B4-SB, B5-PMK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "B1-B3: First Floor PG Block EIE Dept; B4-B5: Lab-305 / B1-B3: First Floor PG Block EIE Dept; B4-B5: First Floor PG Block EEE Dept",
+          "faculty": "Dr. S Kumuda / Shrinivas B",
+          "type": "lab",
+          "groups": "B1-KV, B2-HRA, B3-JRK (AEC) | B4-SB, B5-PMK (DSD)"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-304",
+          "faculty": "Shrisha M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-304",
+          "faculty": "Shrinivas B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-303",
+          "faculty": "Dr. Beena Ullala Mata B N",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (B4-HRA, B5-JRK) / DSD Lab (B1-SB, B2-PMK, B3-DK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "B4-B5: Lab-305 / B1-B3: First Floor PG Block EIE Dept",
+          "faculty": "Dr. S Kumuda / Shrinivas B",
+          "type": "lab",
+          "groups": "B4-HRA, B5-JRK (AEC) | B1-SB, B2-PMK, B3-DK (DSD)"
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-302",
+          "faculty": "Dr. Beena Ullala Mata B N",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-302",
+          "faculty": "Dr. Rangaswamy",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-307",
+          "faculty": "Dr. S Kumuda",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "TCE Lab (B1-AK, B2-ARS, B3-FM, B4-NKC, B5-APP)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "B1-AK, B2-ARS, B3-FM, B4-NKC, B5-APP"
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,ST,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,NKC,SBB,SS,BHT – L&T"
+        }
+      ]
+    },
+    "ECE-S3-3C": {
+      "Monday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-305",
+          "faculty": "Dr. Deepthi M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-305",
+          "faculty": "Dr. Deepthi M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-ISE-503",
+          "faculty": "Veena M B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-503",
+          "faculty": "Dr. Deepthi M R",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "AEC Lab (C1-SKS, C2-APP, C3-MSD) / DSD Lab (C4-PMK, C5-MTN)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "C1-C3: First Floor PG Block EIE Dept; C4-C5: Lab-305 / C1-C3: Lab-306; C4-C5: First Floor PG Block EEE Dept",
+          "faculty": "Pooja A P / Veena M B",
+          "type": "lab",
+          "groups": "C1-SKS, C2-APP, C3-MSD (AEC) | C4-PMK, C5-MTN (DSD)"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-304",
+          "faculty": "Geeta R C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-304",
+          "faculty": "Dr. Deepthi M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-304",
+          "faculty": "Pooja A P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-302",
+          "faculty": "Radha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-302",
+          "faculty": "Geeta R C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-302",
+          "faculty": "Veena M B",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-302",
+          "faculty": "Pooja A P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-302",
+          "faculty": "Dr. Deepthi M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "TCE Lab (C1-FM, C2-NKC, C3-GSK, C4-ED, C5-APP)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "C1-FM, C2-NKC, C3-GSK, C4-ED, C5-APP"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-305",
+          "faculty": "Radha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-305",
+          "faculty": "Geeta R C",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-305",
+          "faculty": "Veena M B",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-305",
+          "faculty": "Dr. Deepthi M R",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-305",
+          "faculty": "Pooja A P",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "PG Block C-5010",
+          "faculty": "Radha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (C4-KV, C5-ARK) / DSD Lab (C1-MPS, C2-PMK, C3-MTN)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "C4-C5: Lab-305 / C1-C3: Lab-306",
+          "faculty": "Pooja A P / Veena M B",
+          "type": "lab",
+          "groups": "C4-KV, C5-ARK (AEC) | C1-MPS, C2-PMK, C3-MTN (DSD)"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Verilog Lab (C1-GT, C2-KPK, C3-NSR, C4-KB, C5-SK)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "C1-GT, C2-KPK, C3-NSR, C4-KB, C5-SK"
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,ST,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,NKC,SBB,SS,BHT – L&T"
+        }
+      ]
+    },
+    "ECE-S3-3D": {
+      "Monday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-301",
+          "faculty": "Dr. Sylvia L S",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-307",
+          "faculty": "Dr. Surendra H H",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-307",
+          "faculty": "Sanjana T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-307",
+          "faculty": "Dr. Jayanthi K Murthy",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-307",
+          "faculty": "Dr. Surendra H H",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-307",
+          "faculty": "Dr. Surendra H H",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-301",
+          "faculty": "Dr. Sylvia L S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (D4-MSD, D5-ARS) / DSD Lab (D1-JMS, D2-GSK, D3-KTK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "D1-D3: Lab-306; D4-D5: First Floor PG Block EEE Dept / D1-D3: First Floor PG Block EIE Dept; D4-D5: Lab-305",
+          "faculty": "Sanjana T / Dr. Jayanthi K Murthy",
+          "type": "lab",
+          "groups": "D4-MSD, D5-ARS (AEC) | D1-JMS, D2-GSK, D3-KTK (DSD)"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-305",
+          "faculty": "Eesha D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-305",
+          "faculty": "Dr. Jayanthi K Murthy",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-305",
+          "faculty": "Sanjana T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "TCE Lab (D1-FM, D2-LS, D3-ED, D4-SMR, D5-ARK)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "D1-FM, D2-LS, D3-ED, D4-SMR, D5-ARK"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "Verilog Lab (D1-GT, D2-SK, D3-PJ, D4-JP, D5-RCR)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "D1-GT, D2-SK, D3-PJ, D4-JP, D5-RCR"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-ISE-503",
+          "faculty": "Dr. Sylvia L S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-ISE-503",
+          "faculty": "Eesha D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-ISE-503",
+          "faculty": "Dr. Jayanthi K Murthy",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "AEC Lab (D1-ST, D2-ARS, D3-SHH) / DSD Lab (D4-JMS, D5-KTK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "D1-D3: Lab-306; D4-D5: Lab-305",
+          "faculty": "Sanjana T / Dr. Jayanthi K Murthy",
+          "type": "lab",
+          "groups": "D1-ST, D2-ARS, D3-SHH (AEC) | D4-JMS, D5-KTK (DSD)"
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-304",
+          "faculty": "Sanjana T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-304",
+          "faculty": "Eesha D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-303",
+          "faculty": "Dr. Sylvia L S",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,DS,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BHT,NKC,SBB,SS,ST – L&T"
+        }
+      ]
+    },
+    "ECE-S3-3E": {
+      "Monday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-306",
+          "faculty": "Dr. Harish V Mekali",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-306",
+          "faculty": "Dr. Gayathri M S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-305",
+          "faculty": "Dr. Seshachalam D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-305",
+          "faculty": "Dr. P S Manjunath",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-305",
+          "faculty": "Geeta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "TCE Lab (E1-AK, E2-FM, E3-NKC, E4-ED, E5-ARK)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "E1-AK, E2-FM, E3-NKC, E4-ED, E5-ARK"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-303",
+          "faculty": "Dr. Seshachalam D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-303",
+          "faculty": "Dr. Gayathri M S",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-307",
+          "faculty": "Dr. P S Manjunath",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-307",
+          "faculty": "Dr. Harish V Mekali",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-307",
+          "faculty": "Dr. Gayathri M S",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (E1-SHH, E2-SKS, E3-ST) / DSD Lab (E4-JMS, E5-MPS)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "E1-E3: Lab-306; E4-E5: Lab-305",
+          "faculty": "Dr. Seshachalam D / Dr. Harish V Mekali",
+          "type": "lab",
+          "groups": "E1-SHH, E2-SKS, E3-ST (AEC) | E4-JMS, E5-MPS (DSD)"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "TBD",
+          "course_code": "",
+          "venue": "C-305",
+          "faculty": "",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-305",
+          "faculty": "Dr. Harish V Mekali",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Verilog Lab (E1-SK, E2-RCR, E3-KPK, E4-PJ, E5-JP)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "E1-SK, E2-RCR, E3-KPK, E4-PJ, E5-JP"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "AEC Lab (E4-KV, E5-JRK) / DSD Lab (E1-VANI, E2-GSK, E3-MPS)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "E4-E5: First Floor PG Block EEE Dept / E1-E3: First Floor PG Block EIE Dept",
+          "faculty": "Dr. Seshachalam D / Dr. Harish V Mekali",
+          "type": "lab",
+          "groups": "E4-KV, E5-JRK (AEC) | E1-VANI, E2-GSK, E3-MPS (DSD)"
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-303",
+          "faculty": "Geeta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-303",
+          "faculty": "Dr. P S Manjunath",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-301",
+          "faculty": "Dr. Seshachalam D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-301",
+          "faculty": "Geeta",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-301",
+          "faculty": "Dr. Gayathri M S",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,ST,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,NKC,SBB,SS,BHT – L&T"
+        }
+      ]
+    },
+    "ECE-S3-3F": {
+      "Monday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "TCE Lab (F1-AK, F2-GSK, F3-FM, F4-PMK, F5-SKU)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "F1-AK, F2-GSK, F3-FM, F4-PMK, F5-SKU"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-304",
+          "faculty": "Dr. H R Archana",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-304",
+          "faculty": "Dr. H Y Shrivalli",
+          "type": "tutorial",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-302",
+          "faculty": "Krishnamurthy K T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-302",
+          "faculty": "Dr. N Srinivas Rao",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "PG Block C-5010",
+          "faculty": "Dr. H Y Shrivalli",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "PG Block C-5010",
+          "faculty": "Dr. H R Archana",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "PG Block C-5010",
+          "faculty": "Dr. Surendra H H",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-301",
+          "faculty": "Krishnamurthy K T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-301",
+          "faculty": "Dr. H Y Shrivalli",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-301",
+          "faculty": "Dr. H R Archana",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-301",
+          "faculty": "Krishnamurthy K T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-301",
+          "faculty": "Dr. N Srinivas Rao",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "AEC Lab (F1-ARK, F2-MSD, F3-AK) / DSD Lab (F4-KPK, F5-MTN)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "F1-F3: First Floor PG Block EEE Dept; F4-F5: First Floor PG Block EEE Dept",
+          "faculty": "Dr. H R Archana / Dr. N Srinivas Rao",
+          "type": "lab",
+          "groups": "F1-ARK, F2-MSD, F3-AK (AEC) | F4-KPK, F5-MTN (DSD)"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-301",
+          "faculty": "Dr. Surendra H H",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-301",
+          "faculty": "Dr. N Srinivas Rao",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-301",
+          "faculty": "Krishnamurthy K T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Verilog Lab (F1-GT, F2-KPK, F3-PJ, F4-NSR, F5-JP)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "F1-GT, F2-KPK, F3-PJ, F4-NSR, F5-JP"
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "AEC Lab (F4-ARK, F5-SHH) / DSD Lab (F1-SB, F2-MTN, F3-PMK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "F4-F5: First Floor PG Block EEE Dept / F1-F3: First Floor PG Block EIE Dept",
+          "faculty": "Dr. H R Archana / Dr. N Srinivas Rao",
+          "type": "lab",
+          "groups": "F4-ARK, F5-SHH (AEC) | F1-SB, F2-MTN, F3-PMK (DSD)"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-304",
+          "faculty": "Krishnamurthy K T",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-304",
+          "faculty": "Dr. H Y Shrivalli",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-304",
+          "faculty": "Dr. Surendra H H",
+          "type": "theory",
+          "groups": ""
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,ST,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,NKC,SBB,SS,BHT – L&T"
+        }
+      ]
+    },
+    "ECE-S3-3G": {
+      "Monday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-303",
+          "faculty": "Dr. Madhukar",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-303",
+          "faculty": "R C Radha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-302",
+          "faculty": "Archana K D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "TCE Lab (G1-AK, G2-ED, G3-LS, G4-ARK, G5-MTN)",
+          "course_code": "26EC3AETCE",
+          "venue": "Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "tce",
+          "groups": "G1-AK, G2-ED, G3-LS, G4-ARK, G5-MTN"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SS,BHT,ST,ED – OPTIMUS"
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:00–9:50 AM",
+          "subject": "AEC Lab (G1-HRA, G2-JRK, G3-ST) / DSD Lab (G4-KTK, G5-JMS)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "G1-G3: Lab-306; G4-G5: First Floor PG Block EEE Dept",
+          "faculty": "Archana K D / Ajay Kumar",
+          "type": "lab",
+          "groups": "G1-HRA, G2-JRK, G3-ST (AEC) | G4-KTK, G5-JMS (DSD)"
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-302",
+          "faculty": "Ajay Kumar",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Verilog Lab (G1-NSR, G2-GT, G3-RCR, G4-KPK, G5-PJ)",
+          "course_code": "26EC3PLHDL",
+          "venue": "Lab1, Second Floor, PG Block",
+          "faculty": "",
+          "type": "verilog",
+          "groups": "G1-NSR, G2-GT, G3-RCR, G4-KPK, G5-PJ"
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,SMR,BU,MAS,FM – L&T | APP,ST,SBB,SS,KPL – Wearable Tech"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-303",
+          "faculty": "Ajay Kumar",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-303",
+          "faculty": "Dr. Madhukar",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-304",
+          "faculty": "Archana K D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-303",
+          "faculty": "Dr. M Vasantha Lakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10–1:05 PM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-303",
+          "faculty": "R C Radha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00–4:45 PM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,MAS,SS,BHT,ST – OPTIMUS | KPL,SBB,APP,ED,GSK – Wearable Tech"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-302",
+          "faculty": "Dr. M Vasantha Lakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Digital System Design",
+          "course_code": "26EC3IPDSD",
+          "venue": "C-302",
+          "faculty": "Ajay Kumar",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Analog Electronic Circuits",
+          "course_code": "26EC3IPAEC",
+          "venue": "C-306",
+          "faculty": "Archana K D",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics Tutorial",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-306",
+          "faculty": "Dr. Madhukar",
+          "type": "tutorial",
+          "groups": ""
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Control Engineering",
+          "course_code": "26EC3PCCEN",
+          "venue": "C-301",
+          "faculty": "R C Radha",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Network Analysis",
+          "course_code": "26EC3PCNAL",
+          "venue": "C-301",
+          "faculty": "Dr. M Vasantha Lakshmi",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20–11:15 AM",
+          "subject": "Program Specific Mathematics",
+          "course_code": "26EC3ASMAT",
+          "venue": "C-305",
+          "faculty": "Dr. Madhukar",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "AEC Lab (G4-HRA, G5-MSD) / DSD Lab (G1-KTK, G2-SB, G3-GSK)",
+          "course_code": "26EC3IPAEC / 26EC3IPDSD",
+          "venue": "G4-G5: First Floor PG Block EEE Dept / G1-G3: Lab-305",
+          "faculty": "Archana K D / Ajay Kumar",
+          "type": "lab",
+          "groups": "G4-HRA, G5-MSD (AEC) | G1-KTK, G2-SB, G3-GSK (DSD)"
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "8:00–8:55 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "BU,ST,SBB,MAS,NKC – L&T"
+        },
+        {
+          "time": "8:55–9:50 AM",
+          "subject": "Skill Lab",
+          "course_code": "26EC3SDSL1",
+          "venue": "Lab1 & Lab2, Second Floor, PG Block",
+          "faculty": "",
+          "type": "skilllab",
+          "groups": "DS,NKC,SBB,SS,BHT – L&T"
+        }
+      ]
+    }
+  }
+}
