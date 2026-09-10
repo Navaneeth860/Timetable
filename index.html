@@ -32,7 +32,13 @@
 <div class="status" id="status" aria-live="polite"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
 <div class="date" id="dateLabel"></div>
 <section class="classes" id="classes" aria-live="polite"></section>
-<div class="footer">Based on 3rd Semester 2026–27 timetable.</div>
+<div class="footer">
+  Based on the 3rd Semester 2026–27 timetable
+  <br> Built by Navaneeth S • 
+  <a href="https://github.com/Navaneeth860/Timetable" target="_blank">
+    GitHub
+  </a>
+</div>
 </main>
 
 <script>
@@ -306,7 +312,12 @@ function render(d, scroll = false) {
     const r = item.venue || "";
     const tr = item.faculty || "";
     const typeStr = (item.type || "theory").toUpperCase();
-    const grp = item.groups || "";
+    let grpStr = "";
+    if (Array.isArray(item.groups)) {
+      grpStr = item.groups.map(g => `${g.group}${g.faculty ? ' (' + g.faculty + ')' : ''}${g.venue ? ' @ ' + g.venue : ''}`).join(", ");
+    } else {
+      grpStr = item.groups || "";
+    }
 
     const el = document.createElement("article");
     const live = i === li;
@@ -319,7 +330,7 @@ function render(d, scroll = false) {
     const codeHtml = c ? `<div class="code">📘 ${c}</div>` : "";
     const roomHtml = r ? `<div class="code">📍 ${r}</div>` : "";
     const teacherHtml = tr ? `<div class="code">👨‍🏫 ${tr}</div>` : "";
-    const groupHtml = grp ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${grp}</div>` : "";
+    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${grpStr}</div>` : "";
 
     el.innerHTML = `
       <div class="time">${t}</div>

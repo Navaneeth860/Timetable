@@ -3965,5 +3965,342 @@
         }
       ]
     }
+  },
+  "CS(IOT)": {
+    "CSE-IoT": {
+      "Monday": [
+        {
+          "time": "8:55 AM–9:50 AM",
+          "subject": "Data Structures and Applications",
+          "course_code": "26DI3PCDSA",
+          "venue": "603",
+          "faculty": "Dr. Pallavi GB (PGB)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20 AM–11:15 AM",
+          "subject": "Digital Logic and Computer Design",
+          "course_code": "26DIPCDLC",
+          "venue": "603",
+          "faculty": "Prof. Medha G (MG)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–12:10 PM",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "603",
+          "faculty": "Dr. Noor E Misbah",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "12:10 PM–1:05 PM",
+          "subject": "Data Base Management System",
+          "course_code": "26DC3IPDBM",
+          "venue": "603",
+          "faculty": "Dr. Manjunath D R (MDR)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "2:00 PM–3:50 PM",
+          "subject": "Full Stack Web Development Lab",
+          "course_code": "26IC3AEFWD",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B1",
+              "faculty": "MM"
+            },
+            {
+              "group": "B2",
+              "faculty": "SAK"
+            },
+            {
+              "group": "B3",
+              "faculty": "AGT"
+            },
+            {
+              "group": "B4",
+              "faculty": "PGB"
+            },
+            {
+              "group": "B5",
+              "faculty": "PN"
+            }
+          ]
+        }
+      ],
+      "Tuesday": [
+        {
+          "time": "8:55 AM–9:50 AM",
+          "subject": "Data Base Management System",
+          "course_code": "26DC3IPDBM",
+          "venue": "603",
+          "faculty": "Dr. Manjunath D R (MDR)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20 AM–11:15 AM",
+          "subject": "Embedded Technologies for IoT",
+          "course_code": "26IC3IPETI",
+          "venue": "603",
+          "faculty": "Prof. Tejaswini AG (AGT)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Mathematics - Tutorial",
+          "course_code": "",
+          "venue": "603",
+          "faculty": "",
+          "type": "tutorial",
+          "groups": ""
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "8:00 AM–8:55 AM",
+          "subject": "Digital Logic and Computer Design",
+          "course_code": "26DIPCDLC",
+          "venue": "603",
+          "faculty": "Prof. Medha G (MG)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55 AM–9:50 AM",
+          "subject": "Embedded Technologies for IoT",
+          "course_code": "26IC3IPETI",
+          "venue": "603A",
+          "faculty": "Prof. Tejaswini AG (AGT)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20 AM–12:10 PM",
+          "subject": "Data Base Management System Lab",
+          "course_code": "26DC3IPDBM",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B1",
+              "faculty": "SMK"
+            },
+            {
+              "group": "B2",
+              "faculty": "MG"
+            },
+            {
+              "group": "B3",
+              "faculty": "MM"
+            },
+            {
+              "group": "B4",
+              "faculty": "SE"
+            },
+            {
+              "group": "B5",
+              "faculty": "PN"
+            }
+          ]
+        },
+        {
+          "time": "12:10 PM–1:05 PM",
+          "subject": "Mathematics Lab",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": ""
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "8:00 AM–8:55 AM",
+          "subject": "Embedded Technologies for IoT",
+          "course_code": "26IC3IPETI",
+          "venue": "603",
+          "faculty": "Prof. Tejaswini AG (AGT)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55 AM–9:50 AM",
+          "subject": "Digital Logic and Computer Design",
+          "course_code": "26DIPCDLC",
+          "venue": "603",
+          "faculty": "Prof. Medha G (MG)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20 AM–11:15 AM",
+          "subject": "Data Structures and Applications Lab",
+          "course_code": "26DI3PCDSA",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": ""
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Embedded Technologies for IoT Lab",
+          "course_code": "26IC3IPETI",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B1",
+              "faculty": "AGT"
+            },
+            {
+              "group": "B2",
+              "faculty": "MG"
+            },
+            {
+              "group": "B3",
+              "faculty": "PN"
+            }
+          ]
+        },
+        {
+          "time": "11:15 AM–1:05 PM",
+          "subject": "Data Structures and Applications Lab",
+          "course_code": "26DI3PCDSA",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B4",
+              "faculty": "PGB"
+            },
+            {
+              "group": "B5",
+              "faculty": "SE"
+            },
+            {
+              "group": "B6",
+              "faculty": "SMK"
+            }
+          ]
+        },
+        {
+          "time": "2:00 PM–3:50 PM",
+          "subject": "Competitive Coding Lab",
+          "course_code": "",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B1",
+              "faculty": "SMK"
+            },
+            {
+              "group": "B2",
+              "faculty": "SE"
+            },
+            {
+              "group": "B3",
+              "faculty": "SAK"
+            },
+            {
+              "group": "B4",
+              "faculty": "MG"
+            },
+            {
+              "group": "B5",
+              "faculty": "PN"
+            }
+          ]
+        }
+      ],
+      "Friday": [
+        {
+          "time": "8:00 AM–8:55 AM",
+          "subject": "Data Base Management System",
+          "course_code": "26DC3IPDBM",
+          "venue": "603A",
+          "faculty": "Dr. Manjunath D R (MDR)",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "8:55 AM–9:50 AM",
+          "subject": "Discrete Mathematics and Statistics",
+          "course_code": "26MA3BSDMS",
+          "venue": "603A",
+          "faculty": "Dr. Noor E Misbah",
+          "type": "theory",
+          "groups": ""
+        },
+        {
+          "time": "10:20 AM–12:10 PM",
+          "subject": "Data Structures and Applications Lab",
+          "course_code": "26DI3PCDSA",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B1",
+              "faculty": "MM"
+            },
+            {
+              "group": "B2",
+              "faculty": "SMK"
+            },
+            {
+              "group": "B3",
+              "faculty": "PN"
+            }
+          ]
+        },
+        {
+          "time": "10:20 AM–12:10 PM",
+          "subject": "Embedded Technologies for IoT Lab",
+          "course_code": "26IC3IPETI",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": [
+            {
+              "group": "B4",
+              "faculty": "AGT"
+            },
+            {
+              "group": "B5",
+              "faculty": "MG"
+            },
+            {
+              "group": "B6",
+              "faculty": "SMK"
+            }
+          ]
+        },
+        {
+          "time": "12:10 PM–1:05 PM",
+          "subject": "Data Structures and Applications Lab",
+          "course_code": "26DI3PCDSA",
+          "venue": "",
+          "faculty": "",
+          "type": "lab",
+          "groups": ""
+        }
+      ],
+      "Saturday": []
+    }
   }
 }
