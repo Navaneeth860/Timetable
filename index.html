@@ -91,7 +91,7 @@ function updateClusterOptions() {
   const branchData = DATA[currentBranch] || {};
 
   if (currentBranch === "CSE") {
-    const clusters = ["All", "B", "D"];
+    const clusters = ["All","A", "B", "C", "D", "E"];
     clusters.forEach(c => {
       const opt = document.createElement("option");
       opt.value = c;
