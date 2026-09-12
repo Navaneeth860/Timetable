@@ -120,16 +120,22 @@ function updateSectionOptions() {
     sections = sections.filter(sec => sec.startsWith(`3${currentCluster}`));
   }
 
+  if (sections.length === 0 && currentBranch === "CSE" && currentCluster !== "All") {
+    sections = [`3${currentCluster}1`, `3${currentCluster}2`, `3${currentCluster}3`].map(s => `${s} (Coming Soon)`);
+  }
+
   sections.forEach(sec => {
     const opt = document.createElement("option");
-    opt.value = sec;
+    const val = sec.replace(" (Coming Soon)", "");
+    opt.value = val;
     opt.textContent = sec;
-    if (sec === currentSection) opt.selected = true;
+    if (val === currentSection) opt.selected = true;
     sectionEl.appendChild(opt);
   });
 
-  if (!sections.includes(currentSection) && sections.length > 0) {
-    currentSection = sections[0];
+  const validValues = sections.map(s => s.replace(" (Coming Soon)", ""));
+  if (!validValues.includes(currentSection)) {
+    currentSection = validValues[0] || "";
     localStorage.setItem("timetable_section", currentSection);
   }
 }
