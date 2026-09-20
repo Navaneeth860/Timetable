@@ -90,8 +90,8 @@ function updateClusterOptions() {
   clusterEl.innerHTML = "";
   const branchData = DATA[currentBranch] || {};
 
-  if (currentBranch === "CSE") {
-    const clusters = ["All","A", "B", "C", "D", "E"];
+  if (currentBranch === "CSE" || currentBranch === "AIML") {
+    const clusters = currentBranch === "AIML" ? ["All", "A", "B"] : ["All", "A", "B", "C", "D", "E"];
     clusters.forEach(c => {
       const opt = document.createElement("option");
       opt.value = c;
@@ -116,11 +116,11 @@ function updateSectionOptions() {
   const branchData = DATA[currentBranch] || {};
   let sections = Object.keys(branchData);
 
-  if (currentBranch === "CSE" && currentCluster !== "All") {
+  if ((currentBranch === "CSE" || currentBranch === "AIML") && currentCluster !== "All") {
     sections = sections.filter(sec => sec.startsWith(`3${currentCluster}`));
   }
 
-  if (sections.length === 0 && currentBranch === "CSE" && currentCluster !== "All") {
+  if (sections.length === 0 && (currentBranch === "CSE" || currentBranch === "AIML") && currentCluster !== "All") {
     sections = [`3${currentCluster}1`, `3${currentCluster}2`, `3${currentCluster}3`].map(s => `${s} (Coming Soon)`);
   }
 
