@@ -1,4 +1,4 @@
-const CACHE = "timetable-app-v10";
+const CACHE = "timetable-app-v13";
 const ASSETS = ["./", "./index.html", "./style.css", "./data.json", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", event => {

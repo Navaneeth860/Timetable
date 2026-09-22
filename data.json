@@ -96,7 +96,7 @@
           "time": "02:00–02:55",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Dr. Chaitra C C",
           "type": "theory"
         },
@@ -198,7 +198,7 @@
           "time": "08:00–09:50",
           "subject": "DMS-T",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Dr. Chaitra C C",
           "type": "tutorial"
         },
@@ -206,7 +206,7 @@
           "time": "10:20–11:15",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Prof. Manjula S",
           "type": "theory"
         },
@@ -214,7 +214,7 @@
           "time": "11:15–12:10",
           "subject": "Object Oriented Programming",
           "course_code": "26CS3PCOOP",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Prof. Pradeep S",
           "type": "theory"
         },
@@ -222,7 +222,7 @@
           "time": "12:10–01:05",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Prof. Roopashree C S",
           "type": "theory"
         }
@@ -293,7 +293,7 @@
           "time": "10:20–11:15",
           "subject": "Object Oriented Programming",
           "course_code": "26CS3PCOOP",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Pradeep S",
           "type": "theory"
         },
@@ -301,7 +301,7 @@
           "time": "11:15–12:10",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Roopashree C S",
           "type": "theory"
         },
@@ -309,7 +309,7 @@
           "time": "12:10–01:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Basavaraj Jakkali",
           "type": "theory"
         },
@@ -377,7 +377,7 @@
           "time": "08:55–09:50",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Mr. Vivan B T",
           "type": "theory"
         },
@@ -480,7 +480,7 @@
           "time": "10:20–11:15",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Dr. M V Sudhamani",
           "type": "theory"
         },
@@ -606,7 +606,7 @@
           "time": "10:20–11:15",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Dr. M V Sudhamani",
           "type": "theory"
         },
@@ -614,7 +614,7 @@
           "time": "11:15–12:10",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Sandhya A Kulkarni",
           "type": "theory"
         },
@@ -640,7 +640,7 @@
           "time": "10:20–11:15",
           "subject": "Object Oriented Programming",
           "course_code": "26CS3PCOOP",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Praveen N",
           "type": "theory"
         },
@@ -648,7 +648,7 @@
           "time": "11:15–12:10",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Kanchana M Dixit",
           "type": "theory"
         },
@@ -656,7 +656,7 @@
           "time": "12:10–01:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "ASE-CR1",
+          "venue": "105",
           "faculty": "Prof. Sandhya A Kulkarni",
           "type": "theory"
         },
@@ -777,7 +777,7 @@
           "time": "10:20–11:15",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Dr. M V Sudhamani",
           "type": "theory"
         },
@@ -785,7 +785,7 @@
           "time": "11:15–12:10",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Dr. Divyashree B K",
           "type": "theory"
         },
@@ -793,7 +793,7 @@
           "time": "12:10–01:05",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Prof. Rezni S",
           "type": "theory"
         },
@@ -980,7 +980,7 @@
           "time": "12:10–01:05",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Dr. H S Guruprasad",
           "type": "theory"
         },
@@ -1144,7 +1144,7 @@
           "time": "08:55–09:50",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Dr. Naresh E",
           "type": "theory"
         },
@@ -1186,7 +1186,7 @@
           "time": "08:55–09:50",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Dr. Ambika Hejib",
           "type": "theory"
         },
@@ -1390,7 +1390,7 @@
           "time": "10:20–11:15",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Prof. Pallavi C V",
           "type": "theory"
         },
@@ -1416,7 +1416,7 @@
           "time": "08:55–09:50",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "PG-5004",
+          "venue": "106",
           "faculty": "Prof. Sowmya T",
           "type": "theory"
         },
@@ -1500,7 +1500,7 @@
           "time": "08:00–09:50",
           "subject": "DMS-T",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Dr. Shivraj D L",
           "type": "tutorial"
         },
@@ -1574,7 +1574,7 @@
           "time": "12:10–01:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Prof. Sowmya T",
           "type": "theory"
         }
@@ -1712,7 +1712,7 @@
           "time": "12:10–01:05",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Prof. Prajwala Gowda P Patil",
           "type": "theory"
         },
@@ -1780,7 +1780,7 @@
           "time": "08:55–09:50",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Ms. Rashmi S M",
           "type": "theory"
         },
@@ -1933,7 +1933,7 @@
           "time": "02:00–03:50",
           "subject": "DMS-T",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6015",
+          "venue": "102",
           "faculty": "Dr. Shivraj D L",
           "type": "tutorial"
         },
@@ -2054,7 +2054,7 @@
           "time": "08:55–09:50",
           "subject": "Object Oriented Programming",
           "course_code": "26CS3PCOOP",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Prof. Shravya AR",
           "type": "theory"
         },
@@ -2178,7 +2178,7 @@
           "time": "12:10–01:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Prof. Vivan BT",
           "type": "theory"
         },
@@ -2291,7 +2291,7 @@
           "time": "10:20–11:15",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Prof. Geetha N",
           "type": "theory"
         },
@@ -2499,7 +2499,7 @@
           "time": "12:10–01:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Dr. Pooja M N",
           "type": "theory"
         },
@@ -2578,7 +2578,7 @@
           "time": "10:20–11:15",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "PG-7001",
+          "venue": "101",
           "faculty": "Prof. Surabhi S",
           "type": "theory"
         },
@@ -2586,7 +2586,7 @@
           "time": "11:15–12:10",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "PG-7001",
+          "venue": "101",
           "faculty": "Prof. Divyashree S",
           "type": "theory"
         },
@@ -2594,7 +2594,7 @@
           "time": "12:10–01:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-7001",
+          "venue": "101",
           "faculty": "Dr. Ambika Hejib",
           "type": "theory"
         },
@@ -2686,7 +2686,7 @@
           "time": "12:10–01:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Dr. Ambika Hejib",
           "type": "theory"
         },
@@ -2704,7 +2704,7 @@
           "time": "08:55–09:50",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Dr. Ambika Hejib",
           "type": "theory"
         },
@@ -3028,7 +3028,7 @@
           "time": "08:00–09:50",
           "subject": "DMS-T",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Dr. Umesha V",
           "type": "tutorial"
         },
@@ -3052,7 +3052,7 @@
           "time": "12:10–01:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Prof. Sneha P",
           "type": "theory"
         },
@@ -3078,7 +3078,7 @@
           "time": "10:20–11:15",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Prof. Antara C",
           "type": "theory"
         },
@@ -3086,7 +3086,7 @@
           "time": "11:15–12:10",
           "subject": "Object Oriented Programming",
           "course_code": "26CS3PCOOP",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Dr. Chandrakala G Raju",
           "type": "theory"
         },
@@ -3094,7 +3094,7 @@
           "time": "12:10–01:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Prof. Sneha P",
           "type": "theory"
         },
@@ -3281,7 +3281,7 @@
           "time": "12:10–01:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-6016",
+          "venue": "103",
           "faculty": "Dr. Umesha V",
           "type": "theory"
         },
@@ -3391,7 +3391,7 @@
           "time": "08:55–09:50",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Prof. Sneha P",
           "type": "theory"
         },
@@ -3460,7 +3460,7 @@
           "time": "12:10–01:05",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-7001",
+          "venue": "101",
           "faculty": "Prof. Radhika A D",
           "type": "theory"
         }
@@ -3799,7 +3799,7 @@
           "time": "08:00–08:55",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Prof. Radhika A D",
           "type": "theory"
         },
@@ -3807,7 +3807,7 @@
           "time": "08:55–09:50",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Ms. Rashmi S M",
           "type": "theory"
         },
@@ -3918,7 +3918,7 @@
           "time": "10:20–11:15",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Dr. Chaitra V",
           "type": "theory"
         }
@@ -4102,7 +4102,7 @@
           "time": "12:10–01:05",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
-          "venue": "PG-5007",
+          "venue": "104",
           "faculty": "Prof. Nanditha R M",
           "type": "theory"
         },

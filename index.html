@@ -341,13 +341,15 @@ function render(d, scroll = false) {
     el.innerHTML = `
       <div class="time">${t}</div>
       <div class="card${live ? " live" : ""}${next ? " next" : ""}">
+        <div class="top-right-badges">
+          ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
+          <span class="type">${typeStr}</span>
+        </div>
         <div class="subject">${s || "Class"}</div>
         ${codeHtml}
         ${roomHtml}
         ${teacherHtml}
         ${groupHtml}
-        <span class="type">${typeStr}</span>
-        ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
       </div>`;
     classesEl.appendChild(el);
 
