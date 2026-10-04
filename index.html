@@ -160,6 +160,9 @@ sectionEl.onchange = (e) => {
   render(selectedDay || todayName());
 };
 
+function todayName() { 
+  return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
+  }
 function todayName() { return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); }
 function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
 
@@ -215,6 +218,7 @@ function hasSectionData() {
 }
 
 function getTimetable(d) {
+  return DATA[currentBranch]?.[currentSection]?.[d] || null;
   if (!hasSectionData()) return null;
   return DATA[currentBranch][currentSection][d] || [];
 }
@@ -271,12 +275,28 @@ function status(list, d) {
       const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
       return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
     }
-    const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-    if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+
     const ni = nextIndex(list, d);
+    const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
+
+    if (br) {
+      let nextStr = "";
+      if (ni >= 0) {
+        const item = list[ni];
+        const venueStr = item.venue ? `, Room ${item.venue}` : "";
+        nextStr = ` · Next: ${item.subject}${venueStr}`;
+      }
+      return { kind: "break", label: br[2], title: `${br[2]}${nextStr}`, target: toMinutes(br[1]), prefix: "Ends in " };
+    }
+
     if (ni >= 0) {
       const item = list[ni];
-      return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
+      const venueStr = item.venue ? `, Room ${item.venue}` : "";
+      const prevClass = list.slice(0, ni).reverse().find(c => parseRange(c.time)[1] > 0);
+      const isFreePeriod = prevClass && n >= parseRange(prevClass.time)[1];
+      const labelStr = isFreePeriod ? "Free Period" : "Next class";
+      const titleStr = isFreePeriod ? `Next: ${item.subject}${venueStr}` : `${item.subject}${venueStr}`;
+      return { kind: "next", label: labelStr, title: titleStr, target: parseRange(item.time)[0], prefix: "Starts in " };
     }
   }
 
@@ -342,6 +362,7 @@ function render(d, scroll = false) {
   subtitleEl.textContent = `${currentBranch} · ${currentSection}`;
   titleEl.textContent = viewToday ? "Today's Timetable" : d + " Timetable";
 
+  const li = liveIndex(list, d);
   const lis = liveIndices(list, d);
   const li = lis[0] ?? -1;
   const ni = nextIndex(list, d);
@@ -349,6 +370,9 @@ function render(d, scroll = false) {
   currentNextIndex = ni;
   const st = status(list, d);
 
+  badgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
+  badgeEl.classList.toggle("live-badge", li >= 0);
+  badgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
   badgeEl.textContent = lis.length > 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
   badgeEl.classList.toggle("live-badge", lis.length > 0);
   badgeEl.classList.toggle("break-badge", lis.length === 0 && st?.kind === "break");
@@ -381,6 +405,7 @@ function render(d, scroll = false) {
     const nextText = nextUp ? `<br><span style="font-size:13px;margin-top:8px;display:inline-block;color:var(--accent);font-weight:700">Next: ${nextUp.day} ${nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : ''} - ${nextUp.item.subject}</span>` : "";
     classesEl.innerHTML = `
       <div class="empty">
+        <strong>No classes scheduled</strong><br>
         <strong>No classes scheduled today</strong><br>
         <span>Enjoy your day! 🎉</span>
         ${nextText}
@@ -404,6 +429,8 @@ function render(d, scroll = false) {
     }
 
     const el = document.createElement("article");
+    const live = i === li;
+    const next = i === ni && li < 0;
     const live = lis.includes(i);
     const next = i === ni && lis.length === 0;
     const [startMin, endMin] = parseRange(t);
@@ -444,6 +471,7 @@ function render(d, scroll = false) {
   classesEl.style.minHeight = "";
 
   if (scroll && li >= 0) {
+    setTimeout(() => classesEl.children[li]?.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
     const liveEl = classesEl.querySelector(".class.live");
     if (liveEl) {
       setTimeout(() => liveEl.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
@@ -475,6 +503,7 @@ fetch("./data.json")
     render(initial, true);
 
     setInterval(() => {
+      if (selectedDay === todayName()) render(selectedDay);
       const dateChanged = checkDateRollover();
       if (dateChanged) {
         selectedDay = todayName();
