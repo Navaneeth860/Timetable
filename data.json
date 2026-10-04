@@ -19,23 +19,37 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "FSD Lab [LAB-SH] (B1-VBM, B2-RK, B3-PS, B4-RK)",
+          "time": "11:15–13:05",
+          "subject": "FSD Lab",
           "course_code": "26CS3AEFSD",
           "venue": "LAB-SH",
           "faculty": "Prof. Vikrant B M",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Vikrant B M",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Roopashree C S",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Pradeep S",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Roopashree C S",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
-          "time": "12:10–01:05",
-          "subject": "FSD Lab [LAB-SH] (B1-VBM, B2-RK, B3-PS, B4-RK)",
-          "course_code": "26CS3AEFSD",
-          "venue": "LAB-SH",
-          "faculty": "Prof. Vikrant B M",
-          "type": "lab"
-        },
-        {
-          "time": "02:00–02:55",
+          "time": "14:00–14:55",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
           "venue": "406",
@@ -43,7 +57,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(A)",
           "course_code": "",
           "venue": "",
@@ -77,23 +91,37 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "OOP Lab [LAB-SH] (B1-PS, B2-DPS, B3-RK, B4-PA)",
+          "time": "11:15–13:05",
+          "subject": "OOP Lab",
           "course_code": "26CS3PCOOP",
           "venue": "LAB-SH",
           "faculty": "Prof. Pradeep S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Pradeep S",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Divyashree B K (DPS)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Roopashree C S",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Pooja Ahuja S",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
-          "time": "12:10–01:05",
-          "subject": "OOP Lab [LAB-SH] (B1-PS, B2-DPS, B3-RK, B4-PA)",
-          "course_code": "26CS3PCOOP",
-          "venue": "LAB-SH",
-          "faculty": "Prof. Pradeep S",
-          "type": "lab"
-        },
-        {
-          "time": "02:00–02:55",
+          "time": "14:00–14:55",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "106",
@@ -101,7 +129,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(A)",
           "course_code": "",
           "venue": "",
@@ -112,11 +140,33 @@
       "Wednesday": [
         {
           "time": "08:00–09:50",
-          "subject": "DS Lab [LAB-SH] (B1-MS, B2-PP, B3-SRN, B4-AHV)",
+          "subject": "DS Lab",
           "course_code": "26CS3IPDST",
           "venue": "LAB-SH",
           "faculty": "Prof. Manjula S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Manjula S",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Pradeep S (PP)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Sheela R N (SRN)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Ahalya H V (AHV)",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
           "time": "10:20–11:15",
@@ -135,7 +185,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "MBA-CR3",
@@ -143,7 +193,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–05:40",
+          "time": "15:50–17:40",
           "subject": "DIP-MATH(A)",
           "course_code": "",
           "venue": "",
@@ -169,23 +219,37 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "DBMS Lab [LAB-402] (B1-CSR, B2-RZ, B3-PA, B4-KOS)",
+          "time": "11:15–13:05",
+          "subject": "DBMS Lab",
           "course_code": "26CS3IPDBM",
           "venue": "LAB-402",
           "faculty": "Prof. Roopashree C S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Roopashree C S",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Rezni S (RZ)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Pooja Ahuja S",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Kanchana O S (KOS)",
+              "venue": "LAB-402"
+            }
+          ]
         },
         {
-          "time": "12:10–01:05",
-          "subject": "DBMS Lab [LAB-402] (B1-CSR, B2-RZ, B3-PA, B4-KOS)",
-          "course_code": "26CS3IPDBM",
-          "venue": "LAB-402",
-          "faculty": "Prof. Roopashree C S",
-          "type": "lab"
-        },
-        {
-          "time": "02:00–02:55",
+          "time": "14:00–14:55",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
           "venue": "405",
@@ -196,7 +260,7 @@
       "Friday": [
         {
           "time": "08:00–09:50",
-          "subject": "DMS-T",
+          "subject": "DMS Tutorial",
           "course_code": "26MA3BSDMS",
           "venue": "106",
           "faculty": "Dr. Chaitra C C",
@@ -219,7 +283,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
           "venue": "106",
@@ -233,11 +297,33 @@
       "Monday": [
         {
           "time": "08:00–09:50",
-          "subject": "FSD Lab [LAB-SH] (B1-PN, B2-ADI, B3-GAN, B4-KBK)",
+          "subject": "FSD Lab",
           "course_code": "26CS3AEFSD",
           "venue": "LAB-SH",
           "faculty": "Prof. Praveen N",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Praveen N",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Ananya D I (ADI)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Gangadhar S (GAN)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. K B K (KBK)",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
           "time": "10:20–11:15",
@@ -256,7 +342,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
           "venue": "405",
@@ -264,7 +350,7 @@
           "type": "theory"
         },
         {
-          "time": "02:00–02:55",
+          "time": "14:00–14:55",
           "subject": "Object Oriented Programming",
           "course_code": "26CS3PCOOP",
           "venue": "405",
@@ -272,7 +358,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(A)",
           "course_code": "",
           "venue": "",
@@ -283,11 +369,33 @@
       "Tuesday": [
         {
           "time": "08:00–09:50",
-          "subject": "DS Lab [LAB-SH] (B1-NM, B2-ANP, B3-RMS, B4-RKM)",
+          "subject": "DS Lab",
           "course_code": "26CS3IPDST",
           "venue": "LAB-SH",
           "faculty": "Dr. Namratha M",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Dr. Namratha M",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Ananya N P (ANP)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Rachana M S (RMS)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Rachana M S (RKM)",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
           "time": "10:20–11:15",
@@ -306,7 +414,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
           "venue": "105",
@@ -314,7 +422,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(A)",
           "course_code": "",
           "venue": "",
@@ -340,23 +448,37 @@
           "type": "theory"
         },
         {
-          "time": "10:20–11:15",
-          "subject": "DBMS Lab [LAB-402] (B1-CSR, B2-DK, B3-RZ, B4-MS)",
+          "time": "10:20–12:10",
+          "subject": "DBMS Lab",
           "course_code": "26CS3IPDBM",
           "venue": "LAB-402",
           "faculty": "Prof. Roopashree C S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Roopashree C S",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Divyashree K (DK)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Rezni S (RZ)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Manjula S (MS)",
+              "venue": "LAB-402"
+            }
+          ]
         },
         {
-          "time": "11:15–12:10",
-          "subject": "DBMS Lab [LAB-402] (B1-CSR, B2-DK, B3-RZ, B4-MS)",
-          "course_code": "26CS3IPDBM",
-          "venue": "LAB-402",
-          "faculty": "Prof. Roopashree C S",
-          "type": "lab"
-        },
-        {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Seminar / Workshop / Proctor Meet",
           "course_code": "",
           "venue": "",
@@ -364,7 +486,7 @@
           "type": "other"
         },
         {
-          "time": "03:50–05:40",
+          "time": "15:50–17:40",
           "subject": "DIP-MATH(A)",
           "course_code": "",
           "venue": "",
@@ -390,23 +512,37 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "OOP Lab [LAB-502] (B1-PS, B2-RK, B3-ANV, B4-ANV)",
+          "time": "11:15–13:05",
+          "subject": "OOP Lab",
           "course_code": "26CS3PCOOP",
           "venue": "LAB-502",
           "faculty": "Prof. Pradeep S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Pradeep S",
+              "venue": "LAB-502"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Roopashree C S (RK)",
+              "venue": "LAB-502"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Ananya N V (ANV)",
+              "venue": "LAB-502"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Ananya N V (ANV)",
+              "venue": "LAB-502"
+            }
+          ]
         },
         {
-          "time": "12:10–01:05",
-          "subject": "OOP Lab [LAB-502] (B1-PS, B2-RK, B3-ANV, B4-ANV)",
-          "course_code": "26CS3PCOOP",
-          "venue": "LAB-502",
-          "faculty": "Prof. Pradeep S",
-          "type": "lab"
-        },
-        {
-          "time": "02:55–03:50",
+          "time": "14:55–15:50",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
           "venue": "404",
@@ -441,15 +577,15 @@
         },
         {
           "time": "11:15–12:10",
-          "subject": "DMS-T",
+          "subject": "DMS Tutorial",
           "course_code": "26MA3BSDMS",
           "venue": "404",
           "faculty": "Mr. Vivan B T",
           "type": "tutorial"
         },
         {
-          "time": "12:10–01:05",
-          "subject": "DMS-T",
+          "time": "12:10–13:05",
+          "subject": "DMS Tutorial",
           "course_code": "26MA3BSDMS",
           "venue": "404",
           "faculty": "Mr. Vivan B T",
@@ -485,23 +621,37 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "FSD Lab [LAB-402] (B1-MS, B2-AP, B3-SSD, B4-RZ)",
+          "time": "11:15–13:05",
+          "subject": "FSD Lab",
           "course_code": "26CS3AEFSD",
           "venue": "LAB-402",
           "faculty": "Prof. Manjula S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Manjula S",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Anupriya Shetty (AP)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Sandhya S D (SSD)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Rezni S (RZ)",
+              "venue": "LAB-402"
+            }
+          ]
         },
         {
-          "time": "12:10–01:05",
-          "subject": "FSD Lab [LAB-402] (B1-MS, B2-AP, B3-SSD, B4-RZ)",
-          "course_code": "26CS3AEFSD",
-          "venue": "LAB-402",
-          "faculty": "Prof. Manjula S",
-          "type": "lab"
-        },
-        {
-          "time": "02:00–02:55",
+          "time": "14:00–14:55",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "404",
@@ -512,7 +662,7 @@
       "Tuesday": [
         {
           "time": "08:00–09:50",
-          "subject": "DMS-T",
+          "subject": "DMS Tutorial",
           "course_code": "26MA3BSDMS",
           "venue": "403",
           "faculty": "Dr. Chaitra C C",
@@ -527,30 +677,66 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "OOP Lab [LAB-402] (B1-PN, B2-GAN, B3-GAN, B4-RMS)",
+          "time": "11:15–13:05",
+          "subject": "OOP Lab",
           "course_code": "26CS3PCOOP",
           "venue": "LAB-402",
           "faculty": "Prof. Praveen N",
-          "type": "lab"
-        },
-        {
-          "time": "12:10–01:05",
-          "subject": "OOP Lab [LAB-402] (B1-PN, B2-GAN, B3-GAN, B4-RMS)",
-          "course_code": "26CS3PCOOP",
-          "venue": "LAB-402",
-          "faculty": "Prof. Praveen N",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Praveen N",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Gangadhar S (GAN)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Gangadhar S (GAN)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Rachana M S (RMS)",
+              "venue": "LAB-402"
+            }
+          ]
         }
       ],
       "Wednesday": [
         {
           "time": "08:00–09:50",
-          "subject": "DBMS Lab [LAB-4] (B1-DK, B2-CSR, B3-KOS, B4-KOS)",
+          "subject": "DBMS Lab",
           "course_code": "26CS3IPDBM",
           "venue": "LAB-4",
           "faculty": "Prof. Kanchana M Dixit",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Divyashree K (DK)",
+              "venue": "LAB-4"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Roopashree C S (CSR)",
+              "venue": "LAB-4"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Kanchana O S (KOS)",
+              "venue": "LAB-4"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Kanchana O S (KOS)",
+              "venue": "LAB-4"
+            }
+          ]
         },
         {
           "time": "10:20–11:15",
@@ -569,7 +755,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
           "venue": "404",
@@ -577,7 +763,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(B)",
           "course_code": "",
           "venue": "",
@@ -619,7 +805,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(B)",
           "course_code": "",
           "venue": "",
@@ -630,11 +816,33 @@
       "Friday": [
         {
           "time": "08:00–09:50",
-          "subject": "DS Lab [LAB-402] (B1-RMS, B2-APS, B3-KBK, B4-KOS)",
+          "subject": "DS Lab",
           "course_code": "26CS3IPDST",
           "venue": "LAB-402",
           "faculty": "Dr. M V Sudhamani",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Rachana M S (RMS)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Anupriya Shetty (APS)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. K B K (KBK)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Kanchana O S (KOS)",
+              "venue": "LAB-402"
+            }
+          ]
         },
         {
           "time": "10:20–11:15",
@@ -653,7 +861,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
           "venue": "105",
@@ -661,7 +869,7 @@
           "type": "theory"
         },
         {
-          "time": "02:00–02:55",
+          "time": "14:00–14:55",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "404",
@@ -669,7 +877,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–05:40",
+          "time": "15:50–17:40",
           "subject": "DIP-MATH(B)",
           "course_code": "",
           "venue": "",
@@ -683,11 +891,33 @@
       "Monday": [
         {
           "time": "08:00–09:50",
-          "subject": "DBMS Lab [LAB-402] (B1-RZ, B2-AP, B3-MNM, B4-SSD)",
+          "subject": "DBMS Lab",
           "course_code": "26CS3IPDBM",
           "venue": "LAB-402",
           "faculty": "Prof. Rezni S",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Rezni S",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Anupriya Shetty (AP)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Meghana N M (MNM)",
+              "venue": "LAB-402"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Sandhya S D (SSD)",
+              "venue": "LAB-402"
+            }
+          ]
         },
         {
           "time": "10:20–11:15",
@@ -706,7 +936,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
           "venue": "603A",
@@ -714,8 +944,8 @@
           "type": "theory"
         },
         {
-          "time": "02:00–03:50",
-          "subject": "DMS-T",
+          "time": "14:00–15:50",
+          "subject": "DMS Tutorial",
           "course_code": "26MA3BSDMS",
           "venue": "403",
           "faculty": "Dr. Divyashree B K",
@@ -748,20 +978,34 @@
           "type": "theory"
         },
         {
-          "time": "11:15–12:10",
-          "subject": "DS Lab [CSDS-LAB1] (B1-SAK, B2-RSH, B3-SSD, B4-KBK)",
+          "time": "11:15–13:05",
+          "subject": "DS Lab",
           "course_code": "26CS3IPDST",
           "venue": "CSDS-LAB1",
           "faculty": "Dr. M V Sudhamani",
-          "type": "lab"
-        },
-        {
-          "time": "12:10–01:05",
-          "subject": "DS Lab [CSDS-LAB1] (B1-SAK, B2-RSH, B3-SSD, B4-KBK)",
-          "course_code": "26CS3IPDST",
-          "venue": "CSDS-LAB1",
-          "faculty": "Dr. M V Sudhamani",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Sandhya A Kulkarni (SAK)",
+              "venue": "CSDS-LAB1"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Rashmi H (RSH)",
+              "venue": "CSDS-LAB1"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Sandhya S D (SSD)",
+              "venue": "CSDS-LAB1"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. K B K (KBK)",
+              "venue": "CSDS-LAB1"
+            }
+          ]
         }
       ],
       "Wednesday": [
@@ -790,7 +1034,7 @@
           "type": "theory"
         },
         {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Database Management Systems",
           "course_code": "26CS3IPDBM",
           "venue": "106",
@@ -798,7 +1042,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(B)",
           "course_code": "",
           "venue": "",
@@ -824,23 +1068,37 @@
           "type": "theory"
         },
         {
-          "time": "10:20–11:15",
-          "subject": "OOP Lab [LAB-SH] (B1-PN, B2-KBK, B3-RMS, B4-RKM)",
+          "time": "10:20–12:10",
+          "subject": "OOP Lab",
           "course_code": "26CS3PCOOP",
           "venue": "LAB-SH",
           "faculty": "Prof. Praveen N",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Praveen N",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. K B K (KBK)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Rachana M S (RMS)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Rachana M S (RKM)",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
-          "time": "11:15–12:10",
-          "subject": "OOP Lab [LAB-SH] (B1-PN, B2-KBK, B3-RMS, B4-RKM)",
-          "course_code": "26CS3PCOOP",
-          "venue": "LAB-SH",
-          "faculty": "Prof. Praveen N",
-          "type": "lab"
-        },
-        {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Data Structures",
           "course_code": "26CS3IPDST",
           "venue": "405",
@@ -848,7 +1106,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–04:45",
+          "time": "15:50–16:45",
           "subject": "DIP-MATH(B)",
           "course_code": "",
           "venue": "",
@@ -874,23 +1132,37 @@
           "type": "theory"
         },
         {
-          "time": "10:20–11:15",
-          "subject": "FSD Lab [LAB-SH] (B1-RSH, B2-SHP, B3-ANV, B4-BJ)",
+          "time": "10:20–12:10",
+          "subject": "FSD Lab",
           "course_code": "26CS3AEFSD",
           "venue": "LAB-SH",
           "faculty": "Prof. Rashmi H",
-          "type": "lab"
+          "type": "lab",
+          "groups": [
+            {
+              "batch": "B1",
+              "faculty": "Prof. Rashmi H",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B2",
+              "faculty": "Prof. Shruti H P (SHP)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B3",
+              "faculty": "Prof. Ananya N V (ANV)",
+              "venue": "LAB-SH"
+            },
+            {
+              "batch": "B4",
+              "faculty": "Prof. Basavaraj Jakkali (BJ)",
+              "venue": "LAB-SH"
+            }
+          ]
         },
         {
-          "time": "11:15–12:10",
-          "subject": "FSD Lab [LAB-SH] (B1-RSH, B2-SHP, B3-ANV, B4-BJ)",
-          "course_code": "26CS3AEFSD",
-          "venue": "LAB-SH",
-          "faculty": "Prof. Rashmi H",
-          "type": "lab"
-        },
-        {
-          "time": "12:10–01:05",
+          "time": "12:10–13:05",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "206",
@@ -898,7 +1170,7 @@
           "type": "theory"
         },
         {
-          "time": "03:50–05:40",
+          "time": "15:50–17:40",
           "subject": "DIP-MATH(B)",
           "course_code": "",
           "venue": "",
@@ -1079,19 +1351,19 @@
       ],
       "Friday": [
         {
+          "time": "08:00–08:55",
+          "subject": "Object Oriented Programming ",
+          "course_code": "26CS3PCOOP",
+          "venue": "206",
+          "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory"
+        },
+        {
           "time": "08:55–09:50",
           "subject": "Digital Logic and Computer Organization",
           "course_code": "26CS3PCDLC",
           "venue": "206",
           "faculty": "Prof. Vanishree",
-          "type": "theory"
-        },
-        {
-          "time": "08:00–08:55",
-          "subject": "Object Oriented Programming (FRI Slot 1)",
-          "course_code": "26CS3PCOOP",
-          "venue": "206",
-          "faculty": "Prof. Mahalakshmi Manasa P",
           "type": "theory"
         },
         {
@@ -7022,7 +7294,8 @@
               "group": "B3",
               "faculty": "PN"
             }
-          ]
+          ],
+          "parallel": true
         },
         {
           "time": "11:15 AM–1:05 PM",
@@ -7044,7 +7317,8 @@
               "group": "B6",
               "faculty": "SMK"
             }
-          ]
+          ],
+          "parallel": true
         },
         {
           "time": "2:00 PM–3:50 PM",
@@ -7116,7 +7390,8 @@
               "group": "B3",
               "faculty": "PN"
             }
-          ]
+          ],
+          "parallel": true
         },
         {
           "time": "10:20 AM–12:10 PM",
@@ -7138,7 +7413,8 @@
               "group": "B6",
               "faculty": "SMK"
             }
-          ]
+          ],
+          "parallel": true
         },
         {
           "time": "12:10 PM–1:05 PM",

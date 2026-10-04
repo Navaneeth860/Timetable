@@ -217,13 +217,33 @@ function getTimetable(d) {
   return DATA[currentBranch]?.[currentSection]?.[d] || null;
 }
 
-function liveIndex(list, d) {
-  if (!isToday(d) || !list) return -1;
+function sortData(data) {
+  if (!data) return;
+  for (const b in data) {
+    for (const s in data[b]) {
+      for (const d in data[b][s]) {
+        if (Array.isArray(data[b][s][d])) {
+          data[b][s][d].sort((a, b) => parseRange(a.time)[0] - parseRange(b.time)[0]);
+        }
+      }
+    }
+  }
+}
+
+function liveIndices(list, d) {
+  if (!isToday(d) || !list) return [];
   const n = nowMin();
-  return list.findIndex(item => {
-    const [s, e] = parseRange(item.time);
-    return s > 0 && n >= s && n < e;
-  });
+  return list
+    .map((item, i) => {
+      const [s, e] = parseRange(item.time);
+      return (s > 0 && n >= s && n < e) ? i : -1;
+    })
+    .filter(i => i >= 0);
+}
+
+function liveIndex(list, d) {
+  const lis = liveIndices(list, d);
+  return lis.length > 0 ? lis[0] : -1;
 }
 
 function nextIndex(list, d) {
@@ -238,10 +258,12 @@ function nextIndex(list, d) {
 function status(list, d) {
   if (!isToday(d) || !list || !list.length) return null;
   const n = nowMin();
-  const li = liveIndex(list, d);
-  if (li >= 0) {
-    const item = list[li];
-    return { kind: "live", label: "Live now", title: item.subject, target: parseRange(item.time)[1], prefix: "Ends in " };
+  const lis = liveIndices(list, d);
+  if (lis.length > 0) {
+    const liveItems = lis.map(i => list[i]);
+    const title = liveItems.map(item => item.subject).join(" + ");
+    const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
+    return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
   }
   const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
   if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
@@ -284,13 +306,14 @@ function render(d, scroll = false) {
   subtitleEl.textContent = `${currentBranch} · ${currentSection}`;
   titleEl.textContent = viewToday ? "Today's Timetable" : d + " Timetable";
 
-  const li = liveIndex(list, d);
+  const lis = liveIndices(list, d);
+  const li = lis[0] ?? -1;
   const ni = nextIndex(list, d);
   const st = status(list, d);
 
-  badgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
-  badgeEl.classList.toggle("live-badge", li >= 0);
-  badgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
+  badgeEl.textContent = lis.length > 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
+  badgeEl.classList.toggle("live-badge", lis.length > 0);
+  badgeEl.classList.toggle("break-badge", lis.length === 0 && st?.kind === "break");
 
   dateEl.textContent = viewToday ? formatDate() : "Tap a day above to switch";
   todayJumpEl.classList.toggle("visible", !viewToday);
@@ -332,8 +355,8 @@ function render(d, scroll = false) {
     }
 
     const el = document.createElement("article");
-    const live = i === li;
-    const next = i === ni && li < 0;
+    const live = lis.includes(i);
+    const next = i === ni && lis.length === 0;
     const [startMin, endMin] = parseRange(t);
     const done = viewToday && !live && endMin > 0 && endMin <= nowMin();
 
@@ -370,7 +393,10 @@ function render(d, scroll = false) {
   });
 
   if (scroll && li >= 0) {
-    setTimeout(() => classesEl.children[li]?.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
+    const liveEl = classesEl.querySelector(".class.live");
+    if (liveEl) {
+      setTimeout(() => liveEl.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
+    }
   }
 }
 
@@ -378,6 +404,7 @@ fetch("./data.json")
   .then(res => res.json())
   .then(data => {
     DATA = data;
+    sortData(DATA);
     initSelectors();
 
     order.forEach(d => {
