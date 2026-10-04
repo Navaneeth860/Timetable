@@ -12,18 +12,22 @@
   <div class="today" id="todayBadge">Today</div>
 </div>
 
-<div class="selectors">
-  <div class="select-group">
-    <label for="branchSelect">Branch</label>
-    <select id="branchSelect"></select>
-  </div>
-  <div class="select-group">
-    <label for="clusterSelect">Cluster</label>
-    <select id="clusterSelect"></select>
-  </div>
-  <div class="select-group">
-    <label for="sectionSelect">Section</label>
-    <select id="sectionSelect"></select>
+<div class="selectors-wrapper" id="selectorsWrapper">
+  <button type="button" class="section-chip" id="sectionChip" style="display:none;"></button>
+  <div class="selectors-prompt" id="selectorsPrompt" style="display:none;">👇 Choose your section to view timetable</div>
+  <div class="selectors" id="selectors">
+    <div class="select-group">
+      <label for="branchSelect">Branch</label>
+      <select id="branchSelect"></select>
+    </div>
+    <div class="select-group">
+      <label for="clusterSelect">Cluster</label>
+      <select id="clusterSelect"></select>
+    </div>
+    <div class="select-group">
+      <label for="sectionSelect">Section</label>
+      <select id="sectionSelect"></select>
+    </div>
   </div>
 </div>
 
@@ -35,9 +39,6 @@
 <div class="footer">
   Based on the 3rd Semester 2026–27 timetable
   <br> Built by Navaneeth S (CSE)
-  <!-- <a href="https://github.com/Navaneeth860/Timetable" target="_blank">
-    GitHub
-  </a> -->
 </div>
 </main>
 
@@ -48,9 +49,29 @@ const order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday
 const short = {Monday: "Mon", Tuesday: "Tue", Wednesday: "Wed", Thursday: "Thu", Friday: "Fri", Saturday: "Sat"};
 const breaks = [["09:50", "10:20", "Tea Break"], ["01:05", "02:00", "Lunch Break"]];
 
-let currentBranch = localStorage.getItem("timetable_branch") || "CSE";
-let currentCluster = localStorage.getItem("timetable_cluster") || "B";
-let currentSection = localStorage.getItem("timetable_section") || "3B1 [3D]";
+const memoryStorage = {};
+function safeGetItem(key) {
+  try { return localStorage.getItem(key); }
+  catch (e) { return memoryStorage[key] || null; }
+}
+function safeSetItem(key, value) {
+  try { localStorage.setItem(key, value); }
+  catch (e) { memoryStorage[key] = value; }
+}
+
+function escapeHtml(str) {
+  if (str === null || str === undefined) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+let currentBranch = safeGetItem("timetable_branch") || "CSE";
+let currentCluster = safeGetItem("timetable_cluster") || "B";
+let currentSection = safeGetItem("timetable_section") || "3B1 [3D]";
 let selectedDay;
 
 const branchEl = document.getElementById("branchSelect");
@@ -68,6 +89,25 @@ const statusTitleEl = document.getElementById("statusTitle");
 const countdownEl = document.getElementById("countdown");
 const todayJumpEl = document.getElementById("todayJump");
 
+function updateSectionChip() {
+  const chipEl = document.getElementById("sectionChip");
+  const selectorsEl = document.getElementById("selectors");
+  const promptEl = document.getElementById("selectorsPrompt");
+  if (!chipEl || !selectorsEl) return;
+
+  const hasSaved = !!safeGetItem("timetable_section");
+  if (!hasSaved) {
+    if (promptEl) promptEl.style.display = "block";
+    chipEl.style.display = "none";
+    selectorsEl.classList.remove("collapsed");
+  } else {
+    if (promptEl) promptEl.style.display = "none";
+    chipEl.style.display = "flex";
+    const isExpanded = !selectorsEl.classList.contains("collapsed");
+    chipEl.textContent = `${currentBranch} · ${currentSection} ${isExpanded ? '▲' : '▾'}`;
+  }
+}
+
 function initSelectors() {
   branchEl.innerHTML = "";
   const branches = Object.keys(DATA);
@@ -80,7 +120,23 @@ function initSelectors() {
   });
   if (!branches.includes(currentBranch) && branches.length > 0) {
     currentBranch = branches[0];
-    localStorage.setItem("timetable_branch", currentBranch);
+    safeSetItem("timetable_branch", currentBranch);
+  }
+
+  const sectionChipEl = document.getElementById("sectionChip");
+  if (sectionChipEl) {
+    sectionChipEl.onclick = () => {
+      const selectorsEl = document.getElementById("selectors");
+      const isCollapsed = selectorsEl.classList.contains("collapsed");
+      if (isCollapsed) {
+        selectorsEl.classList.remove("collapsed");
+        selectorsEl.dataset.userToggled = "true";
+      } else {
+        selectorsEl.classList.add("collapsed");
+        delete selectorsEl.dataset.userToggled;
+      }
+      updateSectionChip();
+    };
   }
 
   updateClusterOptions();
@@ -88,7 +144,6 @@ function initSelectors() {
 
 function updateClusterOptions() {
   clusterEl.innerHTML = "";
-  const branchData = DATA[currentBranch] || {};
 
   if (currentBranch === "CSE" || currentBranch === "AIML") {
     const clusters = currentBranch === "AIML" ? ["All", "A", "B"] : ["All", "A", "B", "C", "D", "E"];
@@ -113,8 +168,8 @@ function updateClusterOptions() {
 
 function updateSectionOptions() {
   sectionEl.innerHTML = "";
-  const branchData = DATA[currentBranch] || {};
-  let sections = Object.keys(branchData);
+  const secObj = DATA[currentBranch] || {};
+  let sections = Object.keys(secObj);
 
   if ((currentBranch === "CSE" || currentBranch === "AIML") && currentCluster !== "All") {
     sections = sections.filter(sec => sec.startsWith(`3${currentCluster}`));
@@ -136,27 +191,28 @@ function updateSectionOptions() {
   const validValues = sections.map(s => s.replace(" (Coming Soon)", ""));
   if (!validValues.includes(currentSection)) {
     currentSection = validValues[0] || "";
-    localStorage.setItem("timetable_section", currentSection);
   }
+  updateSectionChip();
 }
 
 branchEl.onchange = (e) => {
   currentBranch = e.target.value;
-  localStorage.setItem("timetable_branch", currentBranch);
+  safeSetItem("timetable_branch", currentBranch);
   updateClusterOptions();
   render(selectedDay || todayName());
 };
 
 clusterEl.onchange = (e) => {
   currentCluster = e.target.value;
-  localStorage.setItem("timetable_cluster", currentCluster);
+  safeSetItem("timetable_cluster", currentCluster);
   updateSectionOptions();
   render(selectedDay || todayName());
 };
 
 sectionEl.onchange = (e) => {
   currentSection = e.target.value;
-  localStorage.setItem("timetable_section", currentSection);
+  safeSetItem("timetable_section", currentSection);
+  updateSectionChip();
   render(selectedDay || todayName());
 };
 
@@ -263,6 +319,12 @@ function nextIndex(list, d) {
 }
 
 function status(list, d) {
+  if (!isToday(d) || !list || !list.length) return null;
+  const n = nowMin();
+  const li = liveIndex(list, d);
+  if (li >= 0) {
+    const item = list[li];
+    return { kind: "live", label: "Live now", title: item.subject, target: parseRange(item.time)[1], prefix: "Ends in " };
   if (!isToday(d)) return null;
   if (!hasSectionData()) return null;
 
@@ -275,30 +337,20 @@ function status(list, d) {
       const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
       return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
     }
-
-    const ni = nextIndex(list, d);
     const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-
-    if (br) {
-      let nextStr = "";
-      if (ni >= 0) {
-        const item = list[ni];
-        const venueStr = item.venue ? `, Room ${item.venue}` : "";
-        nextStr = ` · Next: ${item.subject}${venueStr}`;
-      }
-      return { kind: "break", label: br[2], title: `${br[2]}${nextStr}`, target: toMinutes(br[1]), prefix: "Ends in " };
-    }
-
+    if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+    const ni = nextIndex(list, d);
     if (ni >= 0) {
       const item = list[ni];
-      const venueStr = item.venue ? `, Room ${item.venue}` : "";
-      const prevClass = list.slice(0, ni).reverse().find(c => parseRange(c.time)[1] > 0);
-      const isFreePeriod = prevClass && n >= parseRange(prevClass.time)[1];
-      const labelStr = isFreePeriod ? "Free Period" : "Next class";
-      const titleStr = isFreePeriod ? `Next: ${item.subject}${venueStr}` : `${item.subject}${venueStr}`;
-      return { kind: "next", label: labelStr, title: titleStr, target: parseRange(item.time)[0], prefix: "Starts in " };
+      return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
     }
   }
+  const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
+  if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+  const ni = nextIndex(list, d);
+  if (ni >= 0) {
+    const item = list[ni];
+    return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
 
   const nextUp = getNextUpcomingClass(d);
   if (nextUp) {
@@ -359,10 +411,9 @@ function render(d, scroll = false) {
   const viewToday = d === today;
   const list = getTimetable(d);
   
-  subtitleEl.textContent = `${currentBranch} · ${currentSection}`;
+  subtitleEl.textContent = `${escapeHtml(currentBranch)} · ${escapeHtml(currentSection)}`;
   titleEl.textContent = viewToday ? "Today's Timetable" : d + " Timetable";
 
-  const li = liveIndex(list, d);
   const lis = liveIndices(list, d);
   const li = lis[0] ?? -1;
   const ni = nextIndex(list, d);
@@ -370,9 +421,6 @@ function render(d, scroll = false) {
   currentNextIndex = ni;
   const st = status(list, d);
 
-  badgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
-  badgeEl.classList.toggle("live-badge", li >= 0);
-  badgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
   badgeEl.textContent = lis.length > 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
   badgeEl.classList.toggle("live-badge", lis.length > 0);
   badgeEl.classList.toggle("break-badge", lis.length === 0 && st?.kind === "break");
@@ -394,7 +442,7 @@ function render(d, scroll = false) {
       <div class="empty">
         <div style="font-size:36px;margin-bottom:8px">🚀</div>
         <strong style="font-size:16px;color:var(--text)">Coming Soon!!</strong><br>
-        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${currentBranch} - ${currentSection} will be updated shortly!</span>
+        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${escapeHtml(currentBranch)} - ${escapeHtml(currentSection)} will be updated shortly!</span>
       </div>`;
     classesEl.style.minHeight = "";
     return;
@@ -402,10 +450,9 @@ function render(d, scroll = false) {
 
   if (!list.length) {
     const nextUp = getNextUpcomingClass(d);
-    const nextText = nextUp ? `<br><span style="font-size:13px;margin-top:8px;display:inline-block;color:var(--accent);font-weight:700">Next: ${nextUp.day} ${nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : ''} - ${nextUp.item.subject}</span>` : "";
+    const nextText = nextUp ? `<br><span style="font-size:13px;margin-top:8px;display:inline-block;color:var(--accent);font-weight:700">Next: ${escapeHtml(nextUp.day)} ${escapeHtml(nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : '')} - ${escapeHtml(nextUp.item.subject)}</span>` : "";
     classesEl.innerHTML = `
       <div class="empty">
-        <strong>No classes scheduled</strong><br>
         <strong>No classes scheduled today</strong><br>
         <span>Enjoy your day! 🎉</span>
         ${nextText}
@@ -429,8 +476,6 @@ function render(d, scroll = false) {
     }
 
     const el = document.createElement("article");
-    const live = i === li;
-    const next = i === ni && li < 0;
     const live = lis.includes(i);
     const next = i === ni && lis.length === 0;
     const [startMin, endMin] = parseRange(t);
@@ -438,19 +483,19 @@ function render(d, scroll = false) {
 
     el.className = `class${live ? " live" : ""}${done ? " done" : ""}`;
 
-    const codeHtml = c ? `<div class="code">📘 ${c}</div>` : "";
-    const roomHtml = r ? `<div class="code">📍 ${r}</div>` : "";
-    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${tr}</div>` : "";
-    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${grpStr}</div>` : "";
+    const codeHtml = c ? `<div class="code">📘 ${escapeHtml(c)}</div>` : "";
+    const roomHtml = r ? `<div class="code">📍 ${escapeHtml(r)}</div>` : "";
+    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${escapeHtml(tr)}</div>` : "";
+    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${escapeHtml(grpStr)}</div>` : "";
 
     el.innerHTML = `
-      <div class="time">${t}</div>
+      <div class="time">${escapeHtml(t)}</div>
       <div class="card${live ? " live" : ""}${next ? " next" : ""}">
         <div class="top-right-badges">
           ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
-          <span class="type">${typeStr}</span>
+          <span class="type">${escapeHtml(typeStr)}</span>
         </div>
-        <div class="subject">${s || "Class"}</div>
+        <div class="subject">${escapeHtml(s) || "Class"}</div>
         ${codeHtml}
         ${roomHtml}
         ${teacherHtml}
@@ -471,7 +516,6 @@ function render(d, scroll = false) {
   classesEl.style.minHeight = "";
 
   if (scroll && li >= 0) {
-    setTimeout(() => classesEl.children[li]?.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
     const liveEl = classesEl.querySelector(".class.live");
     if (liveEl) {
       setTimeout(() => liveEl.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
@@ -479,73 +523,119 @@ function render(d, scroll = false) {
   }
 }
 
-fetch("./data.json")
-  .then(res => res.json())
-  .then(data => {
-    DATA = data;
-    sortData(DATA);
-    initSelectors();
+function showErrorState(msg) {
+  statusEl.className = "status";
+  classesEl.innerHTML = "";
+  const errDiv = document.createElement("div");
+  errDiv.className = "empty";
+  errDiv.style.borderColor = "var(--next)";
 
-    order.forEach(d => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "day";
-      b.dataset.day = d;
-      b.textContent = short[d];
-      if (d === todayName()) b.classList.add("today-day");
-      b.onclick = () => render(d);
-      dayEl.appendChild(b);
-    });
+  const icon = document.createElement("div");
+  icon.style.cssText = "font-size:36px;margin-bottom:8px";
+  icon.textContent = "⚠️";
 
-    todayJumpEl.onclick = () => render(todayName(), true);
+  const title = document.createElement("strong");
+  title.style.cssText = "font-size:16px;color:var(--text)";
+  title.textContent = "Failed to load timetable data";
 
-    const initial = order.includes(todayName()) ? todayName() : "Monday";
-    render(initial, true);
+  const desc = document.createElement("div");
+  desc.style.cssText = "font-size:12px;margin:8px 0 14px;color:var(--muted)";
+  desc.textContent = msg;
 
-    setInterval(() => {
-      if (selectedDay === todayName()) render(selectedDay);
-      const dateChanged = checkDateRollover();
-      if (dateChanged) {
-        selectedDay = todayName();
-        render(selectedDay, true);
-        return;
+  const retryBtn = document.createElement("button");
+  retryBtn.type = "button";
+  retryBtn.className = "today-jump visible";
+  retryBtn.style.cssText = "display:inline-block;width:auto;padding:8px 20px;";
+  retryBtn.textContent = "🔄 Retry";
+  retryBtn.onclick = () => loadData();
+
+  errDiv.appendChild(icon);
+  errDiv.appendChild(title);
+  errDiv.appendChild(desc);
+  errDiv.appendChild(retryBtn);
+  classesEl.appendChild(errDiv);
+}
+
+function loadData() {
+  fetch("./data.json")
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP status ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      if (!data || Object.keys(data).length === 0) {
+        throw new Error("Loaded timetable data is empty");
       }
+      DATA = data;
+      sortData(DATA);
+      initSelectors();
 
-      if (selectedDay === todayName()) {
-        const list = getTimetable(selectedDay);
-        updateStatus(list, selectedDay);
+      dayEl.innerHTML = "";
+      order.forEach(d => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "day";
+        b.dataset.day = d;
+        b.textContent = short[d];
+        if (d === todayName()) b.classList.add("today-day");
+        b.onclick = () => render(d);
+        dayEl.appendChild(b);
+      });
 
-        const li = liveIndex(list, selectedDay);
-        const ni = nextIndex(list, selectedDay);
+      todayJumpEl.onclick = () => render(todayName(), true);
 
-        if (li !== currentLiveIndex || ni !== currentNextIndex) {
-          render(selectedDay);
-        } else if (list) {
-          const n = nowMin();
-          const classNodes = classesEl.querySelectorAll(".class");
-          list.forEach((item, i) => {
-            const el = classNodes[i];
-            if (!el) return;
-            const [startMin, endMin] = parseRange(item.time);
-            const live = i === li;
-            const done = !live && endMin > 0 && endMin <= n;
-            el.classList.toggle("done", done);
-          });
-        }
-      }
-    }, 1000);
+      const initial = order.includes(todayName()) ? todayName() : "Monday";
+      render(initial, true);
 
-    document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) {
+      setInterval(() => {
         const dateChanged = checkDateRollover();
         if (dateChanged) {
           selectedDay = todayName();
+          render(selectedDay, true);
+          return;
         }
-        render(selectedDay);
-      }
+
+        if (selectedDay === todayName()) {
+          const list = getTimetable(selectedDay);
+          updateStatus(list, selectedDay);
+
+          const li = liveIndex(list, selectedDay);
+          const ni = nextIndex(list, selectedDay);
+
+          if (li !== currentLiveIndex || ni !== currentNextIndex) {
+            render(selectedDay);
+          } else if (list) {
+            const n = nowMin();
+            const classNodes = classesEl.querySelectorAll(".class");
+            list.forEach((item, i) => {
+              const el = classNodes[i];
+              if (!el) return;
+              const [startMin, endMin] = parseRange(item.time);
+              const live = i === li;
+              const done = !live && endMin > 0 && endMin <= n;
+              el.classList.toggle("done", done);
+            });
+          }
+        }
+      }, 1000);
+
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+          const dateChanged = checkDateRollover();
+          if (dateChanged) {
+            selectedDay = todayName();
+          }
+          render(selectedDay);
+        }
+      });
+    })
+    .catch(err => {
+      console.error("Failed to load timetable data:", err);
+      showErrorState(err.message || "Failed to load timetable data");
     });
-  })
-  .catch(err => console.error("Failed to load timetable data:", err));
+}
+
+loadData();
 </script>
 <script>
 if("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
