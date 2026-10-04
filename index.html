@@ -38,6 +38,7 @@
 <section class="classes" id="classes" aria-live="polite"></section>
 <div class="footer">
   Based on the 3rd Semester 2026–27 timetable
+  <div id="dataVersion" style="margin-top:2px;"></div>
   <br> Built by Navaneeth S (CSE)
 </div>
 </main>
@@ -110,7 +111,7 @@ function updateSectionChip() {
 
 function initSelectors() {
   branchEl.innerHTML = "";
-  const branches = Object.keys(DATA);
+  const branches = Object.keys(DATA).filter(b => b !== "lastUpdated" && b !== "DATA_VERSION");
   branches.forEach(b => {
     const opt = document.createElement("option");
     opt.value = b;
@@ -571,6 +572,11 @@ function loadData() {
         throw new Error("Loaded timetable data is empty");
       }
       DATA = data;
+      const dataVerStr = data.lastUpdated || data.DATA_VERSION;
+      const dataVerEl = document.getElementById("dataVersion");
+      if (dataVerEl) {
+        dataVerEl.textContent = dataVerStr ? `Timetable data updated ${dataVerStr}` : "";
+      }
       sortData(DATA);
       initSelectors();
 

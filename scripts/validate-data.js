@@ -64,6 +64,7 @@ function validateData(dataPath) {
   let errors = [];
 
   for (const branch of Object.keys(data)) {
+    if (branch === "lastUpdated" || branch === "DATA_VERSION") continue;
     const branchObj = data[branch] || {};
     for (const section of Object.keys(branchObj)) {
       const secObj = branchObj[section] || {};
