@@ -1,5 +1,5 @@
 const CACHE = "timetable-app-v14";
-const ASSETS = ["./", "./index.html", "./style.css", "./data.json", "./manifest.json", "./icon-192.png", "./icon-512.png"];
+const ASSETS = ["./", "./index.html", "./style.css", "./data.json", "./manifest.json", "./scripts/time-engine.js", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", event => {
   event.waitUntil(

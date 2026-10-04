@@ -1,70 +1,63 @@
 # 📚 College Timetable
 
-A simple, mobile-friendly multi-cluster timetable app with Cluster (A–V) & Section selection, offline PWA support, and real-time class tracking.
-A simple, mobile-friendly multi-cluster timetable app with Cluster (A–E) & Section selection, offline PWA support, and real-time class tracking.
+An offline-first, mobile-friendly student timetable Progressive Web App (PWA) with Branch, Cluster & Section selection, real-time class tracking, and zero build steps. Built with vanilla HTML/CSS/JS and hosted on GitHub Pages.
 
 ## ✨ Features
 
-- 📅 Automatically opens on **today's timetable**
-- 🏫 Select **Cluster (A–V)** and **Section** (saves automatically locally)
-- 🏫 Select **Cluster (A–E)** and **Section** (saves automatically locally)
-- 📍 Displays **Room / Lab** numbers and 👨‍🏫 **Teacher / Faculty** names for each slot
-- ⏰ Real-time class timings, live countdown, break indicators (Tea/Lunch), and **LIVE NOW** pill
-- 🚀 **Coming Soon!! Skill Lab** placeholder view for sections currently being updated
-- 👆 Tap **Mon–Sat** buttons to view schedules for any day
-- 📱 Optimized for mobile browsers (PWA support)
-- 🏠 Installable on Android & iOS home screens as an offline PWA
-- 🔄 Automatically updates current time and active classes live
-
-## 📱 Install on Mobile
-
-1. Open the live app link in **Chrome** (Android) or **Safari** (iOS).
-2. Open the browser menu (**⋮** on Android, **Share** icon on iOS).
-3. Choose **Add to Home screen** or **Install app**.
-4. Launch **College Timetable** directly from your home screen like a native app.
+- 📅 **Today's Timetable**: Automatically opens on the current day's schedule.
+- 🏫 **Branch, Cluster & Section Selectors**: Select your branch (CSE, ECE, CS(IOT), AIML), cluster, and section (persisted in local storage).
+- 📍 **Venue & Faculty Info**: Displays room numbers, course codes, and teacher details for every slot.
+- ⏰ **Real-Time Countdown**: Live status banner showing active classes, upcoming classes, break indicators (Tea/Lunch), and free periods.
+- 👥 **Parallel Labs**: Automatically identifies and lists overlapping lab batches (e.g., "Embedded Technologies Lab + Data Structures Lab").
+- 📱 **Offline PWA**: Full offline capability via Service Worker caching (`timetable-app-v14`).
+- ♿ **Accessible**: WCAG AA color contrast compliant, screen-reader polite announcements, visible focus outlines, and reduced motion support.
 
 ## 🌐 Live App
 
 👉 **[Open Live App on GitHub Pages](https://navaneeth860.github.io/Timetable)**
 
-## 🖥️ How It Works
+## 📱 Install on Mobile
 
-The app is a lightweight static single-page app built with HTML5, CSS3, and Vanilla JavaScript. No server or database required.
-
-When opened, JavaScript checks `localStorage` for your selected Cluster & Section, detects the current day and time, and displays active class cards, room locations, teacher metadata, and break count-downs.
+1. Open the live app link in **Chrome** (Android) or **Safari** (iOS).
+2. Tap the browser menu (**⋮** on Android, **Share** icon on iOS).
+3. Select **Add to Home screen** or **Install app**.
 
 ## 📁 Project Structure
 
 ```text
 Timetable/
-├── index.html       # App UI, CSS styling, selectors & timetable JSON dataset
-├── manifest.json    # PWA configuration manifest
-├── sw.js            # Service worker / offline caching (v3)
-├── icon-192.png     # PWA app icon (192x192)
-├── icon-512.png     # PWA app icon (512x512)
-└── README.md        # Project documentation
+├── index.html               # App markup, UI logic, selectors & rendering
+├── style.css                # App styles, CSS variables & media queries
+├── data.json                # Timetable dataset (separate JSON file)
+├── sw.js                    # Service Worker with offline caching & stale-while-revalidate
+├── manifest.json            # PWA web app manifest
+├── scripts/
+│   ├── time-engine.js       # Core time parsing, status & sorting functions
+│   └── validate-data.js     # CLI validator for data.json integrity
+├── tests/
+│   └── time-engine.test.js  # Node.js unit tests for time & status engine
+├── icon-192.png             # PWA app icon (192x192)
+├── icon-512.png             # PWA app icon (512x512)
+└── README.md                # Project documentation
 ```
 
-## 📋 Timetable Data
+## 🛠️ Updating Timetable Data
 
-Includes complete 3rd Semester 2026–27 timetable data for:
-- **Cluster B**: Sections `3B1 [3D]`, `3B2 [3G]`, `3B3 [3N]`, `3B4 [3Q]`, `3B5 [3V]`
-- **Cluster D**: Sections `3D1 [3B]`, `3D2 [3I]`, `3D3 [3L]`, `3D4 [3S]`, `3D5 [3U]`
-- Placeholder/Coming Soon support for Clusters A, C, E, F, G, H... through V.
-- Placeholder/Coming Soon support for Clusters A, C, and E.
+1. Edit `data.json` to update class timings, subjects, rooms, or faculty details.
+2. If introducing overlapping parallel labs, add `"parallel": true` to each overlapping entry.
+3. Update `"lastUpdated"` or `"DATA_VERSION"` at the top level of `data.json` (e.g., `"lastUpdated": "October 4, 2026"`).
+4. Bump `CACHE` version string in `sw.js` (e.g., `timetable-app-v15`).
+5. Run the validation script to verify formatting and sorting:
+   ```bash
+   node scripts/validate-data.js
+   ```
 
-## 🛠️ Tech Stack
+## 🧪 Testing
 
-- HTML5
-- CSS3 (CSS Variables, Flexbox/Grid, Dark & Light Mode)
-- Vanilla JavaScript (ES6+)
-- Web App Manifest (PWA)
-- Service Worker (Offline Cache API)
-- GitHub Pages
-
-## 🚀 Deployment
-
-The project is hosted and deployed automatically using **GitHub Pages** from the `main` branch.
+Run the unit test suite locally using Node.js:
+```bash
+node tests/time-engine.test.js
+```
 
 ## ⚠️ Disclaimer
 
