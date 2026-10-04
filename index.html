@@ -31,11 +31,12 @@
   </div>
 </div>
 
-<div class="days" id="days" aria-label="Choose a day"></div>
+<div class="days" id="days" role="group" aria-label="Choose a day"></div>
 <button type="button" class="today-jump" id="todayJump">↩ Back to Today</button>
-<div class="status" id="status" aria-live="polite"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
+<div class="status" id="status"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
+<div id="statusAnnounce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 <div class="date" id="dateLabel"></div>
-<section class="classes" id="classes" aria-live="polite"></section>
+<section class="classes" id="classes"></section>
 <div class="footer">
   Based on the 3rd Semester 2026–27 timetable
   <div id="dataVersion" style="margin-top:2px;"></div>
@@ -373,13 +374,28 @@ function duration(sec) {
   return h ? `${h}h ${m}m` : m ? `${m}m ${s}s` : `${s}s`;
 }
 
+let lastAnnouncedKey = "";
+
 function updateStatus(list, d) {
   const x = status(list, d);
-  if (!x) { statusEl.className = "status"; return; }
+  if (!x) {
+    statusEl.className = "status";
+    lastAnnouncedKey = "";
+    return;
+  }
   statusEl.className = `status visible ${x.kind}`;
   statusLabelEl.textContent = x.label;
   statusTitleEl.textContent = x.title;
   countdownEl.textContent = x.target === null ? "✓" : x.prefix + duration((x.target - nowMin()) * 60);
+
+  const announceKey = `${x.kind}:${x.title}`;
+  if (announceKey !== lastAnnouncedKey) {
+    lastAnnouncedKey = announceKey;
+    const announceEl = document.getElementById("statusAnnounce");
+    if (announceEl) {
+      announceEl.textContent = `${x.label}: ${x.title}`;
+    }
+  }
 }
 
 function addBreak(b) {
@@ -433,7 +449,11 @@ function render(d, scroll = false) {
   dateEl.textContent = viewToday ? formatDate() : "Tap a day above to switch";
   todayJumpEl.classList.toggle("visible", !viewToday);
   updateTodayButtons();
-  dayEl.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.day === d));
+  dayEl.querySelectorAll("button").forEach(b => {
+    const isActive = b.dataset.day === d;
+    b.classList.toggle("active", isActive);
+    b.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
   
   const prevHeight = classesEl.offsetHeight;
   if (prevHeight > 0) {
