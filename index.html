@@ -12,39 +12,35 @@
   <div class="today" id="todayBadge">Today</div>
 </div>
 
-<div class="selectors-wrapper" id="selectorsWrapper">
-  <button type="button" class="section-chip" id="sectionChip" style="display:none;"></button>
-  <div class="selectors-prompt" id="selectorsPrompt" style="display:none;">👇 Choose your section to view timetable</div>
-  <div class="selectors" id="selectors">
-    <div class="select-group">
-      <label for="branchSelect">Branch</label>
-      <select id="branchSelect"></select>
-    </div>
-    <div class="select-group">
-      <label for="clusterSelect">Cluster</label>
-      <select id="clusterSelect"></select>
-    </div>
-    <div class="select-group">
-      <label for="sectionSelect">Section</label>
-      <select id="sectionSelect"></select>
-    </div>
+<div class="selectors">
+  <div class="select-group">
+    <label for="branchSelect">Branch</label>
+    <select id="branchSelect"></select>
+  </div>
+  <div class="select-group">
+    <label for="clusterSelect">Cluster</label>
+    <select id="clusterSelect"></select>
+  </div>
+  <div class="select-group">
+    <label for="sectionSelect">Section</label>
+    <select id="sectionSelect"></select>
   </div>
 </div>
 
-<div class="days" id="days" role="group" aria-label="Choose a day"></div>
+<div class="days" id="days" aria-label="Choose a day"></div>
 <button type="button" class="today-jump" id="todayJump">↩ Back to Today</button>
-<div class="status" id="status"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
-<div id="statusAnnounce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<div class="status" id="status" aria-live="polite"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
 <div class="date" id="dateLabel"></div>
-<section class="classes" id="classes"></section>
+<section class="classes" id="classes" aria-live="polite"></section>
 <div class="footer">
   Based on the 3rd Semester 2026–27 timetable
-  <div id="dataVersion" style="margin-top:2px;"></div>
   <br> Built by Navaneeth S (CSE)
+  <!-- <a href="https://github.com/Navaneeth860/Timetable" target="_blank">
+    GitHub
+  </a> -->
 </div>
 </main>
 
-<script src="scripts/time-engine.js"></script>
 <script>
 let DATA = {};
 
@@ -52,29 +48,9 @@ const order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday
 const short = {Monday: "Mon", Tuesday: "Tue", Wednesday: "Wed", Thursday: "Thu", Friday: "Fri", Saturday: "Sat"};
 const breaks = [["09:50", "10:20", "Tea Break"], ["01:05", "02:00", "Lunch Break"]];
 
-const memoryStorage = {};
-function safeGetItem(key) {
-  try { return localStorage.getItem(key); }
-  catch (e) { return memoryStorage[key] || null; }
-}
-function safeSetItem(key, value) {
-  try { localStorage.setItem(key, value); }
-  catch (e) { memoryStorage[key] = value; }
-}
-
-function escapeHtml(str) {
-  if (str === null || str === undefined) return "";
-  return String(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-let currentBranch = safeGetItem("timetable_branch") || "CSE";
-let currentCluster = safeGetItem("timetable_cluster") || "B";
-let currentSection = safeGetItem("timetable_section") || "3B1 [3D]";
+let currentBranch = localStorage.getItem("timetable_branch") || "CSE";
+let currentCluster = localStorage.getItem("timetable_cluster") || "B";
+let currentSection = localStorage.getItem("timetable_section") || "3B1 [3D]";
 let selectedDay;
 
 const branchEl = document.getElementById("branchSelect");
@@ -92,28 +68,9 @@ const statusTitleEl = document.getElementById("statusTitle");
 const countdownEl = document.getElementById("countdown");
 const todayJumpEl = document.getElementById("todayJump");
 
-function updateSectionChip() {
-  const chipEl = document.getElementById("sectionChip");
-  const selectorsEl = document.getElementById("selectors");
-  const promptEl = document.getElementById("selectorsPrompt");
-  if (!chipEl || !selectorsEl) return;
-
-  const hasSaved = !!safeGetItem("timetable_section");
-  if (!hasSaved) {
-    if (promptEl) promptEl.style.display = "block";
-    chipEl.style.display = "none";
-    selectorsEl.classList.remove("collapsed");
-  } else {
-    if (promptEl) promptEl.style.display = "none";
-    chipEl.style.display = "flex";
-    const isExpanded = !selectorsEl.classList.contains("collapsed");
-    chipEl.textContent = `${currentBranch} · ${currentSection} ${isExpanded ? '▲' : '▾'}`;
-  }
-}
-
 function initSelectors() {
   branchEl.innerHTML = "";
-  const branches = Object.keys(DATA).filter(b => b !== "lastUpdated" && b !== "DATA_VERSION");
+  const branches = Object.keys(DATA);
   branches.forEach(b => {
     const opt = document.createElement("option");
     opt.value = b;
@@ -123,23 +80,7 @@ function initSelectors() {
   });
   if (!branches.includes(currentBranch) && branches.length > 0) {
     currentBranch = branches[0];
-    safeSetItem("timetable_branch", currentBranch);
-  }
-
-  const sectionChipEl = document.getElementById("sectionChip");
-  if (sectionChipEl) {
-    sectionChipEl.onclick = () => {
-      const selectorsEl = document.getElementById("selectors");
-      const isCollapsed = selectorsEl.classList.contains("collapsed");
-      if (isCollapsed) {
-        selectorsEl.classList.remove("collapsed");
-        selectorsEl.dataset.userToggled = "true";
-      } else {
-        selectorsEl.classList.add("collapsed");
-        delete selectorsEl.dataset.userToggled;
-      }
-      updateSectionChip();
-    };
+    localStorage.setItem("timetable_branch", currentBranch);
   }
 
   updateClusterOptions();
@@ -147,6 +88,7 @@ function initSelectors() {
 
 function updateClusterOptions() {
   clusterEl.innerHTML = "";
+  const branchData = DATA[currentBranch] || {};
 
   if (currentBranch === "CSE" || currentBranch === "AIML") {
     const clusters = currentBranch === "AIML" ? ["All", "A", "B"] : ["All", "A", "B", "C", "D", "E"];
@@ -171,8 +113,8 @@ function updateClusterOptions() {
 
 function updateSectionOptions() {
   sectionEl.innerHTML = "";
-  const secObj = DATA[currentBranch] || {};
-  let sections = Object.keys(secObj);
+  const branchData = DATA[currentBranch] || {};
+  let sections = Object.keys(branchData);
 
   if ((currentBranch === "CSE" || currentBranch === "AIML") && currentCluster !== "All") {
     sections = sections.filter(sec => sec.startsWith(`3${currentCluster}`));
@@ -194,33 +136,34 @@ function updateSectionOptions() {
   const validValues = sections.map(s => s.replace(" (Coming Soon)", ""));
   if (!validValues.includes(currentSection)) {
     currentSection = validValues[0] || "";
-    if (currentSection) safeSetItem("timetable_section", currentSection);
+    localStorage.setItem("timetable_section", currentSection);
   }
-  updateSectionChip();
 }
 
 branchEl.onchange = (e) => {
   currentBranch = e.target.value;
-  safeSetItem("timetable_branch", currentBranch);
+  localStorage.setItem("timetable_branch", currentBranch);
   updateClusterOptions();
   render(selectedDay || todayName());
 };
 
 clusterEl.onchange = (e) => {
   currentCluster = e.target.value;
-  safeSetItem("timetable_cluster", currentCluster);
+  localStorage.setItem("timetable_cluster", currentCluster);
   updateSectionOptions();
   render(selectedDay || todayName());
 };
 
 sectionEl.onchange = (e) => {
   currentSection = e.target.value;
-  safeSetItem("timetable_section", currentSection);
-  updateSectionChip();
+  localStorage.setItem("timetable_section", currentSection);
   render(selectedDay || todayName());
 };
 
-function todayName() { return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); }
+function todayName() { 
+  return "Monday";
+  // return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
+  }
 function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
 
 function toMinutes(v) {
@@ -264,61 +207,14 @@ function parseRange(t) {
   return [toMinutes(startStr), toMinutes(endStr)];
 }
 
-function sortDayList(list) {
-  if (!Array.isArray(list)) return list;
-  return list.slice().sort((a, b) => parseRange(a.time)[0] - parseRange(b.time)[0]);
-}
-
-function sortData(data) {
-  if (!data || typeof data !== "object") return;
-  for (const branch of Object.keys(data)) {
-    if (branch === "lastUpdated" || branch === "DATA_VERSION") continue;
-    const branchObj = data[branch] || {};
-    for (const section of Object.keys(branchObj)) {
-      const secObj = branchObj[section] || {};
-      for (const day of Object.keys(secObj)) {
-        if (Array.isArray(secObj[day])) {
-          secObj[day] = sortDayList(secObj[day]);
-        }
-      }
-    }
-  }
-}
-
 function isToday(d) { return d === todayName(); }
 function nowMin() { 
   const n = new Date(); 
   return n.getHours() * 60 + n.getMinutes() + n.getSeconds() / 60; 
 }
 
-function hasSectionData() {
-  return !!(DATA[currentBranch] && DATA[currentBranch][currentSection]);
-}
-
 function getTimetable(d) {
-  if (!hasSectionData()) return null;
-  return DATA[currentBranch][currentSection][d] || [];
-}
-
-function getNextUpcomingClass(fromDay) {
-  if (!hasSectionData()) return null;
-  const daysOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const fromIdx = daysOrder.indexOf(fromDay);
-  
-  for (let offset = 0; offset < 7; offset++) {
-    const checkIdx = (fromIdx >= 0 ? fromIdx + offset : offset) % daysOrder.length;
-    const dayName = daysOrder[checkIdx];
-    const list = DATA[currentBranch]?.[currentSection]?.[dayName];
-    if (Array.isArray(list) && list.length > 0) {
-      if (offset === 0 && isToday(dayName)) {
-        const upcomingInDay = list.find(item => parseRange(item.time)[0] > nowMin());
-        if (upcomingInDay) return { day: dayName, item: upcomingInDay, isToday: true };
-      } else if (offset > 0 || !isToday(dayName)) {
-        return { day: dayName, item: list[0], isToday: false };
-      }
-    }
-  }
-  return null;
+  return DATA[currentBranch]?.[currentSection]?.[d] || null;
 }
 
 function liveIndex(list, d) {
@@ -340,50 +236,20 @@ function nextIndex(list, d) {
 }
 
 function status(list, d) {
-  if (!isToday(d)) return null;
-  if (!hasSectionData()) return null;
-
-  if (list && list.length > 0) {
-    const n = nowMin();
-    const lis = liveIndices(list, d);
-    if (lis.length > 0) {
-      const liveItems = lis.map(i => list[i]);
-      const title = liveItems.map(item => item.subject).join(" + ");
-      const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
-      return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
-    }
-
-    const ni = nextIndex(list, d);
-    const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-
-    if (br) {
-      let nextStr = "";
-      if (ni >= 0) {
-        const item = list[ni];
-        const venueStr = item.venue ? `, Room ${item.venue}` : "";
-        nextStr = ` · Next: ${item.subject}${venueStr}`;
-      }
-      return { kind: "break", label: br[2], title: `${br[2]}${nextStr}`, target: toMinutes(br[1]), prefix: "Ends in " };
-    }
-
-    if (ni >= 0) {
-      const item = list[ni];
-      const venueStr = item.venue ? `, Room ${item.venue}` : "";
-      const prevClass = list.slice(0, ni).reverse().find(c => parseRange(c.time)[1] > 0);
-      const isFreePeriod = prevClass && n >= parseRange(prevClass.time)[1];
-      const labelStr = isFreePeriod ? "Free Period" : "Next class";
-      const titleStr = isFreePeriod ? `Next: ${item.subject}${venueStr}` : `${item.subject}${venueStr}`;
-      return { kind: "next", label: labelStr, title: titleStr, target: parseRange(item.time)[0], prefix: "Starts in " };
-    }
+  if (!isToday(d) || !list || !list.length) return null;
+  const n = nowMin();
+  const li = liveIndex(list, d);
+  if (li >= 0) {
+    const item = list[li];
+    return { kind: "live", label: "Live now", title: item.subject, target: parseRange(item.time)[1], prefix: "Ends in " };
   }
-
-  const nextUp = getNextUpcomingClass(d);
-  if (nextUp) {
-    const startTimeStr = nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : "";
-    const titleText = `${nextUp.day} ${startTimeStr} - ${nextUp.item.subject}`;
-    return { kind: "done", label: "No classes today", title: "Next: " + titleText, target: null, prefix: "" };
+  const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
+  if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+  const ni = nextIndex(list, d);
+  if (ni >= 0) {
+    const item = list[ni];
+    return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
   }
-
   return { kind: "done", label: "Day complete", title: "No more classes today", target: null, prefix: "" };
 }
 
@@ -393,28 +259,13 @@ function duration(sec) {
   return h ? `${h}h ${m}m` : m ? `${m}m ${s}s` : `${s}s`;
 }
 
-let lastAnnouncedKey = "";
-
 function updateStatus(list, d) {
   const x = status(list, d);
-  if (!x) {
-    statusEl.className = "status";
-    lastAnnouncedKey = "";
-    return;
-  }
+  if (!x) { statusEl.className = "status"; return; }
   statusEl.className = `status visible ${x.kind}`;
   statusLabelEl.textContent = x.label;
   statusTitleEl.textContent = x.title;
   countdownEl.textContent = x.target === null ? "✓" : x.prefix + duration((x.target - nowMin()) * 60);
-
-  const announceKey = `${x.kind}:${x.title}`;
-  if (announceKey !== lastAnnouncedKey) {
-    lastAnnouncedKey = announceKey;
-    const announceEl = document.getElementById("statusAnnounce");
-    if (announceEl) {
-      announceEl.textContent = `${x.label}: ${x.title}`;
-    }
-  }
 }
 
 function addBreak(b) {
@@ -424,60 +275,26 @@ function addBreak(b) {
   classesEl.appendChild(i);
 }
 
-let currentLiveIndex = -2;
-let currentNextIndex = -2;
-let currentDateStr = new Date().toDateString();
-
-function updateTodayButtons() {
-  const currentToday = todayName();
-  dayEl.querySelectorAll("button").forEach(b => {
-    b.classList.toggle("today-day", b.dataset.day === currentToday);
-  });
-}
-
-function checkDateRollover() {
-  const nowStr = new Date().toDateString();
-  if (nowStr !== currentDateStr) {
-    currentDateStr = nowStr;
-    updateTodayButtons();
-    return true;
-  }
-  return false;
-}
-
 function render(d, scroll = false) {
   selectedDay = d;
   const today = todayName();
   const viewToday = d === today;
   const list = getTimetable(d);
   
-  subtitleEl.textContent = `${escapeHtml(currentBranch)} · ${escapeHtml(currentSection)}`;
+  subtitleEl.textContent = `${currentBranch} · ${currentSection}`;
   titleEl.textContent = viewToday ? "Today's Timetable" : d + " Timetable";
 
-  const lis = liveIndices(list, d);
-  const li = lis[0] ?? -1;
+  const li = liveIndex(list, d);
   const ni = nextIndex(list, d);
-  currentLiveIndex = li;
-  currentNextIndex = ni;
   const st = status(list, d);
 
-  badgeEl.textContent = lis.length > 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
-  badgeEl.classList.toggle("live-badge", lis.length > 0);
-  badgeEl.classList.toggle("break-badge", lis.length === 0 && st?.kind === "break");
+  badgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
+  badgeEl.classList.toggle("live-badge", li >= 0);
+  badgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
 
   dateEl.textContent = viewToday ? formatDate() : "Tap a day above to switch";
   todayJumpEl.classList.toggle("visible", !viewToday);
-  updateTodayButtons();
-  dayEl.querySelectorAll("button").forEach(b => {
-    const isActive = b.dataset.day === d;
-    b.classList.toggle("active", isActive);
-    b.setAttribute("aria-pressed", isActive ? "true" : "false");
-  });
-  
-  const prevHeight = classesEl.offsetHeight;
-  if (prevHeight > 0) {
-    classesEl.style.minHeight = prevHeight + "px";
-  }
+  dayEl.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.day === d));
   classesEl.innerHTML = "";
   updateStatus(list, d);
 
@@ -486,22 +303,17 @@ function render(d, scroll = false) {
       <div class="empty">
         <div style="font-size:36px;margin-bottom:8px">🚀</div>
         <strong style="font-size:16px;color:var(--text)">Coming Soon!!</strong><br>
-        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${escapeHtml(currentBranch)} - ${escapeHtml(currentSection)} will be updated shortly!</span>
+        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${currentBranch} - ${currentSection} will be updated shortly!</span>
       </div>`;
-    classesEl.style.minHeight = "";
     return;
   }
 
   if (!list.length) {
-    const nextUp = getNextUpcomingClass(d);
-    const nextText = nextUp ? `<br><span style="font-size:13px;margin-top:8px;display:inline-block;color:var(--accent);font-weight:700">Next: ${escapeHtml(nextUp.day)} ${escapeHtml(nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : '')} - ${escapeHtml(nextUp.item.subject)}</span>` : "";
     classesEl.innerHTML = `
       <div class="empty">
-        <strong>No classes scheduled today</strong><br>
+        <strong>No classes scheduled</strong><br>
         <span>Enjoy your day! 🎉</span>
-        ${nextText}
       </div>`;
-    classesEl.style.minHeight = "";
     return;
   }
 
@@ -511,6 +323,7 @@ function render(d, scroll = false) {
     const c = item.course_code || "";
     const r = item.venue || "";
     const tr = item.faculty || "";
+    const typeStr = (item.type || "theory").toUpperCase();
     let grpStr = "";
     if (Array.isArray(item.groups)) {
       grpStr = item.groups.map(g => `${g.group}${g.faculty ? ' (' + g.faculty + ')' : ''}${g.venue ? ' @ ' + g.venue : ''}`).join(", ");
@@ -519,30 +332,26 @@ function render(d, scroll = false) {
     }
 
     const el = document.createElement("article");
-    const live = lis.includes(i);
-    const next = i === ni && lis.length === 0;
+    const live = i === li;
+    const next = i === ni && li < 0;
     const [startMin, endMin] = parseRange(t);
     const done = viewToday && !live && endMin > 0 && endMin <= nowMin();
 
     el.className = `class${live ? " live" : ""}${done ? " done" : ""}`;
 
-    const rawType = (item.type || "").toLowerCase();
-    const showTypeBadge = rawType && rawType !== "theory";
-    const typeBadgeHtml = showTypeBadge ? `<span class="type">${escapeHtml(rawType.toUpperCase())}</span>` : "";
-
-    const codeHtml = c ? `<div class="code">📘 ${escapeHtml(c)}</div>` : "";
-    const roomHtml = r ? `<div class="code room">📍 ${escapeHtml(r)}</div>` : "";
-    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${escapeHtml(tr)}</div>` : "";
-    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent-text);font-weight:700">👥 Groups: ${escapeHtml(grpStr)}</div>` : "";
+    const codeHtml = c ? `<div class="code">📘 ${c}</div>` : "";
+    const roomHtml = r ? `<div class="code">📍 ${r}</div>` : "";
+    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${tr}</div>` : "";
+    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${grpStr}</div>` : "";
 
     el.innerHTML = `
-      <div class="time">${escapeHtml(t)}</div>
+      <div class="time">${t}</div>
       <div class="card${live ? " live" : ""}${next ? " next" : ""}">
         <div class="top-right-badges">
           ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
-          ${typeBadgeHtml}
+          <span class="type">${typeStr}</span>
         </div>
-        <div class="subject">${escapeHtml(s) || "Class"}</div>
+        <div class="subject">${s || "Class"}</div>
         ${codeHtml}
         ${roomHtml}
         ${teacherHtml}
@@ -560,135 +369,38 @@ function render(d, scroll = false) {
     }
   });
 
-  classesEl.style.minHeight = "";
-
   if (scroll && li >= 0) {
-    const liveEl = classesEl.querySelector(".class.live");
-    if (liveEl) {
-      setTimeout(() => liveEl.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
-    }
+    setTimeout(() => classesEl.children[li]?.scrollIntoView({ behavior: "smooth", block: "center" }), 150);
   }
 }
 
-function showErrorState(msg) {
-  statusEl.className = "status";
-  classesEl.innerHTML = "";
-  const errDiv = document.createElement("div");
-  errDiv.className = "empty";
-  errDiv.style.borderColor = "var(--next)";
+fetch("./data.json")
+  .then(res => res.json())
+  .then(data => {
+    DATA = data;
+    initSelectors();
 
-  const icon = document.createElement("div");
-  icon.style.cssText = "font-size:36px;margin-bottom:8px";
-  icon.textContent = "⚠️";
-
-  const title = document.createElement("strong");
-  title.style.cssText = "font-size:16px;color:var(--text)";
-  title.textContent = "Failed to load timetable data";
-
-  const desc = document.createElement("div");
-  desc.style.cssText = "font-size:12px;margin:8px 0 14px;color:var(--muted)";
-  desc.textContent = msg;
-
-  const retryBtn = document.createElement("button");
-  retryBtn.type = "button";
-  retryBtn.className = "today-jump visible";
-  retryBtn.style.cssText = "display:inline-block;width:auto;padding:8px 20px;";
-  retryBtn.textContent = "🔄 Retry";
-  retryBtn.onclick = () => loadData();
-
-  errDiv.appendChild(icon);
-  errDiv.appendChild(title);
-  errDiv.appendChild(desc);
-  errDiv.appendChild(retryBtn);
-  classesEl.appendChild(errDiv);
-}
-
-function loadData() {
-  fetch("./data.json")
-    .then(res => {
-      if (!res.ok) throw new Error(`HTTP status ${res.status}`);
-      return res.json();
-    })
-    .then(data => {
-      const metaKeys = new Set(["lastUpdated", "DATA_VERSION"]);
-      if (!data || Object.keys(data).filter(k => !metaKeys.has(k)).length === 0) {
-        throw new Error("Loaded timetable data is empty");
-      }
-      DATA = data;
-      const dataVerStr = data.lastUpdated || data.DATA_VERSION;
-      const dataVerEl = document.getElementById("dataVersion");
-      if (dataVerEl) {
-        dataVerEl.textContent = dataVerStr ? `Timetable data updated ${dataVerStr}` : "";
-      }
-      sortData(DATA);
-      initSelectors();
-
-      dayEl.innerHTML = "";
-      order.forEach(d => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "day";
-        b.dataset.day = d;
-        b.textContent = short[d];
-        if (d === todayName()) b.classList.add("today-day");
-        b.onclick = () => render(d);
-        dayEl.appendChild(b);
-      });
-
-      todayJumpEl.onclick = () => render(todayName(), true);
-
-      const initial = order.includes(todayName()) ? todayName() : "Monday";
-      render(initial, true);
-
-      setInterval(() => {
-        const dateChanged = checkDateRollover();
-        if (dateChanged) {
-          selectedDay = todayName();
-          render(selectedDay, true);
-          return;
-        }
-
-        if (selectedDay === todayName()) {
-          const list = getTimetable(selectedDay);
-          updateStatus(list, selectedDay);
-
-          const li = liveIndex(list, selectedDay);
-          const ni = nextIndex(list, selectedDay);
-
-          if (li !== currentLiveIndex || ni !== currentNextIndex) {
-            render(selectedDay);
-          } else if (list) {
-            const n = nowMin();
-            const classNodes = classesEl.querySelectorAll(".class");
-            list.forEach((item, i) => {
-              const el = classNodes[i];
-              if (!el) return;
-              const [startMin, endMin] = parseRange(item.time);
-              const live = i === li;
-              const done = !live && endMin > 0 && endMin <= n;
-              el.classList.toggle("done", done);
-            });
-          }
-        }
-      }, 1000);
-
-      document.addEventListener("visibilitychange", () => {
-        if (!document.hidden) {
-          const dateChanged = checkDateRollover();
-          if (dateChanged) {
-            selectedDay = todayName();
-          }
-          render(selectedDay);
-        }
-      });
-    })
-    .catch(err => {
-      console.error("Failed to load timetable data:", err);
-      showErrorState(err.message || "Failed to load timetable data");
+    order.forEach(d => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "day";
+      b.dataset.day = d;
+      b.textContent = short[d];
+      if (d === todayName()) b.classList.add("today-day");
+      b.onclick = () => render(d);
+      dayEl.appendChild(b);
     });
-}
 
-loadData();
+    todayJumpEl.onclick = () => render(todayName(), true);
+
+    const initial = order.includes(todayName()) ? todayName() : "Monday";
+    render(initial, true);
+
+    setInterval(() => {
+      if (selectedDay === todayName()) render(selectedDay);
+    }, 1000);
+  })
+  .catch(err => console.error("Failed to load timetable data:", err));
 </script>
 <script>
 if("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
