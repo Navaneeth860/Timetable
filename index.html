@@ -508,17 +508,21 @@ function render(d, scroll = false) {
 
     el.className = `class${live ? " live" : ""}${done ? " done" : ""}`;
 
+    const rawType = (item.type || "").toLowerCase();
+    const showTypeBadge = rawType && rawType !== "theory";
+    const typeBadgeHtml = showTypeBadge ? `<span class="type">${escapeHtml(rawType.toUpperCase())}</span>` : "";
+
     const codeHtml = c ? `<div class="code">📘 ${escapeHtml(c)}</div>` : "";
-    const roomHtml = r ? `<div class="code">📍 ${escapeHtml(r)}</div>` : "";
+    const roomHtml = r ? `<div class="code room">📍 ${escapeHtml(r)}</div>` : "";
     const teacherHtml = tr ? `<div class="code">👨‍🏫 ${escapeHtml(tr)}</div>` : "";
-    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${escapeHtml(grpStr)}</div>` : "";
+    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent-text);font-weight:700">👥 Groups: ${escapeHtml(grpStr)}</div>` : "";
 
     el.innerHTML = `
       <div class="time">${escapeHtml(t)}</div>
       <div class="card${live ? " live" : ""}${next ? " next" : ""}">
         <div class="top-right-badges">
           ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
-          <span class="type">${escapeHtml(typeStr)}</span>
+          ${typeBadgeHtml}
         </div>
         <div class="subject">${escapeHtml(s) || "Class"}</div>
         ${codeHtml}
