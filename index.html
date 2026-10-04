@@ -160,10 +160,7 @@ sectionEl.onchange = (e) => {
   render(selectedDay || todayName());
 };
 
-function todayName() { 
-  return "Monday";
-  // return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
-  }
+function todayName() { return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); }
 function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
 
 function toMinutes(v) {
@@ -213,37 +210,43 @@ function nowMin() {
   return n.getHours() * 60 + n.getMinutes() + n.getSeconds() / 60; 
 }
 
-function getTimetable(d) {
-  return DATA[currentBranch]?.[currentSection]?.[d] || null;
+function hasSectionData() {
+  return !!(DATA[currentBranch] && DATA[currentBranch][currentSection]);
 }
 
-function sortData(data) {
-  if (!data) return;
-  for (const b in data) {
-    for (const s in data[b]) {
-      for (const d in data[b][s]) {
-        if (Array.isArray(data[b][s][d])) {
-          data[b][s][d].sort((a, b) => parseRange(a.time)[0] - parseRange(b.time)[0]);
-        }
+function getTimetable(d) {
+  if (!hasSectionData()) return null;
+  return DATA[currentBranch][currentSection][d] || [];
+}
+
+function getNextUpcomingClass(fromDay) {
+  if (!hasSectionData()) return null;
+  const daysOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const fromIdx = daysOrder.indexOf(fromDay);
+  
+  for (let offset = 0; offset < 7; offset++) {
+    const checkIdx = (fromIdx >= 0 ? fromIdx + offset : offset) % daysOrder.length;
+    const dayName = daysOrder[checkIdx];
+    const list = DATA[currentBranch]?.[currentSection]?.[dayName];
+    if (Array.isArray(list) && list.length > 0) {
+      if (offset === 0 && isToday(dayName)) {
+        const upcomingInDay = list.find(item => parseRange(item.time)[0] > nowMin());
+        if (upcomingInDay) return { day: dayName, item: upcomingInDay, isToday: true };
+      } else if (offset > 0 || !isToday(dayName)) {
+        return { day: dayName, item: list[0], isToday: false };
       }
     }
   }
-}
-
-function liveIndices(list, d) {
-  if (!isToday(d) || !list) return [];
-  const n = nowMin();
-  return list
-    .map((item, i) => {
-      const [s, e] = parseRange(item.time);
-      return (s > 0 && n >= s && n < e) ? i : -1;
-    })
-    .filter(i => i >= 0);
+  return null;
 }
 
 function liveIndex(list, d) {
-  const lis = liveIndices(list, d);
-  return lis.length > 0 ? lis[0] : -1;
+  if (!isToday(d) || !list) return -1;
+  const n = nowMin();
+  return list.findIndex(item => {
+    const [s, e] = parseRange(item.time);
+    return s > 0 && n >= s && n < e;
+  });
 }
 
 function nextIndex(list, d) {
@@ -256,22 +259,34 @@ function nextIndex(list, d) {
 }
 
 function status(list, d) {
-  if (!isToday(d) || !list || !list.length) return null;
-  const n = nowMin();
-  const lis = liveIndices(list, d);
-  if (lis.length > 0) {
-    const liveItems = lis.map(i => list[i]);
-    const title = liveItems.map(item => item.subject).join(" + ");
-    const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
-    return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
+  if (!isToday(d)) return null;
+  if (!hasSectionData()) return null;
+
+  if (list && list.length > 0) {
+    const n = nowMin();
+    const lis = liveIndices(list, d);
+    if (lis.length > 0) {
+      const liveItems = lis.map(i => list[i]);
+      const title = liveItems.map(item => item.subject).join(" + ");
+      const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
+      return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
+    }
+    const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
+    if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+    const ni = nextIndex(list, d);
+    if (ni >= 0) {
+      const item = list[ni];
+      return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
+    }
   }
-  const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-  if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
-  const ni = nextIndex(list, d);
-  if (ni >= 0) {
-    const item = list[ni];
-    return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
+
+  const nextUp = getNextUpcomingClass(d);
+  if (nextUp) {
+    const startTimeStr = nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : "";
+    const titleText = `${nextUp.day} ${startTimeStr} - ${nextUp.item.subject}`;
+    return { kind: "done", label: "No classes today", title: "Next: " + titleText, target: null, prefix: "" };
   }
+
   return { kind: "done", label: "Day complete", title: "No more classes today", target: null, prefix: "" };
 }
 
@@ -297,6 +312,27 @@ function addBreak(b) {
   classesEl.appendChild(i);
 }
 
+let currentLiveIndex = -2;
+let currentNextIndex = -2;
+let currentDateStr = new Date().toDateString();
+
+function updateTodayButtons() {
+  const currentToday = todayName();
+  dayEl.querySelectorAll("button").forEach(b => {
+    b.classList.toggle("today-day", b.dataset.day === currentToday);
+  });
+}
+
+function checkDateRollover() {
+  const nowStr = new Date().toDateString();
+  if (nowStr !== currentDateStr) {
+    currentDateStr = nowStr;
+    updateTodayButtons();
+    return true;
+  }
+  return false;
+}
+
 function render(d, scroll = false) {
   selectedDay = d;
   const today = todayName();
@@ -309,6 +345,8 @@ function render(d, scroll = false) {
   const lis = liveIndices(list, d);
   const li = lis[0] ?? -1;
   const ni = nextIndex(list, d);
+  currentLiveIndex = li;
+  currentNextIndex = ni;
   const st = status(list, d);
 
   badgeEl.textContent = lis.length > 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
@@ -317,7 +355,13 @@ function render(d, scroll = false) {
 
   dateEl.textContent = viewToday ? formatDate() : "Tap a day above to switch";
   todayJumpEl.classList.toggle("visible", !viewToday);
+  updateTodayButtons();
   dayEl.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.day === d));
+  
+  const prevHeight = classesEl.offsetHeight;
+  if (prevHeight > 0) {
+    classesEl.style.minHeight = prevHeight + "px";
+  }
   classesEl.innerHTML = "";
   updateStatus(list, d);
 
@@ -328,15 +372,20 @@ function render(d, scroll = false) {
         <strong style="font-size:16px;color:var(--text)">Coming Soon!!</strong><br>
         <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${currentBranch} - ${currentSection} will be updated shortly!</span>
       </div>`;
+    classesEl.style.minHeight = "";
     return;
   }
 
   if (!list.length) {
+    const nextUp = getNextUpcomingClass(d);
+    const nextText = nextUp ? `<br><span style="font-size:13px;margin-top:8px;display:inline-block;color:var(--accent);font-weight:700">Next: ${nextUp.day} ${nextUp.item.time ? nextUp.item.time.split("–")[0].trim() : ''} - ${nextUp.item.subject}</span>` : "";
     classesEl.innerHTML = `
       <div class="empty">
-        <strong>No classes scheduled</strong><br>
+        <strong>No classes scheduled today</strong><br>
         <span>Enjoy your day! 🎉</span>
+        ${nextText}
       </div>`;
+    classesEl.style.minHeight = "";
     return;
   }
 
@@ -392,6 +441,8 @@ function render(d, scroll = false) {
     }
   });
 
+  classesEl.style.minHeight = "";
+
   if (scroll && li >= 0) {
     const liveEl = classesEl.querySelector(".class.live");
     if (liveEl) {
@@ -424,8 +475,46 @@ fetch("./data.json")
     render(initial, true);
 
     setInterval(() => {
-      if (selectedDay === todayName()) render(selectedDay);
+      const dateChanged = checkDateRollover();
+      if (dateChanged) {
+        selectedDay = todayName();
+        render(selectedDay, true);
+        return;
+      }
+
+      if (selectedDay === todayName()) {
+        const list = getTimetable(selectedDay);
+        updateStatus(list, selectedDay);
+
+        const li = liveIndex(list, selectedDay);
+        const ni = nextIndex(list, selectedDay);
+
+        if (li !== currentLiveIndex || ni !== currentNextIndex) {
+          render(selectedDay);
+        } else if (list) {
+          const n = nowMin();
+          const classNodes = classesEl.querySelectorAll(".class");
+          list.forEach((item, i) => {
+            const el = classNodes[i];
+            if (!el) return;
+            const [startMin, endMin] = parseRange(item.time);
+            const live = i === li;
+            const done = !live && endMin > 0 && endMin <= n;
+            el.classList.toggle("done", done);
+          });
+        }
+      }
     }, 1000);
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        const dateChanged = checkDateRollover();
+        if (dateChanged) {
+          selectedDay = todayName();
+        }
+        render(selectedDay);
+      }
+    });
   })
   .catch(err => console.error("Failed to load timetable data:", err));
 </script>
