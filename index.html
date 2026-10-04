@@ -319,12 +319,6 @@ function nextIndex(list, d) {
 }
 
 function status(list, d) {
-  if (!isToday(d) || !list || !list.length) return null;
-  const n = nowMin();
-  const li = liveIndex(list, d);
-  if (li >= 0) {
-    const item = list[li];
-    return { kind: "live", label: "Live now", title: item.subject, target: parseRange(item.time)[1], prefix: "Ends in " };
   if (!isToday(d)) return null;
   if (!hasSectionData()) return null;
 
@@ -337,20 +331,30 @@ function status(list, d) {
       const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
       return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
     }
-    const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-    if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+
     const ni = nextIndex(list, d);
+    const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
+
+    if (br) {
+      let nextStr = "";
+      if (ni >= 0) {
+        const item = list[ni];
+        const venueStr = item.venue ? `, Room ${item.venue}` : "";
+        nextStr = ` · Next: ${item.subject}${venueStr}`;
+      }
+      return { kind: "break", label: br[2], title: `${br[2]}${nextStr}`, target: toMinutes(br[1]), prefix: "Ends in " };
+    }
+
     if (ni >= 0) {
       const item = list[ni];
-      return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
+      const venueStr = item.venue ? `, Room ${item.venue}` : "";
+      const prevClass = list.slice(0, ni).reverse().find(c => parseRange(c.time)[1] > 0);
+      const isFreePeriod = prevClass && n >= parseRange(prevClass.time)[1];
+      const labelStr = isFreePeriod ? "Free Period" : "Next class";
+      const titleStr = isFreePeriod ? `Next: ${item.subject}${venueStr}` : `${item.subject}${venueStr}`;
+      return { kind: "next", label: labelStr, title: titleStr, target: parseRange(item.time)[0], prefix: "Starts in " };
     }
   }
-  const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-  if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
-  const ni = nextIndex(list, d);
-  if (ni >= 0) {
-    const item = list[ni];
-    return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
 
   const nextUp = getNextUpcomingClass(d);
   if (nextUp) {
