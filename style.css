@@ -323,6 +323,7 @@ button {
   gap: 10px;
   align-items: stretch;
   min-width: 0;
+  scroll-margin-top: calc(80px + env(safe-area-inset-top, 0px));
 }
 
 .time {

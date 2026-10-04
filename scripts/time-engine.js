@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
   function toMinutes(v) {
     if (!v) return 0;
     let str = String(v).trim().toUpperCase();
@@ -67,76 +67,78 @@
     }
   }
 
-  function liveIndices(list, isToday, nowMin) {
-    if (!isToday || !Array.isArray(list)) return [];
-    const indices = [];
-    list.forEach((item, i) => {
-      const [s, e] = parseRange(item.time);
-      if (s > 0 && nowMin >= s && nowMin < e) {
-        indices.push(i);
-      }
-    });
-    return indices;
-  }
+  // Node.js module exports (for unit tests)
+  if (typeof exports === "object" && typeof module !== "undefined") {
+    exports.toMinutes = toMinutes;
+    exports.parseRange = parseRange;
+    exports.sortDayList = sortDayList;
+    exports.sortData = sortData;
 
-  function nextIndex(list, isToday, nowMin) {
-    if (!isToday || !Array.isArray(list)) return -1;
-    return list.findIndex(item => {
-      const [s] = parseRange(item.time);
-      return s > nowMin;
-    });
-  }
+    exports.liveIndices = function(list, isToday, nowMin) {
+      if (!isToday || !Array.isArray(list)) return [];
+      const indices = [];
+      list.forEach((item, i) => {
+        const [s, e] = parseRange(item.time);
+        if (s > 0 && nowMin >= s && nowMin < e) {
+          indices.push(i);
+        }
+      });
+      return indices;
+    };
 
-  function status(list, isToday, nowMin, breaks) {
-    if (!isToday) return null;
-    breaks = breaks || [["09:50", "10:20", "Tea Break"], ["01:05", "02:00", "Lunch Break"]];
+    exports.nextIndex = function(list, isToday, nowMin) {
+      if (!isToday || !Array.isArray(list)) return -1;
+      return list.findIndex(item => {
+        const [s] = parseRange(item.time);
+        return s > nowMin;
+      });
+    };
 
-    if (Array.isArray(list) && list.length > 0) {
-      const lis = liveIndices(list, true, nowMin);
-      if (lis.length > 0) {
-        const liveItems = lis.map(i => list[i]);
-        const title = liveItems.map(item => item.subject).join(" + ");
-        const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
-        return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
+    exports.status = function(list, isToday, nowMin, breaks) {
+      if (!isToday) return null;
+      breaks = breaks || [["09:50", "10:20", "Tea Break"], ["01:05", "02:00", "Lunch Break"]];
+
+      if (Array.isArray(list) && list.length > 0) {
+        const lis = exports.liveIndices(list, true, nowMin);
+        if (lis.length > 0) {
+          const liveItems = lis.map(i => list[i]);
+          const title = liveItems.map(item => item.subject).join(" + ");
+          const minEnd = Math.min(...liveItems.map(item => parseRange(item.time)[1]));
+          return { kind: "live", label: "Live now", title: title, target: minEnd, prefix: "Ends in " };
+        }
+
+        const br = breaks.find(([s, e]) => nowMin >= toMinutes(s) && nowMin < toMinutes(e));
+        if (br) {
+          const ni = exports.nextIndex(list, true, nowMin);
+          const nextTitle = ni >= 0 ? `Next: ${list[ni].subject}` + (list[ni].venue ? `, Room ${list[ni].venue}` : "") : "Enjoy your break";
+          return { kind: "break", label: br[2], title: nextTitle, target: toMinutes(br[1]), prefix: "Ends in " };
+        }
+
+        const ni = exports.nextIndex(list, true, nowMin);
+        if (ni >= 0) {
+          const item = list[ni];
+          const isFreePeriod = ni > 0;
+          return {
+            kind: isFreePeriod ? "break" : "next",
+            label: isFreePeriod ? "Free Period" : "Next class",
+            title: item.subject + (item.venue ? `, Room ${item.venue}` : ""),
+            target: parseRange(item.time)[0],
+            prefix: "Starts in "
+          };
+        }
       }
 
       const br = breaks.find(([s, e]) => nowMin >= toMinutes(s) && nowMin < toMinutes(e));
-      if (br) {
-        const ni = nextIndex(list, true, nowMin);
-        const nextTitle = ni >= 0 ? `Next: ${list[ni].subject}` + (list[ni].venue ? `, Room ${list[ni].venue}` : "") : "Enjoy your break";
-        return { kind: "break", label: br[2], title: nextTitle, target: toMinutes(br[1]), prefix: "Ends in " };
-      }
+      if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
 
-      const ni = nextIndex(list, true, nowMin);
-      if (ni >= 0) {
-        const item = list[ni];
-        const prevLiveOrBreak = list.some(item => {
-          const [s, e] = parseRange(item.time);
-          return nowMin >= s && nowMin < e;
-        });
-        const isFreePeriod = !prevLiveOrBreak && ni > 0;
-        return {
-          kind: isFreePeriod ? "break" : "next",
-          label: isFreePeriod ? "Free Period" : "Next class",
-          title: item.subject + (item.venue ? `, Room ${item.venue}` : ""),
-          target: parseRange(item.time)[0],
-          prefix: "Starts in "
-        };
-      }
-    }
-
-    const br = breaks.find(([s, e]) => nowMin >= toMinutes(s) && nowMin < toMinutes(e));
-    if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
-
-    return { kind: "done", label: "Day complete", title: "No more classes today", target: null, prefix: "" };
+      return { kind: "done", label: "Day complete", title: "No more classes today", target: null, prefix: "" };
+    };
+  } else {
+    // Browser: Export core utilities directly to window; do NOT overwrite index.html's local liveIndices/nextIndex/status
+    const root = typeof self !== "undefined" ? self : window;
+    root.toMinutes = toMinutes;
+    root.parseRange = parseRange;
+    root.sortDayList = sortDayList;
+    root.sortData = sortData;
   }
-
-  exports.toMinutes = toMinutes;
-  exports.parseRange = parseRange;
-  exports.sortDayList = sortDayList;
-  exports.sortData = sortData;
-  exports.liveIndices = liveIndices;
-  exports.nextIndex = nextIndex;
-  exports.status = status;
-
-})(typeof exports !== 'undefined' ? exports : (window.TimeEngine = {}));
+})();
