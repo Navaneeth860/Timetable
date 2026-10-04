@@ -160,7 +160,10 @@ sectionEl.onchange = (e) => {
   render(selectedDay || todayName());
 };
 
-function todayName() { return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); }
+function todayName() { 
+  return "Monday";
+  // return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
+  }
 function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
 
 function toMinutes(v) {
@@ -205,7 +208,10 @@ function parseRange(t) {
 }
 
 function isToday(d) { return d === todayName(); }
-function nowMin() { const n = new Date(); return n.getHours() * 60 + n.getMinutes() + n.getSeconds() / 60; }
+function nowMin() { 
+  const n = new Date(); 
+  return n.getHours() * 60 + n.getMinutes() + n.getSeconds() / 60; 
+}
 
 function getTimetable(d) {
   return DATA[currentBranch]?.[currentSection]?.[d] || null;
