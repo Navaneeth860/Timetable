@@ -194,6 +194,7 @@ function updateSectionOptions() {
   const validValues = sections.map(s => s.replace(" (Coming Soon)", ""));
   if (!validValues.includes(currentSection)) {
     currentSection = validValues[0] || "";
+    if (currentSection) safeSetItem("timetable_section", currentSection);
   }
   updateSectionChip();
 }
@@ -219,9 +220,6 @@ sectionEl.onchange = (e) => {
   render(selectedDay || todayName());
 };
 
-function todayName() { 
-  return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
-  }
 function todayName() { return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); }
 function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
 
@@ -277,7 +275,6 @@ function hasSectionData() {
 }
 
 function getTimetable(d) {
-  return DATA[currentBranch]?.[currentSection]?.[d] || null;
   if (!hasSectionData()) return null;
   return DATA[currentBranch][currentSection][d] || [];
 }
@@ -493,7 +490,6 @@ function render(d, scroll = false) {
     const c = item.course_code || "";
     const r = item.venue || "";
     const tr = item.faculty || "";
-    const typeStr = (item.type || "theory").toUpperCase();
     let grpStr = "";
     if (Array.isArray(item.groups)) {
       grpStr = item.groups.map(g => `${g.group}${g.faculty ? ' (' + g.faculty + ')' : ''}${g.venue ? ' @ ' + g.venue : ''}`).join(", ");
@@ -593,7 +589,8 @@ function loadData() {
       return res.json();
     })
     .then(data => {
-      if (!data || Object.keys(data).length === 0) {
+      const metaKeys = new Set(["lastUpdated", "DATA_VERSION"]);
+      if (!data || Object.keys(data).filter(k => !metaKeys.has(k)).length === 0) {
         throw new Error("Loaded timetable data is empty");
       }
       DATA = data;
