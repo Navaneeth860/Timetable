@@ -1,4 +1,10 @@
-(function(exports) {
+(function(root, factory) {
+  if (typeof exports === 'object' && typeof module !== 'undefined') {
+    factory(exports);
+  } else {
+    factory(root);
+  }
+})(typeof self !== 'undefined' ? self : this, function(exports) {
   function toMinutes(v) {
     if (!v) return 0;
     let str = String(v).trim().toUpperCase();
@@ -139,4 +145,13 @@
   exports.nextIndex = nextIndex;
   exports.status = status;
 
-})(typeof exports !== 'undefined' ? exports : (window.TimeEngine = {}));
+  if (typeof window !== 'undefined' && exports !== window) {
+    window.toMinutes = toMinutes;
+    window.parseRange = parseRange;
+    window.sortDayList = sortDayList;
+    window.sortData = sortData;
+    window.liveIndices = liveIndices;
+    window.nextIndex = nextIndex;
+    window.status = status;
+  }
+});
