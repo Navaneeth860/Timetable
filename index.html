@@ -1,43 +1,99 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="description" content="B.Tech Daily Timetable with Branch, Cluster & Section Selection"><link rel="manifest" href="manifest.json"><title>College Timetable</title>
-<link rel="stylesheet" href="style.css"></head>
-<body><main>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b18">
+<meta name="description" content="B.Tech Daily Timetable with Branch, Cluster & Section Selection">
+<link rel="manifest" href="manifest.json">
+<title>College Timetable</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4PXCH9ZS8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y4PXCH9ZS8');
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
 <div class="top">
-  <div>
+  <div class="brand">
     <h1 id="title">Today's Timetable</h1>
     <div class="subtitle" id="subtitle">Select Branch, Cluster & Section</div>
   </div>
-  <div class="today" id="todayBadge">Today</div>
+  <div class="top-actions">
+    <button type="button" class="today-btn" id="todayBadge">Today</button>
+    <button type="button" class="filters-btn" id="filtersBtn" aria-haspopup="dialog" aria-controls="filterModal">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+      <span>Filters</span>
+    </button>
+  </div>
 </div>
 
-<div class="selectors">
-  <div class="select-group">
-    <label for="branchSelect">Branch</label>
-    <select id="branchSelect"></select>
+<dialog class="filter-modal" id="filterModal" aria-labelledby="filterModalTitle">
+  <div class="filter-modal-content">
+    <div class="filter-modal-header">
+      <h2 id="filterModalTitle">Select Timetable</h2>
+      <button type="button" class="filter-close-btn" id="filterModalClose" aria-label="Close filters">✕</button>
+    </div>
+    <div class="selectors">
+      <div class="select-group">
+        <label for="branchSelect">Branch</label>
+        <select id="branchSelect"></select>
+      </div>
+      <div class="select-group">
+        <label for="clusterSelect">Cluster</label>
+        <select id="clusterSelect"></select>
+      </div>
+      <div class="select-group">
+        <label for="sectionSelect">Section</label>
+        <select id="sectionSelect"></select>
+      </div>
+    </div>
+    <div class="filter-modal-actions">
+      <button type="button" class="btn-cancel" id="filterCancelBtn">Cancel</button>
+      <button type="button" class="btn-apply" id="filterApplyBtn">Apply</button>
+    </div>
   </div>
-  <div class="select-group">
-    <label for="clusterSelect">Cluster</label>
-    <select id="clusterSelect"></select>
-  </div>
-  <div class="select-group">
-    <label for="sectionSelect">Section</label>
-    <select id="sectionSelect"></select>
-  </div>
-</div>
+</dialog>
 
 <div class="days" id="days" aria-label="Choose a day"></div>
 <button type="button" class="today-jump" id="todayJump">↩ Back to Today</button>
-<div class="status" id="status" aria-live="polite"><div class="status-main"><div><div class="status-label" id="statusLabel"></div><div class="status-title" id="statusTitle"></div></div><div class="countdown" id="countdown"></div></div></div>
+
+<div class="status-wrapper">
+  <div class="status" id="status" aria-live="polite">
+    <div class="status-top">
+      <div class="status-tags">
+        <span class="status-badge" id="statusBadge">NEXT CLASS</span>
+        <span class="status-pill" id="statusPill">UP NEXT</span>
+      </div>
+    </div>
+    <div class="status-body">
+      <div class="status-info">
+        <div class="status-title" id="statusTitle"></div>
+        <div class="status-meta" id="statusMeta">
+          <span class="meta-time" id="statusTime"></span>
+          <span class="meta-venue" id="statusVenue"></span>
+        </div>
+      </div>
+      <div class="status-countdown-box">
+        <div class="countdown-label" id="countdownLabel">Starts in</div>
+        <div class="countdown-value" id="countdown"></div>
+        <div class="countdown-sub" id="countdownSub">until class</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="date" id="dateLabel"></div>
 <section class="classes" id="classes" aria-live="polite"></section>
 <div class="footer">
   Based on the 3rd Semester 2026–27 timetable
   <br> Built by Navaneeth S (CSE)
-  <!-- <a href="https://github.com/Navaneeth860/Timetable" target="_blank">
-    GitHub
-  </a> -->
 </div>
 </main>
 
@@ -53,75 +109,99 @@ let currentCluster = localStorage.getItem("timetable_cluster") || "B";
 let currentSection = localStorage.getItem("timetable_section") || "3B1 [3D]";
 let selectedDay;
 
+// Temporary staging values while the filter modal is open
+let tempBranch = currentBranch;
+let tempCluster = currentCluster;
+let tempSection = currentSection;
+
+// DOM references
 const branchEl = document.getElementById("branchSelect");
 const clusterEl = document.getElementById("clusterSelect");
 const sectionEl = document.getElementById("sectionSelect");
+const filterModal = document.getElementById("filterModal");
+const filtersBtn = document.getElementById("filtersBtn");
+const filterModalClose = document.getElementById("filterModalClose");
+const filterCancelBtn = document.getElementById("filterCancelBtn");
+const filterApplyBtn = document.getElementById("filterApplyBtn");
+
 const dayEl = document.getElementById("days");
 const classesEl = document.getElementById("classes");
 const titleEl = document.getElementById("title");
 const subtitleEl = document.getElementById("subtitle");
 const dateEl = document.getElementById("dateLabel");
-const badgeEl = document.getElementById("todayBadge");
-const statusEl = document.getElementById("status");
-const statusLabelEl = document.getElementById("statusLabel");
-const statusTitleEl = document.getElementById("statusTitle");
-const countdownEl = document.getElementById("countdown");
+const todayBadgeEl = document.getElementById("todayBadge");
 const todayJumpEl = document.getElementById("todayJump");
 
-function initSelectors() {
+const statusEl = document.getElementById("status");
+const statusBadgeEl = document.getElementById("statusBadge");
+const statusPillEl = document.getElementById("statusPill");
+const statusTitleEl = document.getElementById("statusTitle");
+const statusTimeEl = document.getElementById("statusTime");
+const statusVenueEl = document.getElementById("statusVenue");
+const countdownLabelEl = document.getElementById("countdownLabel");
+const countdownEl = document.getElementById("countdown");
+const countdownSubEl = document.getElementById("countdownSub");
+
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function populateBranchSelect() {
   branchEl.innerHTML = "";
   const branches = Object.keys(DATA);
   branches.forEach(b => {
     const opt = document.createElement("option");
     opt.value = b;
     opt.textContent = b;
-    if (b === currentBranch) opt.selected = true;
+    if (b === tempBranch) opt.selected = true;
     branchEl.appendChild(opt);
   });
-  if (!branches.includes(currentBranch) && branches.length > 0) {
-    currentBranch = branches[0];
-    localStorage.setItem("timetable_branch", currentBranch);
+  if (!branches.includes(tempBranch) && branches.length > 0) {
+    tempBranch = branches[0];
   }
-
-  updateClusterOptions();
 }
 
-function updateClusterOptions() {
+function populateClusterSelect() {
   clusterEl.innerHTML = "";
-  const branchData = DATA[currentBranch] || {};
-
-  if (currentBranch === "CSE" || currentBranch === "AIML") {
-    const clusters = currentBranch === "AIML" ? ["All", "A", "B"] : ["All", "A", "B", "C", "D", "E"];
+  if (tempBranch === "CSE" || tempBranch === "AIML") {
+    const clusters = tempBranch === "AIML" ? ["All", "A", "B"] : ["All", "A", "B", "C", "D", "E"];
     clusters.forEach(c => {
       const opt = document.createElement("option");
       opt.value = c;
       opt.textContent = c === "All" ? "All Clusters" : `Cluster ${c}`;
-      if (c === currentCluster) opt.selected = true;
+      if (c === tempCluster) opt.selected = true;
       clusterEl.appendChild(opt);
     });
+    if (!clusters.includes(tempCluster)) {
+      tempCluster = "All";
+    }
   } else {
     const opt = document.createElement("option");
     opt.value = "All";
     opt.textContent = "All Sections";
     opt.selected = true;
     clusterEl.appendChild(opt);
-    currentCluster = "All";
+    tempCluster = "All";
   }
-
-  updateSectionOptions();
 }
 
-function updateSectionOptions() {
+function populateSectionSelect() {
   sectionEl.innerHTML = "";
-  const branchData = DATA[currentBranch] || {};
+  const branchData = DATA[tempBranch] || {};
   let sections = Object.keys(branchData);
 
-  if ((currentBranch === "CSE" || currentBranch === "AIML") && currentCluster !== "All") {
-    sections = sections.filter(sec => sec.startsWith(`3${currentCluster}`));
+  if ((tempBranch === "CSE" || tempBranch === "AIML") && tempCluster !== "All") {
+    sections = sections.filter(sec => sec.startsWith(`3${tempCluster}`));
   }
 
-  if (sections.length === 0 && (currentBranch === "CSE" || currentBranch === "AIML") && currentCluster !== "All") {
-    sections = [`3${currentCluster}1`, `3${currentCluster}2`, `3${currentCluster}3`].map(s => `${s} (Coming Soon)`);
+  if (sections.length === 0 && (tempBranch === "CSE" || tempBranch === "AIML") && tempCluster !== "All") {
+    sections = [`3${tempCluster}1`, `3${tempCluster}2`, `3${tempCluster}3`].map(s => `${s} (Coming Soon)`);
   }
 
   sections.forEach(sec => {
@@ -129,41 +209,120 @@ function updateSectionOptions() {
     const val = sec.replace(" (Coming Soon)", "");
     opt.value = val;
     opt.textContent = sec;
-    if (val === currentSection) opt.selected = true;
+    if (val === tempSection) opt.selected = true;
     sectionEl.appendChild(opt);
   });
 
   const validValues = sections.map(s => s.replace(" (Coming Soon)", ""));
-  if (!validValues.includes(currentSection)) {
-    currentSection = validValues[0] || "";
-    localStorage.setItem("timetable_section", currentSection);
+  if (!validValues.includes(tempSection)) {
+    tempSection = validValues[0] || "";
   }
 }
 
+function syncModalSelectors() {
+  populateBranchSelect();
+  populateClusterSelect();
+  populateSectionSelect();
+}
+
 branchEl.onchange = (e) => {
-  currentBranch = e.target.value;
-  localStorage.setItem("timetable_branch", currentBranch);
-  updateClusterOptions();
-  render(selectedDay || todayName());
+  tempBranch = e.target.value;
+  tempCluster = "All";
+  populateClusterSelect();
+  populateSectionSelect();
 };
 
 clusterEl.onchange = (e) => {
-  currentCluster = e.target.value;
-  localStorage.setItem("timetable_cluster", currentCluster);
-  updateSectionOptions();
-  render(selectedDay || todayName());
+  tempCluster = e.target.value;
+  populateSectionSelect();
 };
 
 sectionEl.onchange = (e) => {
-  currentSection = e.target.value;
-  localStorage.setItem("timetable_section", currentSection);
-  render(selectedDay || todayName());
+  tempSection = e.target.value;
 };
 
-function todayName() { 
-    return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
+// Filter Modal Controls
+if (filtersBtn) {
+  filtersBtn.onclick = () => {
+    tempBranch = currentBranch;
+    tempCluster = currentCluster;
+    tempSection = currentSection;
+    syncModalSelectors();
+    if (filterModal.showModal) {
+      filterModal.showModal();
+    } else {
+      filterModal.setAttribute("open", "");
+    }
+  };
 }
-function formatDate() { return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" }).format(new Date()); }
+
+function closeFilterModal() {
+  if (filterModal.close) {
+    filterModal.close();
+  } else {
+    filterModal.removeAttribute("open");
+  }
+}
+
+if (filterModalClose) filterModalClose.onclick = closeFilterModal;
+if (filterCancelBtn) filterCancelBtn.onclick = closeFilterModal;
+
+if (filterApplyBtn) {
+  filterApplyBtn.onclick = () => {
+    currentBranch = tempBranch;
+    currentCluster = tempCluster;
+    currentSection = tempSection;
+    localStorage.setItem("timetable_branch", currentBranch);
+    localStorage.setItem("timetable_cluster", currentCluster);
+    localStorage.setItem("timetable_section", currentSection);
+    if (typeof gtag === "function") {
+      gtag("event", "select_timetable", {
+        branch: currentBranch,
+        cluster: currentCluster,
+        section: currentSection
+      });
+    }
+    closeFilterModal();
+    render(selectedDay || todayName());
+  };
+}
+
+// Close dialog when clicking on backdrop
+filterModal.addEventListener("click", (e) => {
+  const rect = filterModal.getBoundingClientRect();
+  const isInDialog = (
+    rect.top <= e.clientY &&
+    e.clientY <= rect.top + rect.height &&
+    rect.left <= e.clientX &&
+    e.clientX <= rect.left + rect.width
+  );
+  if (!isInDialog) {
+    closeFilterModal();
+  }
+});
+
+function todayName() { 
+  return new Intl.DateTimeFormat("en-IN", { weekday: "long" }).format(new Date()); 
+}
+
+function getWeekdayDate(dayName) {
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const targetIdx = days.indexOf(dayName);
+  const now = new Date();
+  const currentIdx = now.getDay();
+  const diff = targetIdx - currentIdx;
+  const d = new Date(now);
+  d.setDate(now.getDate() + diff);
+  return d;
+}
+
+function formatDayPillDate(dateObj) {
+  return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short" }).format(dateObj);
+}
+
+function formatFullDate(dateObj) {
+  return new Intl.DateTimeFormat("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(dateObj);
+}
 
 function toMinutes(v) {
   if (!v) return 0;
@@ -213,7 +372,9 @@ function nowMin() {
 }
 
 function getTimetable(d) {
-  return DATA[currentBranch]?.[currentSection]?.[d] || null;
+  const list = DATA[currentBranch]?.[currentSection]?.[d] || null;
+  if (!Array.isArray(list)) return list;
+  return [...list].sort((a, b) => parseRange(a.time)[0] - parseRange(b.time)[0]);
 }
 
 function liveIndex(list, d) {
@@ -235,42 +396,163 @@ function nextIndex(list, d) {
 }
 
 function status(list, d) {
-  if (!isToday(d) || !list || !list.length) return null;
+  const isCurrentDay = isToday(d);
+  if (!list || !list.length) {
+    if (!isCurrentDay) {
+      return {
+        kind: "preview",
+        badge: d.toUpperCase(),
+        pill: "SCHEDULE",
+        title: "No classes scheduled",
+        time: "Free day",
+        venue: "Campus",
+        target: null,
+        prefix: "",
+        sub: "Day off 🎉"
+      };
+    }
+    return {
+      kind: "done",
+      badge: "DAY COMPLETE",
+      pill: "ALL DONE",
+      title: "No classes scheduled today",
+      time: "See you tomorrow!",
+      venue: "Campus",
+      target: null,
+      prefix: "",
+      sub: "Enjoy your day! 🎉"
+    };
+  }
+
+  if (!isCurrentDay) {
+    const first = list[0];
+    return {
+      kind: "preview",
+      badge: d.toUpperCase(),
+      pill: "SCHEDULE",
+      title: first.subject || "Classes scheduled",
+      time: `${list.length} classes scheduled`,
+      venue: first.venue ? `Room ${first.venue}` : "Campus",
+      target: null,
+      prefix: "Classes",
+      sub: "total periods"
+    };
+  }
+
   const n = nowMin();
   const li = liveIndex(list, d);
   if (li >= 0) {
     const item = list[li];
-    return { kind: "live", label: "Live now", title: item.subject, target: parseRange(item.time)[1], prefix: "Ends in " };
+    return {
+      kind: "live",
+      badge: "LIVE NOW",
+      pill: "IN PROGRESS",
+      title: item.subject || "Class",
+      time: item.time || "",
+      venue: item.venue ? `Room ${item.venue}` : "Campus",
+      target: parseRange(item.time)[1],
+      prefix: "Ends in",
+      sub: "until class ends"
+    };
   }
+
   const br = breaks.find(([s, e]) => n >= toMinutes(s) && n < toMinutes(e));
-  if (br) return { kind: "break", label: br[2], title: "Enjoy your break", target: toMinutes(br[1]), prefix: "Ends in " };
+  if (br) {
+    return {
+      kind: "break",
+      badge: "BREAK TIME",
+      pill: "RELAX",
+      title: br[2],
+      time: `${br[0]}–${br[1]}`,
+      venue: "Cafeteria / Campus",
+      target: toMinutes(br[1]),
+      prefix: "Ends in",
+      sub: "until break ends"
+    };
+  }
+
   const ni = nextIndex(list, d);
   if (ni >= 0) {
     const item = list[ni];
-    return { kind: "next", label: "Next class", title: item.subject, target: parseRange(item.time)[0], prefix: "Starts in " };
+    return {
+      kind: "next",
+      badge: "NEXT CLASS",
+      pill: "UP NEXT",
+      title: item.subject || "Class",
+      time: item.time || "",
+      venue: item.venue ? `Room ${item.venue}` : "Campus",
+      target: parseRange(item.time)[0],
+      prefix: "Starts in",
+      sub: "until class"
+    };
   }
-  return { kind: "done", label: "Day complete", title: "No more classes today", target: null, prefix: "" };
+
+  return {
+    kind: "done",
+    badge: "DAY COMPLETE",
+    pill: "ALL DONE",
+    title: "No more classes today",
+    time: "See you tomorrow!",
+    venue: "Campus",
+    target: null,
+    prefix: "",
+    sub: "Have a great evening! 🎉"
+  };
 }
 
 function duration(sec) {
   sec = Math.max(0, Math.ceil(sec));
-  const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
-  return h ? `${h}h ${m}m` : m ? `${m}m ${s}s` : `${s}s`;
+  const h = Math.floor(sec / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  const s = sec % 60;
+  if (h > 0) return `${h}h ${m}m`;
+  if (m > 0) return `${m} min`;
+  return `${s}s`;
 }
 
 function updateStatus(list, d) {
   const x = status(list, d);
-  if (!x) { statusEl.className = "status"; return; }
+  if (!x) {
+    statusEl.classList.remove("visible");
+    return;
+  }
   statusEl.className = `status visible ${x.kind}`;
-  statusLabelEl.textContent = x.label;
+  statusBadgeEl.textContent = x.badge;
+  statusPillEl.textContent = x.pill;
   statusTitleEl.textContent = x.title;
-  countdownEl.textContent = x.target === null ? "✓" : x.prefix + duration((x.target - nowMin()) * 60);
+  
+  if (x.time) {
+    statusTimeEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${escapeHtml(x.time)}`;
+  } else {
+    statusTimeEl.innerHTML = "";
+  }
+  
+  if (x.venue) {
+    statusVenueEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ${escapeHtml(x.venue)}`;
+  } else {
+    statusVenueEl.innerHTML = "";
+  }
+  
+  countdownLabelEl.textContent = x.prefix;
+  if (x.target === null) {
+    countdownEl.textContent = x.kind === "preview" ? String(list ? list.length : 0) : "✓";
+  } else {
+    countdownEl.textContent = duration((x.target - nowMin()) * 60);
+  }
+  countdownSubEl.textContent = x.sub;
 }
 
 function addBreak(b) {
-  const [s, e, l] = b, i = document.createElement("div");
+  const [s, e, l] = b;
+  const i = document.createElement("div");
   i.className = "break-row";
-  i.innerHTML = `<div class="time">${s}–${e}</div><div class="break-card">☕ ${l}</div>`;
+  i.innerHTML = `
+    <div class="time">
+      <span>${escapeHtml(s)}</span>
+      <span>${escapeHtml(e)}</span>
+    </div>
+    <div class="break-card">☕ ${escapeHtml(l)} (${escapeHtml(s)}–${escapeHtml(e)})</div>
+  `;
   classesEl.appendChild(i);
 }
 
@@ -281,19 +563,21 @@ function render(d, scroll = false) {
   const list = getTimetable(d);
   
   subtitleEl.textContent = `${currentBranch} · ${currentSection}`;
-  titleEl.textContent = viewToday ? "Today's Timetable" : d + " Timetable";
+  titleEl.textContent = viewToday ? "Today's Timetable" : `${d}'s Timetable`;
 
   const li = liveIndex(list, d);
   const ni = nextIndex(list, d);
   const st = status(list, d);
 
-  badgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : viewToday ? "TODAY" : "VIEWING";
-  badgeEl.classList.toggle("live-badge", li >= 0);
-  badgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
+  todayBadgeEl.textContent = li >= 0 ? "● LIVE NOW" : st?.kind === "break" ? "☕ BREAK" : "Today";
+  todayBadgeEl.classList.toggle("live-badge", li >= 0);
+  todayBadgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
 
-  dateEl.textContent = viewToday ? formatDate() : "Tap a day above to switch";
+  const selectedDateObj = getWeekdayDate(d);
+  dateEl.textContent = formatFullDate(selectedDateObj);
   todayJumpEl.classList.toggle("visible", !viewToday);
   dayEl.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.day === d));
+  
   classesEl.innerHTML = "";
   updateStatus(list, d);
 
@@ -302,7 +586,7 @@ function render(d, scroll = false) {
       <div class="empty">
         <div style="font-size:36px;margin-bottom:8px">🚀</div>
         <strong style="font-size:16px;color:var(--text)">Coming Soon!!</strong><br>
-        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${currentBranch} - ${currentSection} will be updated shortly!</span>
+        <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${escapeHtml(currentBranch)} - ${escapeHtml(currentSection)} will be updated shortly!</span>
       </div>`;
     return;
   }
@@ -310,8 +594,8 @@ function render(d, scroll = false) {
   if (!list.length) {
     classesEl.innerHTML = `
       <div class="empty">
-        <strong>No classes scheduled</strong><br>
-        <span>Enjoy your day! 🎉</span>
+        <strong style="font-size:16px;color:var(--text)">No classes scheduled</strong><br>
+        <span style="font-size:12px;margin-top:6px;display:inline-block">Enjoy your day! 🎉</span>
       </div>`;
     return;
   }
@@ -338,19 +622,26 @@ function render(d, scroll = false) {
 
     el.className = `class${live ? " live" : ""}${done ? " done" : ""}`;
 
-    const codeHtml = c ? `<div class="code">📘 ${c}</div>` : "";
-    const roomHtml = r ? `<div class="code">📍 ${r}</div>` : "";
-    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${tr}</div>` : "";
-    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${grpStr}</div>` : "";
+    const parts = t.split("–");
+    const startStr = parts[0] ? parts[0].trim() : t;
+    const endStr = parts[1] ? parts[1].trim() : "";
+
+    const codeHtml = c ? `<div class="code">📘 ${escapeHtml(c)}</div>` : "";
+    const roomHtml = r ? `<div class="code">📍 ${escapeHtml(r)}</div>` : "";
+    const teacherHtml = tr ? `<div class="code">👨‍🏫 ${escapeHtml(tr)}</div>` : "";
+    const groupHtml = grpStr ? `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${escapeHtml(grpStr)}</div>` : "";
 
     el.innerHTML = `
-      <div class="time">${t}</div>
+      <div class="time">
+        <span>${escapeHtml(startStr)}</span>
+        <span>${escapeHtml(endStr)}</span>
+      </div>
       <div class="card${live ? " live" : ""}${next ? " next" : ""}">
         <div class="top-right-badges">
           ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
-          <span class="type">${typeStr}</span>
+          <span class="type">${escapeHtml(typeStr)}</span>
         </div>
-        <div class="subject">${s || "Class"}</div>
+        <div class="subject">${escapeHtml(s || "Class")}</div>
         ${codeHtml}
         ${roomHtml}
         ${teacherHtml}
@@ -373,37 +664,60 @@ function render(d, scroll = false) {
   }
 }
 
+let lastMinute = -1;
+
 fetch("./data.json")
   .then(res => res.json())
   .then(data => {
     DATA = data;
-    initSelectors();
 
     order.forEach(d => {
+      const dateObj = getWeekdayDate(d);
+      const pillDate = formatDayPillDate(dateObj);
       const b = document.createElement("button");
       b.type = "button";
       b.className = "day";
       b.dataset.day = d;
-      b.textContent = short[d];
+      b.innerHTML = `<span class="day-name">${short[d]}</span><span class="day-date">${pillDate}</span>`;
       if (d === todayName()) b.classList.add("today-day");
       b.onclick = () => render(d);
       dayEl.appendChild(b);
     });
 
+    if (todayBadgeEl) {
+      todayBadgeEl.onclick = () => render(todayName(), true);
+    }
     todayJumpEl.onclick = () => render(todayName(), true);
 
     const initial = order.includes(todayName()) ? todayName() : "Monday";
     render(initial, true);
 
     setInterval(() => {
-      if (selectedDay === todayName()) render(selectedDay);
+      const list = getTimetable(selectedDay);
+      if (selectedDay === todayName()) {
+        const currentMin = Math.floor(nowMin());
+        if (currentMin !== lastMinute) {
+          lastMinute = currentMin;
+          render(selectedDay);
+        } else {
+          updateStatus(list, selectedDay);
+        }
+      }
     }, 1000);
   })
   .catch(err => console.error("Failed to load timetable data:", err));
 </script>
 <script>
-if("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
-  navigator.serviceWorker.register("./sw.js").catch(() => {});
+if ("serviceWorker" in navigator) {
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+      for (let reg of registrations) {
+        reg.unregister();
+      }
+    });
+  } else if (location.protocol === "https:") {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  }
 }
 </script>
 </body>

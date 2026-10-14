@@ -1079,19 +1079,19 @@
       ],
       "Friday": [
         {
-          "time": "08:55–09:50",
-          "subject": "Digital Logic and Computer Organization",
-          "course_code": "26CS3PCDLC",
-          "venue": "206",
-          "faculty": "Prof. Vanishree",
-          "type": "theory"
-        },
-        {
           "time": "08:00–08:55",
           "subject": "Object Oriented Programming (FRI Slot 1)",
           "course_code": "26CS3PCOOP",
           "venue": "206",
           "faculty": "Prof. Mahalakshmi Manasa P",
+          "type": "theory"
+        },
+        {
+          "time": "08:55–09:50",
+          "subject": "Digital Logic and Computer Organization",
+          "course_code": "26CS3PCDLC",
+          "venue": "206",
+          "faculty": "Prof. Vanishree",
           "type": "theory"
         },
         {
@@ -5082,7 +5082,7 @@
     "ECE-S3-3A": {
       "Monday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-304",
@@ -5091,7 +5091,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-304",
@@ -5100,7 +5100,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-301",
@@ -5109,7 +5109,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (A1-KV, A2-SKU, A3-APP) / DSD Lab (A4-SB, A5-PMK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "A1-A3: First Floor PG Block EIE Dept; A4-A5: Lab-305 / A1-A3: Lab-306; A4-A5: First Floor PG Block EEE Dept",
@@ -5118,7 +5118,7 @@
           "groups": "A1-KV, A2-SKU, A3-APP (AEC) | A4-SB, A5-PMK (DSD)"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5129,7 +5129,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-303",
@@ -5138,7 +5138,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-303",
@@ -5147,7 +5147,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-306",
@@ -5156,7 +5156,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-306",
@@ -5165,7 +5165,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5176,7 +5176,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-304",
@@ -5185,7 +5185,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-304",
@@ -5194,7 +5194,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -5203,7 +5203,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-306",
@@ -5212,7 +5212,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-306",
@@ -5221,7 +5221,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5232,7 +5232,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -5241,7 +5241,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -5250,7 +5250,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-302",
@@ -5259,7 +5259,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (A4-KV, A5-ARK) / DSD Lab (A1-RJG, A2-JMS, A3-MPS)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "A4-A5: Lab-305 / A1-A3: Lab-306",
@@ -5268,7 +5268,7 @@
           "groups": "A4-KV, A5-ARK (AEC) | A1-RJG, A2-JMS, A3-MPS (DSD)"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "TCE Lab (A1-APP, A2-AK, A3-SKU, A4-ED, A5-LS)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -5279,7 +5279,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-306",
@@ -5288,7 +5288,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -5297,7 +5297,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-302",
@@ -5306,7 +5306,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Verilog Lab (A1-SK, A2-RCR, A3-KPK, A4-KB, A5-NSR)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -5317,7 +5317,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5326,7 +5326,7 @@
           "groups": "BU,ST,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5339,7 +5339,7 @@
     "ECE-S3-3B": {
       "Monday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-307",
@@ -5348,7 +5348,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-307",
@@ -5357,7 +5357,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-303",
@@ -5366,7 +5366,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Verilog Lab (B1-JP, B2-KPK, B3-PJ, B4-NSR, B5-KB)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -5375,7 +5375,7 @@
           "groups": "B1-JP, B2-KPK, B3-PJ, B4-NSR, B5-KB"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5386,7 +5386,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -5395,7 +5395,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-306",
@@ -5404,7 +5404,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-305",
@@ -5413,7 +5413,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-305",
@@ -5422,7 +5422,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5433,7 +5433,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -5442,7 +5442,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-306",
@@ -5451,7 +5451,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-303",
@@ -5460,7 +5460,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (B1-KV, B2-HRA, B3-JRK) / DSD Lab (B4-SB, B5-PMK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "B1-B3: First Floor PG Block EIE Dept; B4-B5: Lab-305 / B1-B3: First Floor PG Block EIE Dept; B4-B5: First Floor PG Block EEE Dept",
@@ -5469,7 +5469,7 @@
           "groups": "B1-KV, B2-HRA, B3-JRK (AEC) | B4-SB, B5-PMK (DSD)"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5480,7 +5480,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-304",
@@ -5489,7 +5489,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-304",
@@ -5498,7 +5498,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-303",
@@ -5507,7 +5507,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (B4-HRA, B5-JRK) / DSD Lab (B1-SB, B2-PMK, B3-DK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "B4-B5: Lab-305 / B1-B3: First Floor PG Block EIE Dept",
@@ -5518,7 +5518,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-302",
@@ -5527,7 +5527,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-302",
@@ -5536,7 +5536,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-307",
@@ -5545,7 +5545,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "TCE Lab (B1-AK, B2-ARS, B3-FM, B4-NKC, B5-APP)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -5556,7 +5556,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5565,7 +5565,7 @@
           "groups": "BU,ST,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5578,7 +5578,7 @@
     "ECE-S3-3C": {
       "Monday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-305",
@@ -5587,7 +5587,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-305",
@@ -5596,7 +5596,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-ISE-503",
@@ -5605,7 +5605,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-503",
@@ -5614,7 +5614,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5625,7 +5625,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "AEC Lab (C1-SKS, C2-APP, C3-MSD) / DSD Lab (C4-PMK, C5-MTN)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "C1-C3: First Floor PG Block EIE Dept; C4-C5: Lab-305 / C1-C3: Lab-306; C4-C5: First Floor PG Block EEE Dept",
@@ -5634,7 +5634,7 @@
           "groups": "C1-SKS, C2-APP, C3-MSD (AEC) | C4-PMK, C5-MTN (DSD)"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-304",
@@ -5643,7 +5643,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-304",
@@ -5652,7 +5652,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-304",
@@ -5661,7 +5661,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5672,7 +5672,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-302",
@@ -5681,7 +5681,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-302",
@@ -5690,7 +5690,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-302",
@@ -5699,7 +5699,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-302",
@@ -5708,7 +5708,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-302",
@@ -5717,7 +5717,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5728,7 +5728,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "TCE Lab (C1-FM, C2-NKC, C3-GSK, C4-ED, C5-APP)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -5737,7 +5737,7 @@
           "groups": "C1-FM, C2-NKC, C3-GSK, C4-ED, C5-APP"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-305",
@@ -5746,7 +5746,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-305",
@@ -5755,7 +5755,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-305",
@@ -5766,7 +5766,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-305",
@@ -5775,7 +5775,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-305",
@@ -5784,7 +5784,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "PG Block C-5010",
@@ -5793,7 +5793,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (C4-KV, C5-ARK) / DSD Lab (C1-MPS, C2-PMK, C3-MTN)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "C4-C5: Lab-305 / C1-C3: Lab-306",
@@ -5802,7 +5802,7 @@
           "groups": "C4-KV, C5-ARK (AEC) | C1-MPS, C2-PMK, C3-MTN (DSD)"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Verilog Lab (C1-GT, C2-KPK, C3-NSR, C4-KB, C5-SK)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -5813,7 +5813,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5822,7 +5822,7 @@
           "groups": "BU,ST,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5835,7 +5835,7 @@
     "ECE-S3-3D": {
       "Monday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-301",
@@ -5844,7 +5844,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-307",
@@ -5853,7 +5853,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-307",
@@ -5862,7 +5862,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-307",
@@ -5871,7 +5871,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5882,7 +5882,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-307",
@@ -5891,7 +5891,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-307",
@@ -5900,7 +5900,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-301",
@@ -5909,7 +5909,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (D4-MSD, D5-ARS) / DSD Lab (D1-JMS, D2-GSK, D3-KTK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "D1-D3: Lab-306; D4-D5: First Floor PG Block EEE Dept / D1-D3: First Floor PG Block EIE Dept; D4-D5: Lab-305",
@@ -5918,7 +5918,7 @@
           "groups": "D4-MSD, D5-ARS (AEC) | D1-JMS, D2-GSK, D3-KTK (DSD)"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5929,7 +5929,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-305",
@@ -5938,7 +5938,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-305",
@@ -5947,7 +5947,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-305",
@@ -5956,7 +5956,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "TCE Lab (D1-FM, D2-LS, D3-ED, D4-SMR, D5-ARK)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -5965,7 +5965,7 @@
           "groups": "D1-FM, D2-LS, D3-ED, D4-SMR, D5-ARK"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -5976,7 +5976,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "Verilog Lab (D1-GT, D2-SK, D3-PJ, D4-JP, D5-RCR)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -5985,7 +5985,7 @@
           "groups": "D1-GT, D2-SK, D3-PJ, D4-JP, D5-RCR"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-ISE-503",
@@ -5994,7 +5994,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-ISE-503",
@@ -6003,7 +6003,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-ISE-503",
@@ -6012,7 +6012,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "AEC Lab (D1-ST, D2-ARS, D3-SHH) / DSD Lab (D4-JMS, D5-KTK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "D1-D3: Lab-306; D4-D5: Lab-305",
@@ -6023,7 +6023,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-304",
@@ -6032,7 +6032,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-304",
@@ -6041,7 +6041,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-303",
@@ -6052,7 +6052,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6061,7 +6061,7 @@
           "groups": "BU,DS,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6074,7 +6074,7 @@
     "ECE-S3-3E": {
       "Monday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-306",
@@ -6083,7 +6083,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-306",
@@ -6092,7 +6092,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-305",
@@ -6101,7 +6101,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-305",
@@ -6110,7 +6110,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-305",
@@ -6119,7 +6119,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6130,7 +6130,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "TCE Lab (E1-AK, E2-FM, E3-NKC, E4-ED, E5-ARK)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -6139,7 +6139,7 @@
           "groups": "E1-AK, E2-FM, E3-NKC, E4-ED, E5-ARK"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-303",
@@ -6148,7 +6148,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-303",
@@ -6157,7 +6157,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6168,7 +6168,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-307",
@@ -6177,7 +6177,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-307",
@@ -6186,7 +6186,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-307",
@@ -6195,7 +6195,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (E1-SHH, E2-SKS, E3-ST) / DSD Lab (E4-JMS, E5-MPS)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "E1-E3: Lab-306; E4-E5: Lab-305",
@@ -6204,7 +6204,7 @@
           "groups": "E1-SHH, E2-SKS, E3-ST (AEC) | E4-JMS, E5-MPS (DSD)"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6215,7 +6215,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "TBD",
           "course_code": "",
           "venue": "C-305",
@@ -6224,7 +6224,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-305",
@@ -6233,7 +6233,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Verilog Lab (E1-SK, E2-RCR, E3-KPK, E4-PJ, E5-JP)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -6242,7 +6242,7 @@
           "groups": "E1-SK, E2-RCR, E3-KPK, E4-PJ, E5-JP"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "AEC Lab (E4-KV, E5-JRK) / DSD Lab (E1-VANI, E2-GSK, E3-MPS)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "E4-E5: First Floor PG Block EEE Dept / E1-E3: First Floor PG Block EIE Dept",
@@ -6253,7 +6253,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-303",
@@ -6262,7 +6262,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-303",
@@ -6271,7 +6271,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-301",
@@ -6280,7 +6280,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-301",
@@ -6289,7 +6289,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-301",
@@ -6300,7 +6300,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6309,7 +6309,7 @@
           "groups": "BU,ST,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6322,7 +6322,7 @@
     "ECE-S3-3F": {
       "Monday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "TCE Lab (F1-AK, F2-GSK, F3-FM, F4-PMK, F5-SKU)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -6331,7 +6331,7 @@
           "groups": "F1-AK, F2-GSK, F3-FM, F4-PMK, F5-SKU"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-304",
@@ -6340,7 +6340,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-304",
@@ -6349,7 +6349,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6360,7 +6360,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-302",
@@ -6369,7 +6369,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-302",
@@ -6378,7 +6378,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "PG Block C-5010",
@@ -6387,7 +6387,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "PG Block C-5010",
@@ -6396,7 +6396,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "PG Block C-5010",
@@ -6405,7 +6405,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6416,7 +6416,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-301",
@@ -6425,7 +6425,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-301",
@@ -6434,7 +6434,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-301",
@@ -6443,7 +6443,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-301",
@@ -6452,7 +6452,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-301",
@@ -6461,7 +6461,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6472,7 +6472,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "AEC Lab (F1-ARK, F2-MSD, F3-AK) / DSD Lab (F4-KPK, F5-MTN)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "F1-F3: First Floor PG Block EEE Dept; F4-F5: First Floor PG Block EEE Dept",
@@ -6481,7 +6481,7 @@
           "groups": "F1-ARK, F2-MSD, F3-AK (AEC) | F4-KPK, F5-MTN (DSD)"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-301",
@@ -6490,7 +6490,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-301",
@@ -6499,7 +6499,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-301",
@@ -6508,7 +6508,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Verilog Lab (F1-GT, F2-KPK, F3-PJ, F4-NSR, F5-JP)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -6519,7 +6519,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "AEC Lab (F4-ARK, F5-SHH) / DSD Lab (F1-SB, F2-MTN, F3-PMK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "F4-F5: First Floor PG Block EEE Dept / F1-F3: First Floor PG Block EIE Dept",
@@ -6528,7 +6528,7 @@
           "groups": "F4-ARK, F5-SHH (AEC) | F1-SB, F2-MTN, F3-PMK (DSD)"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-304",
@@ -6537,7 +6537,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-304",
@@ -6546,7 +6546,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-304",
@@ -6557,7 +6557,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6566,7 +6566,7 @@
           "groups": "BU,ST,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6579,7 +6579,7 @@
     "ECE-S3-3G": {
       "Monday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-303",
@@ -6588,7 +6588,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-303",
@@ -6597,7 +6597,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-302",
@@ -6606,7 +6606,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "TCE Lab (G1-AK, G2-ED, G3-LS, G4-ARK, G5-MTN)",
           "course_code": "26EC3AETCE",
           "venue": "Lab2, Second Floor, PG Block",
@@ -6615,7 +6615,7 @@
           "groups": "G1-AK, G2-ED, G3-LS, G4-ARK, G5-MTN"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6626,7 +6626,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:00–9:50 AM",
+          "time": "08:00–09:50",
           "subject": "AEC Lab (G1-HRA, G2-JRK, G3-ST) / DSD Lab (G4-KTK, G5-JMS)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "G1-G3: Lab-306; G4-G5: First Floor PG Block EEE Dept",
@@ -6635,7 +6635,7 @@
           "groups": "G1-HRA, G2-JRK, G3-ST (AEC) | G4-KTK, G5-JMS (DSD)"
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-302",
@@ -6644,7 +6644,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Verilog Lab (G1-NSR, G2-GT, G3-RCR, G4-KPK, G5-PJ)",
           "course_code": "26EC3PLHDL",
           "venue": "Lab1, Second Floor, PG Block",
@@ -6653,7 +6653,7 @@
           "groups": "G1-NSR, G2-GT, G3-RCR, G4-KPK, G5-PJ"
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6664,7 +6664,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-303",
@@ -6673,7 +6673,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-303",
@@ -6682,7 +6682,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-304",
@@ -6691,7 +6691,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-303",
@@ -6700,7 +6700,7 @@
           "groups": ""
         },
         {
-          "time": "12:10–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-303",
@@ -6709,7 +6709,7 @@
           "groups": ""
         },
         {
-          "time": "2:00–4:45 PM",
+          "time": "02:00–04:45",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6720,7 +6720,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-302",
@@ -6729,7 +6729,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital System Design",
           "course_code": "26EC3IPDSD",
           "venue": "C-302",
@@ -6738,7 +6738,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Analog Electronic Circuits",
           "course_code": "26EC3IPAEC",
           "venue": "C-306",
@@ -6747,7 +6747,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics Tutorial",
           "course_code": "26EC3ASMAT",
           "venue": "C-306",
@@ -6758,7 +6758,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Control Engineering",
           "course_code": "26EC3PCCEN",
           "venue": "C-301",
@@ -6767,7 +6767,7 @@
           "groups": ""
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Network Analysis",
           "course_code": "26EC3PCNAL",
           "venue": "C-301",
@@ -6776,7 +6776,7 @@
           "groups": ""
         },
         {
-          "time": "10:20–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Program Specific Mathematics",
           "course_code": "26EC3ASMAT",
           "venue": "C-305",
@@ -6785,7 +6785,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "AEC Lab (G4-HRA, G5-MSD) / DSD Lab (G1-KTK, G2-SB, G3-GSK)",
           "course_code": "26EC3IPAEC / 26EC3IPDSD",
           "venue": "G4-G5: First Floor PG Block EEE Dept / G1-G3: Lab-305",
@@ -6796,7 +6796,7 @@
       ],
       "Saturday": [
         {
-          "time": "8:00–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6805,7 +6805,7 @@
           "groups": "BU,ST,SBB,MAS,NKC – L&T"
         },
         {
-          "time": "8:55–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Skill Lab",
           "course_code": "26EC3SDSL1",
           "venue": "Lab1 & Lab2, Second Floor, PG Block",
@@ -6820,7 +6820,7 @@
     "CSE-IoT": {
       "Monday": [
         {
-          "time": "8:55 AM–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Data Structures and Applications",
           "course_code": "26DI3PCDSA",
           "venue": "603",
@@ -6829,7 +6829,7 @@
           "groups": ""
         },
         {
-          "time": "10:20 AM–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Digital Logic and Computer Design",
           "course_code": "26DIPCDLC",
           "venue": "603",
@@ -6838,7 +6838,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–12:10 PM",
+          "time": "11:15–12:10",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "603",
@@ -6847,7 +6847,7 @@
           "groups": ""
         },
         {
-          "time": "12:10 PM–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Data Base Management System",
           "course_code": "26DC3IPDBM",
           "venue": "603",
@@ -6856,7 +6856,7 @@
           "groups": ""
         },
         {
-          "time": "2:00 PM–3:50 PM",
+          "time": "02:00–03:50",
           "subject": "Full Stack Web Development Lab",
           "course_code": "26IC3AEFWD",
           "venue": "",
@@ -6888,7 +6888,7 @@
       ],
       "Tuesday": [
         {
-          "time": "8:55 AM–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Data Base Management System",
           "course_code": "26DC3IPDBM",
           "venue": "603",
@@ -6897,7 +6897,7 @@
           "groups": ""
         },
         {
-          "time": "10:20 AM–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Embedded Technologies for IoT",
           "course_code": "26IC3IPETI",
           "venue": "603",
@@ -6906,7 +6906,7 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
+          "time": "11:15–01:05",
           "subject": "Mathematics - Tutorial",
           "course_code": "",
           "venue": "603",
@@ -6917,7 +6917,7 @@
       ],
       "Wednesday": [
         {
-          "time": "8:00 AM–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Digital Logic and Computer Design",
           "course_code": "26DIPCDLC",
           "venue": "603",
@@ -6926,7 +6926,7 @@
           "groups": ""
         },
         {
-          "time": "8:55 AM–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Embedded Technologies for IoT",
           "course_code": "26IC3IPETI",
           "venue": "603A",
@@ -6935,7 +6935,7 @@
           "groups": ""
         },
         {
-          "time": "10:20 AM–12:10 PM",
+          "time": "10:20–12:10",
           "subject": "Data Base Management System Lab",
           "course_code": "26DC3IPDBM",
           "venue": "",
@@ -6965,7 +6965,7 @@
           ]
         },
         {
-          "time": "12:10 PM–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Mathematics Lab",
           "course_code": "",
           "venue": "",
@@ -6976,7 +6976,7 @@
       ],
       "Thursday": [
         {
-          "time": "8:00 AM–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Embedded Technologies for IoT",
           "course_code": "26IC3IPETI",
           "venue": "603",
@@ -6985,7 +6985,7 @@
           "groups": ""
         },
         {
-          "time": "8:55 AM–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Digital Logic and Computer Design",
           "course_code": "26DIPCDLC",
           "venue": "603",
@@ -6994,7 +6994,7 @@
           "groups": ""
         },
         {
-          "time": "10:20 AM–11:15 AM",
+          "time": "10:20–11:15",
           "subject": "Data Structures and Applications Lab",
           "course_code": "26DI3PCDSA",
           "venue": "",
@@ -7003,8 +7003,8 @@
           "groups": ""
         },
         {
-          "time": "11:15 AM–1:05 PM",
-          "subject": "Embedded Technologies for IoT Lab",
+          "time": "11:15–01:05",
+          "subject": "Embedded Technologies for IoT Lab / Data Structures and Applications Lab",
           "course_code": "26IC3IPETI",
           "venue": "",
           "faculty": "",
@@ -7021,17 +7021,7 @@
             {
               "group": "B3",
               "faculty": "PN"
-            }
-          ]
-        },
-        {
-          "time": "11:15 AM–1:05 PM",
-          "subject": "Data Structures and Applications Lab",
-          "course_code": "26DI3PCDSA",
-          "venue": "",
-          "faculty": "",
-          "type": "lab",
-          "groups": [
+            },
             {
               "group": "B4",
               "faculty": "PGB"
@@ -7047,7 +7037,7 @@
           ]
         },
         {
-          "time": "2:00 PM–3:50 PM",
+          "time": "02:00–03:50",
           "subject": "Competitive Coding Lab",
           "course_code": "",
           "venue": "",
@@ -7079,7 +7069,7 @@
       ],
       "Friday": [
         {
-          "time": "8:00 AM–8:55 AM",
+          "time": "08:00–08:55",
           "subject": "Data Base Management System",
           "course_code": "26DC3IPDBM",
           "venue": "603A",
@@ -7088,7 +7078,7 @@
           "groups": ""
         },
         {
-          "time": "8:55 AM–9:50 AM",
+          "time": "08:55–09:50",
           "subject": "Discrete Mathematics and Statistics",
           "course_code": "26MA3BSDMS",
           "venue": "603A",
@@ -7097,8 +7087,8 @@
           "groups": ""
         },
         {
-          "time": "10:20 AM–12:10 PM",
-          "subject": "Data Structures and Applications Lab",
+          "time": "10:20–12:10",
+          "subject": "Data Structures and Applications Lab / Embedded Technologies for IoT Lab",
           "course_code": "26DI3PCDSA",
           "venue": "",
           "faculty": "",
@@ -7115,17 +7105,7 @@
             {
               "group": "B3",
               "faculty": "PN"
-            }
-          ]
-        },
-        {
-          "time": "10:20 AM–12:10 PM",
-          "subject": "Embedded Technologies for IoT Lab",
-          "course_code": "26IC3IPETI",
-          "venue": "",
-          "faculty": "",
-          "type": "lab",
-          "groups": [
+            },
             {
               "group": "B4",
               "faculty": "AGT"
@@ -7141,7 +7121,7 @@
           ]
         },
         {
-          "time": "12:10 PM–1:05 PM",
+          "time": "12:10–01:05",
           "subject": "Data Structures and Applications Lab",
           "course_code": "26DI3PCDSA",
           "venue": "",
