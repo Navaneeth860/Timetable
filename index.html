@@ -7,15 +7,6 @@
 <meta name="description" content="B.Tech Daily Timetable with Branch, Cluster & Section Selection">
 <link rel="manifest" href="manifest.json">
 <title>College Timetable</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4PXCH9ZS8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y4PXCH9ZS8');
-</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -275,13 +266,6 @@ if (filterApplyBtn) {
     localStorage.setItem("timetable_branch", currentBranch);
     localStorage.setItem("timetable_cluster", currentCluster);
     localStorage.setItem("timetable_section", currentSection);
-    if (typeof gtag === "function") {
-      gtag("event", "select_timetable", {
-        branch: currentBranch,
-        cluster: currentCluster,
-        section: currentSection
-      });
-    }
     closeFilterModal();
     render(selectedDay || todayName());
   };
