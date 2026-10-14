@@ -302,16 +302,21 @@ select:focus {
 }
 
 .day .day-name {
+  display: block;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
+  color: inherit;
 }
 
 .day .day-date {
+  display: block;
   font-size: 10px;
-  font-weight: 500;
-  margin-top: 3px;
-  opacity: 0.8;
+  font-weight: 600;
+  margin-top: 4px;
+  opacity: 0.85;
+  color: inherit;
+  white-space: nowrap;
 }
 
 .day.active {
@@ -420,13 +425,29 @@ select:focus {
 }
 
 .status.done .status-badge {
-  color: var(--text-muted);
+  color: #94a3b8;
+}
+
+.status.done .status-pill {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.status.preview .status-badge {
+  color: #60a5fa;
+}
+
+.status.preview .status-pill {
+  background: var(--accent-soft);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.25);
 }
 
 .status-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   gap: 16px;
 }
 
@@ -465,11 +486,12 @@ select:focus {
 }
 
 .status-countdown-box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  text-align: right !important;
   flex-shrink: 0;
+  padding-left: 10px;
 }
 
 .countdown-label {

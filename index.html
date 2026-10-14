@@ -7,7 +7,16 @@
 <meta name="description" content="B.Tech Daily Timetable with Branch, Cluster & Section Selection">
 <link rel="manifest" href="manifest.json">
 <title>College Timetable</title>
-<link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4PXCH9ZS8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y4PXCH9ZS8');
+</script>
+<link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
 <main>
@@ -67,8 +76,8 @@
       <div class="status-info">
         <div class="status-title" id="statusTitle"></div>
         <div class="status-meta" id="statusMeta">
-          <span class="meta-time" id="statusTime"></span>
           <span class="meta-venue" id="statusVenue"></span>
+          <span class="meta-time" id="statusTime"></span>
         </div>
       </div>
       <div class="status-countdown-box">
@@ -142,6 +151,29 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+function cleanHeroSubject(subject) {
+  if (!subject) return "Class";
+  let s = String(subject);
+  s = s.replace(/\s*\([A-Za-z0-9\s,\-/&|]+\)/g, (match) => {
+    if (/\b[A-E]\d|\b\w{2,4}-\w{2,4}\b/i.test(match)) return "";
+    return match;
+  });
+  s = s.replace(/\s*\[LAB-[^\]]+\]/gi, "");
+  return s.trim() || subject;
+}
+
+function cleanHeroVenue(item) {
+  let v = (item.venue || "").trim();
+  if (!v && item.subject) {
+    const match = item.subject.match(/\[([^\]]+)\]/);
+    if (match) v = match[1];
+  }
+  if (!v) return "Campus";
+  if (/^\d+[A-Za-z]?$/.test(v)) return "Room " + v;
+  return v;
+}
+
 
 function populateBranchSelect() {
   branchEl.innerHTML = "";
@@ -266,6 +298,13 @@ if (filterApplyBtn) {
     localStorage.setItem("timetable_branch", currentBranch);
     localStorage.setItem("timetable_cluster", currentCluster);
     localStorage.setItem("timetable_section", currentSection);
+    if (typeof gtag === "function") {
+      gtag("event", "select_timetable", {
+        branch: currentBranch,
+        cluster: currentCluster,
+        section: currentSection
+      });
+    }
     closeFilterModal();
     render(selectedDay || todayName());
   };
@@ -414,9 +453,9 @@ function status(list, d) {
       kind: "preview",
       badge: d.toUpperCase(),
       pill: "SCHEDULE",
-      title: first.subject || "Classes scheduled",
+      title: cleanHeroSubject(first.subject),
       time: `${list.length} classes scheduled`,
-      venue: first.venue ? `Room ${first.venue}` : "Campus",
+      venue: cleanHeroVenue(first),
       target: null,
       prefix: "Classes",
       sub: "total periods"
@@ -431,9 +470,9 @@ function status(list, d) {
       kind: "live",
       badge: "LIVE NOW",
       pill: "IN PROGRESS",
-      title: item.subject || "Class",
+      title: cleanHeroSubject(item.subject),
       time: item.time || "",
-      venue: item.venue ? `Room ${item.venue}` : "Campus",
+      venue: cleanHeroVenue(item),
       target: parseRange(item.time)[1],
       prefix: "Ends in",
       sub: "until class ends"
@@ -462,9 +501,9 @@ function status(list, d) {
       kind: "next",
       badge: "NEXT CLASS",
       pill: "UP NEXT",
-      title: item.subject || "Class",
+      title: cleanHeroSubject(item.subject),
       time: item.time || "",
-      venue: item.venue ? `Room ${item.venue}` : "Campus",
+      venue: cleanHeroVenue(item),
       target: parseRange(item.time)[0],
       prefix: "Starts in",
       sub: "until class"
@@ -505,16 +544,16 @@ function updateStatus(list, d) {
   statusPillEl.textContent = x.pill;
   statusTitleEl.textContent = x.title;
   
-  if (x.time) {
-    statusTimeEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${escapeHtml(x.time)}`;
-  } else {
-    statusTimeEl.innerHTML = "";
-  }
-  
   if (x.venue) {
     statusVenueEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ${escapeHtml(x.venue)}`;
   } else {
     statusVenueEl.innerHTML = "";
+  }
+
+  if (x.time) {
+    statusTimeEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${escapeHtml(x.time)}`;
+  } else {
+    statusTimeEl.innerHTML = "";
   }
   
   countdownLabelEl.textContent = x.prefix;
@@ -650,10 +689,18 @@ function render(d, scroll = false) {
 
 let lastMinute = -1;
 
-fetch("./data.json")
+fetch("./data.json?v=2.0", { cache: "no-cache" })
   .then(res => res.json())
   .then(data => {
     DATA = data;
+
+    if (!DATA[currentBranch]) {
+      currentBranch = Object.keys(DATA)[0] || "CSE";
+    }
+    if (!DATA[currentBranch][currentSection]) {
+      const available = Object.keys(DATA[currentBranch]);
+      if (available.length > 0) currentSection = available[0];
+    }
 
     order.forEach(d => {
       const dateObj = getWeekdayDate(d);
@@ -695,12 +742,29 @@ fetch("./data.json")
 if ("serviceWorker" in navigator) {
   if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     navigator.serviceWorker.getRegistrations().then(registrations => {
-      for (let reg of registrations) {
-        reg.unregister();
+      for (let reg of registrations) reg.unregister();
+    });
+    if ("caches" in window) {
+      caches.keys().then(keys => {
+        for (let k of keys) caches.delete(k);
+      });
+    }
+  } else if (location.protocol === "https:") {
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (!refreshing) {
+        refreshing = true;
+        window.location.reload();
       }
     });
-  } else if (location.protocol === "https:") {
-    navigator.serviceWorker.register("./sw.js").catch(() => {});
+    navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" })
+      .then(reg => {
+        reg.update();
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") reg.update();
+        });
+      })
+      .catch(() => {});
   }
 }
 </script>
