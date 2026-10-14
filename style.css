@@ -535,8 +535,8 @@ select:focus {
 
 .class {
   display: grid;
-  grid-template-columns: 82px 1fr;
-  gap: 14px;
+  grid-template-columns: 50px 1fr;
+  gap: 12px;
   align-items: stretch;
   position: relative;
 }
@@ -544,13 +544,14 @@ select:focus {
 .time {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 14px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 6px 0;
   color: var(--text-muted);
   font-size: 11px;
   font-weight: 700;
   text-align: right;
-  line-height: 1.4;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -560,7 +561,17 @@ select:focus {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 14px 16px;
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: border-color 0.2s, background 0.2s;
+}
+
+.class.double .card {
+  min-height: 180px;
+  justify-content: flex-start;
+  padding: 16px 18px;
 }
 
 .card:hover {
@@ -666,15 +677,23 @@ select:focus {
 
 .break-row {
   display: grid;
-  grid-template-columns: 82px 1fr;
-  gap: 14px;
+  grid-template-columns: 50px 1fr;
+  gap: 12px;
   align-items: center;
   margin: 4px 0;
 }
 
 .break-row .time {
-  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 4px 0;
   color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: right;
+  line-height: 1.2;
 }
 
 .break-card {
@@ -723,8 +742,8 @@ select:focus {
     font-size: 9px;
   }
   .class, .break-row {
-    grid-template-columns: 70px 1fr;
-    gap: 10px;
+    grid-template-columns: 46px 1fr;
+    gap: 8px;
   }
   .time {
     font-size: 10px;

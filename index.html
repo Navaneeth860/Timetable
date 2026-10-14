@@ -174,6 +174,15 @@ function cleanHeroVenue(item) {
   return v;
 }
 
+function formatHeroTitle(item) {
+  if (!item) return "Class";
+  const code = (item.course_code || "").trim();
+  if (code && code.length >= 3) {
+    return code.slice(-3).toUpperCase();
+  }
+  return cleanHeroSubject(item.subject);
+}
+
 
 function populateBranchSelect() {
   branchEl.innerHTML = "";
@@ -394,10 +403,44 @@ function nowMin() {
   return n.getHours() * 60 + n.getMinutes() + n.getSeconds() / 60; 
 }
 
+function consolidateTimetable(rawList) {
+  if (!Array.isArray(rawList)) return rawList;
+  const list = [...rawList].sort((a, b) => parseRange(a.time)[0] - parseRange(b.time)[0]);
+  const result = [];
+  
+  for (let i = 0; i < list.length; i++) {
+    const cur = { ...list[i] };
+    const [curStart, curEnd] = parseRange(cur.time);
+
+    if (i < list.length - 1) {
+      const next = list[i + 1];
+      const [nextStart, nextEnd] = parseRange(next.time);
+
+      const isSameSubjectOrCode = (
+        (cur.course_code && next.course_code && cur.course_code === next.course_code) ||
+        (cur.subject && next.subject && cur.subject === next.subject)
+      );
+
+      // Continuous if current ends exactly when next starts
+      if (isSameSubjectOrCode && curEnd === nextStart) {
+        const startStr = cur.time.split("–")[0].trim();
+        const endStr = next.time.split("–")[1].trim();
+        cur.time = `${startStr}–${endStr}`;
+        cur.isDouble = true;
+        if (!cur.faculty && next.faculty) cur.faculty = next.faculty;
+        if (!cur.venue && next.venue) cur.venue = next.venue;
+        i++; // skip merged period
+      }
+    }
+    result.push(cur);
+  }
+  return result;
+}
+
 function getTimetable(d) {
   const list = DATA[currentBranch]?.[currentSection]?.[d] || null;
   if (!Array.isArray(list)) return list;
-  return [...list].sort((a, b) => parseRange(a.time)[0] - parseRange(b.time)[0]);
+  return consolidateTimetable(list);
 }
 
 function liveIndex(list, d) {
@@ -453,7 +496,7 @@ function status(list, d) {
       kind: "preview",
       badge: d.toUpperCase(),
       pill: "SCHEDULE",
-      title: cleanHeroSubject(first.subject),
+      title: formatHeroTitle(first),
       time: `${list.length} classes scheduled`,
       venue: cleanHeroVenue(first),
       target: null,
@@ -470,7 +513,7 @@ function status(list, d) {
       kind: "live",
       badge: "LIVE NOW",
       pill: "IN PROGRESS",
-      title: cleanHeroSubject(item.subject),
+      title: formatHeroTitle(item),
       time: item.time || "",
       venue: cleanHeroVenue(item),
       target: parseRange(item.time)[1],
@@ -501,7 +544,7 @@ function status(list, d) {
       kind: "next",
       badge: "NEXT CLASS",
       pill: "UP NEXT",
-      title: cleanHeroSubject(item.subject),
+      title: formatHeroTitle(item),
       time: item.time || "",
       venue: cleanHeroVenue(item),
       target: parseRange(item.time)[0],
@@ -643,7 +686,7 @@ function render(d, scroll = false) {
     const [startMin, endMin] = parseRange(t);
     const done = viewToday && !live && endMin > 0 && endMin <= nowMin();
 
-    el.className = `class${live ? " live" : ""}${done ? " done" : ""}`;
+    el.className = `class${item.isDouble ? " double" : ""}${live ? " live" : ""}${done ? " done" : ""}`;
 
     const parts = t.split("–");
     const startStr = parts[0] ? parts[0].trim() : t;
@@ -661,7 +704,6 @@ function render(d, scroll = false) {
       </div>
       <div class="card${live ? " live" : ""}${next ? " next" : ""}">
         <div class="top-right-badges">
-          ${live ? '<span class="live-pill"><span class="live-dot"></span>LIVE NOW</span>' : next ? '<span class="next-pill">NEXT</span>' : ""}
           <span class="type">${escapeHtml(typeStr)}</span>
         </div>
         <div class="subject">${escapeHtml(s || "Class")}</div>
