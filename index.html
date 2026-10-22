@@ -416,13 +416,14 @@ function consolidateTimetable(rawList) {
       const next = list[i + 1];
       const [nextStart, nextEnd] = parseRange(next.time);
 
-      const isSameSubjectOrCode = (
-        (cur.course_code && next.course_code && cur.course_code === next.course_code) ||
-        (cur.subject && next.subject && cur.subject === next.subject)
+      const isSameSubjectAndCodeAndType = (
+        (cur.course_code && next.course_code && cur.course_code === next.course_code) &&
+        (cur.subject && next.subject && cur.subject === next.subject) &&
+        (cur.type && next.type && cur.type === next.type)
       );
 
       // Continuous if current ends exactly when next starts
-      if (isSameSubjectOrCode && curEnd === nextStart) {
+      if (isSameSubjectAndCodeAndType && curEnd === nextStart) {
         const startStr = cur.time.split("–")[0].trim();
         const endStr = next.time.split("–")[1].trim();
         cur.time = `${startStr}–${endStr}`;
