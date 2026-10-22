@@ -5019,10 +5019,10 @@
         },
         {
           "time": "10:20–11:15",
-          "subject": "Object Oriented Programming",
-          "course_code": "26CS3PCOOP",
+          "subject": "Data Structures",
+          "course_code": "26CS3IPDST",
           "venue": "406",
-          "faculty": "Dr. Bhavani K",
+          "faculty": "Prof. Nagesh N M",
           "type": "theory"
         },
         {
@@ -5053,11 +5053,12 @@
       "Saturday": [
         {
           "time": "10:20–11:15",
-          "subject": "Data Structures",
-          "course_code": "26CS3IPDST",
+          "subject": "Object Oriented Programming",
+          "course_code": "26CS3PCOOP",
           "venue": "406",
-          "faculty": "Prof. Nagesh N M",
+          "faculty": "Dr. Bhavani K",
           "type": "theory"
+          
         },
         {
           "time": "11:15–12:10",
