@@ -1,8 +1,9 @@
-const CACHE = "timetable-app-v15";
+const CACHE = "timetable-app-v17";
 const ASSETS = [
   "./",
   "./index.html",
-  "./style.css?v=2.0",
+  "./style.css?v=2.2",
+  "./script.js?v=2.2",
   "./data.json",
   "./manifest.json",
   "./icon-192.png",
@@ -43,6 +44,8 @@ self.addEventListener("fetch", event => {
 
   if (
     url.includes("data.json") ||
+    url.includes("script.js") ||
+    url.includes("style.css") ||
     event.request.destination === "style" ||
     event.request.destination === "script" ||
     url.includes("manifest.json")
