@@ -110,7 +110,7 @@
               id="filterModalClose"
               aria-label="Close filters"
             >
-              ✕
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
           <div class="selectors">
@@ -158,7 +158,7 @@
               id="bunkModalClose"
               aria-label="Close bunk dialog"
             >
-              ✕
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
 
@@ -174,14 +174,12 @@
               <span id="bunkMetaTime">08:30–09:20</span>
               <span class="bunk-meta-dot">•</span>
               <span id="bunkMetaDate">Monday, 03 Nov</span>
-              <span class="bunk-meta-dot">•</span>
-              <span id="bunkMetaVenue">Room 304</span>
             </div>
           </div>
 
           <!-- Bunk Nature Selection -->
           <div class="bunk-form-group">
-            <label class="bunk-label">Bunk Type</label>
+            <label class="bunk-label">Bunk Category</label>
             <div class="bunk-type-options">
               <label class="bunk-type-option" id="typeIntentionalLabel">
                 <input
@@ -192,9 +190,9 @@
                   checked
                 />
                 <div class="bunk-type-card intentional">
-                  <div class="bunk-type-title">🎯 Intentional</div>
+                  <div class="bunk-type-title">Personal</div>
                   <div class="bunk-type-desc">
-                    Personal chill, self-study, planned skip
+                    Casual skip, self-study, planned leave
                   </div>
                 </div>
               </label>
@@ -206,9 +204,9 @@
                   id="typeUnintentional"
                 />
                 <div class="bunk-type-card unintentional">
-                  <div class="bunk-type-title">📋 Unintentional</div>
+                  <div class="bunk-type-title">Official Duty / Medical</div>
                   <div class="bunk-type-desc">
-                    Event certificate, medical emergency
+                    Event duty, college activity, medical emergency
                   </div>
                 </div>
               </label>
@@ -279,7 +277,7 @@
               id="allBunksModalClose"
               aria-label="Close bunk log"
             >
-              ✕
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
 
@@ -314,14 +312,14 @@
                 class="nature-pill intentional"
                 data-nature="intentional"
               >
-                🎯 Intentional
+                Personal
               </button>
               <button
                 type="button"
                 class="nature-pill unintentional"
                 data-nature="unintentional"
               >
-                📋 Unintentional
+                OD / Medical
               </button>
             </div>
 
@@ -382,7 +380,6 @@
           id="dayBunkBtn"
           aria-label="Bunk entire day"
         >
-          <!-- <span class="day-bunk-icon">🚷</span> -->
           <span id="dayBunkText">Bunk Full Day</span>
         </button>
       </div>

@@ -1437,6 +1437,12 @@ dialog:not([open]) {
   color: var(--text-muted);
 }
 
+.bunk-item-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .bunk-item-meta-dot {
   color: var(--text-dim);
 }

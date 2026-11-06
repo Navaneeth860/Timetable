@@ -1,71 +1,74 @@
-# 📚 College Timetable
+# College Timetable
 
-A simple, mobile-friendly multi-cluster timetable app with Cluster (A–V) & Section selection, offline PWA support, and real-time class tracking.
-A simple, mobile-friendly multi-cluster timetable app with Cluster (A–E) & Section selection, offline PWA support, and real-time class tracking.
+A modern, mobile-friendly multi-branch college timetable and attendance/bunk tracking web app with offline PWA support, live status tracking, and clean, professional styling.
 
-## ✨ Features
+## Features
 
-- 📅 Automatically opens on **today's timetable**
-- 🏫 Select **Cluster (A–V)** and **Section** (saves automatically locally)
-- 🏫 Select **Cluster (A–E)** and **Section** (saves automatically locally)
-- 📍 Displays **Room / Lab** numbers and 👨‍🏫 **Teacher / Faculty** names for each slot
-- ⏰ Real-time class timings, live countdown, break indicators (Tea/Lunch), and **LIVE NOW** pill
-- 🚀 **Coming Soon!! Skill Lab** placeholder view for sections currently being updated
-- 👆 Tap **Mon–Sat** buttons to view schedules for any day
-- 📱 Optimized for mobile browsers (PWA support)
-- 🏠 Installable on Android & iOS home screens as an offline PWA
-- 🔄 Automatically updates current time and active classes live
+- **Automatic Daily View:** Opens automatically to today's schedule with real-time class tracking.
+- **Multi-Branch & Section Filters:** Filter schedules across **CSE**, **ECE**, **AIML**, and **CS(IOT)**, including cluster and section selection with persistent local caching.
+- **Live Status & Countdown:** Real-time indicator for ongoing classes ("LIVE NOW"), next upcoming class countdown, and tea/lunch break cards.
+- **Attendance & Bunk Tracking Engine:**
+  - Mark individual classes or full days as bunked directly from the timetable.
+  - Classify bunks into **Personal** (casual/self-study) vs **Official Duty / Medical** (OD, events, emergencies).
+  - Add optional reason titles and descriptive notes.
+  - View overall bunk statistics and quick metrics.
+  - Filter past bunks by category (Personal vs OD), subject, and month.
+  - Streamlined bunk metadata limited to Subject Name, Subject Code, Date, and Time.
+- **Clean SVG Iconography:** Professional, minimalist SVG icons for course codes, venues, instructors, groups, breaks, and actions with zero cartoonish emojis.
+- **Day-by-Day Navigation:** Interactive day switcher (Mon–Sat) with dates and quick "Back to Today" jump button.
+- **100% Offline PWA:** Installable on Android and iOS home screens with seamless Service Worker caching.
 
-## 📱 Install on Mobile
+## Install on Mobile
 
 1. Open the live app link in **Chrome** (Android) or **Safari** (iOS).
-2. Open the browser menu (**⋮** on Android, **Share** icon on iOS).
-3. Choose **Add to Home screen** or **Install app**.
-4. Launch **College Timetable** directly from your home screen like a native app.
+2. Open the browser menu (**⋮** on Android, **Share** on iOS).
+3. Tap **Add to Home screen** or **Install app**.
+4. Launch **College Timetable** directly from your home screen with instant offline access.
 
-## 🌐 Live App
+## Live App
 
-👉 **[Open Live App on GitHub Pages](https://navaneeth860.github.io/Timetable)**
+👉 **[Open College Timetable](https://navaneeth860.github.io/Timetable)**
 
-## 🖥️ How It Works
+## How It Works
 
-The app is a lightweight static single-page app built with HTML5, CSS3, and Vanilla JavaScript. No server or database required.
+The app is built with pure HTML5, CSS3, and modern Vanilla JavaScript without heavy framework dependencies.
 
-When opened, JavaScript checks `localStorage` for your selected Cluster & Section, detects the current day and time, and displays active class cards, room locations, teacher metadata, and break count-downs.
+- Data is loaded asynchronously from `data.json` and cached locally in `localStorage` for instant subsequent loads.
+- Bunk records and filter preferences are persisted in `localStorage`.
+- Real-time calculations determine the active period, upcoming class, and countdown timers relative to local time.
+- A Service Worker (`sw.js`) caches all assets (`index.html`, `style.css`, `script.js`, `data.json`, icons) for reliable offline support.
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 Timetable/
-├── index.html       # App UI, CSS styling, selectors & timetable JSON dataset
-├── manifest.json    # PWA configuration manifest
-├── sw.js            # Service worker / offline caching (v3)
+├── index.html       # Semantic HTML markup, dialog modals, and PWA setup
+├── style.css        # Responsive dark-theme styling, CSS variables & layouts
+├── script.js        # Core logic: timetable engine, live countdown, filters & bunk tracking
+├── data.json        # Structured timetable dataset for all branches and sections
+├── manifest.json    # Progressive Web App manifest
+├── sw.js            # Service worker for offline caching and background updates
 ├── icon-192.png     # PWA app icon (192x192)
 ├── icon-512.png     # PWA app icon (512x512)
 └── README.md        # Project documentation
 ```
 
-## 📋 Timetable Data
+## Supported Branches & Schedules
 
-Includes complete 3rd Semester 2026–27 timetable data for:
-- **Cluster B**: Sections `3B1 [3D]`, `3B2 [3G]`, `3B3 [3N]`, `3B4 [3Q]`, `3B5 [3V]`
-- **Cluster D**: Sections `3D1 [3B]`, `3D2 [3I]`, `3D3 [3L]`, `3D4 [3S]`, `3D5 [3U]`
-- Placeholder/Coming Soon support for Clusters A, C, E, F, G, H... through V.
-- Placeholder/Coming Soon support for Clusters A, C, and E.
+Based on the 3rd Semester 2026–27 timetable:
+- **CSE:** 22 sections across Clusters A–E (`3A1–3A4`, `3B1–3B5`, `3C1–3C4`, `3D1–3D5`, `3E1–3E4`)
+- **AIML:** 7 sections across Clusters A and B (`3A1–3A3`, `3B1–3B2`, etc.)
+- **ECE:** 7 sections (`ECE-S3-3A` through `ECE-S3-3G`)
+- **CS(IOT):** `CSE-IoT`
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- HTML5
-- CSS3 (CSS Variables, Flexbox/Grid, Dark & Light Mode)
-- Vanilla JavaScript (ES6+)
-- Web App Manifest (PWA)
-- Service Worker (Offline Cache API)
-- GitHub Pages
+- **HTML5:** Semantic elements (`<dialog>`, `<main>`, `<article>`, `<section>`)
+- **CSS3:** Custom properties (CSS variables), Grid, Flexbox, backdrop filters, responsive mobile-first UI
+- **Vanilla JavaScript:** ES6+, native `Intl` DateTimeFormat, `localStorage` API, custom modals
+- **Web App Manifest & Service Worker:** Offline PWA functionality
+- **GitHub Pages:** Automated static hosting
 
-## 🚀 Deployment
+## Disclaimer
 
-The project is hosted and deployed automatically using **GitHub Pages** from the `main` branch.
-
-## ⚠️ Disclaimer
-
-This is a student-made timetable app. Always verify class schedule changes with official university announcements.
+This is an independent student-made timetable and productivity tool. Always verify official schedule changes and attendance requirements with university announcements and departments.

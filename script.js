@@ -445,7 +445,7 @@ function openPeriodBunkModal(item, d) {
   bunkMetaType.textContent = (item.type || "theory").toUpperCase();
   bunkMetaTime.textContent = item.time || "Period";
   bunkMetaDate.textContent = formatFullDate(getWeekdayDate(d));
-  bunkMetaVenue.textContent = item.venue ? `Room ${item.venue}` : "Campus";
+  if (bunkMetaVenue) bunkMetaVenue.style.display = "none";
 
   if (existing) {
     if (
@@ -789,16 +789,23 @@ function renderAllBunksDashboard() {
   if (filtered.length === 0) {
     bunkLogList.innerHTML = `
             <div class="bunk-empty-box">
-              <div class="bunk-empty-icon">${total === 0 ? "🎉" : "🔍"}</div>
+              <div class="bunk-empty-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
               <div class="bunk-empty-title">${
                 total === 0 ?
-                  "No bunks recorded yet!"
+                  "No bunks recorded yet"
                 : "No matching bunks found"
               }</div>
               <div class="bunk-empty-sub">
                 ${
                   total === 0 ?
-                    "You haven't marked any classes as bunked yet. Tap '+ Bunk' on any class card to record one."
+                    "No classes have been marked as bunked. Select '+ Log Bunk' on any class to record one."
                   : "Try clearing or changing your filters above to view other records."
                 }
               </div>
@@ -816,7 +823,7 @@ function renderAllBunksDashboard() {
 
     const dateObj = new Date(b.date + "T00:00:00");
     const formattedDate = formatFullDate(dateObj);
-    const natureLabel = isIntentional ? "🎯 Intentional" : "📋 Unintentional";
+    const natureLabel = isIntentional ? "Personal" : "OD / Medical";
     const typeLabel = (b.classType || "theory").toUpperCase();
 
     card.innerHTML = `
@@ -825,7 +832,7 @@ function renderAllBunksDashboard() {
                 <span class="bunk-item-subject">${escapeHtml(b.subject)}</span>
                 ${
                   b.courseCode ?
-                    `<span class="bunk-item-code">📘 ${escapeHtml(
+                    `<span class="bunk-item-code">${escapeHtml(
                       b.courseCode,
                     )}</span>`
                   : ""
@@ -839,35 +846,39 @@ function renderAllBunksDashboard() {
               </div>
             </div>
 
+            <!-- Bunked info strictly limited to: Subject Name, Subject Code, Date and Time -->
             <div class="bunk-item-meta">
-              <span>📅 ${escapeHtml(formattedDate)}</span>
+              <span class="bunk-item-meta-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                ${escapeHtml(formattedDate)}
+              </span>
               <span class="bunk-item-meta-dot">•</span>
-              <span>⏰ ${escapeHtml(b.time || "Period")}</span>
-              // ${
-              //   b.venue ?
-              //     `<span class="bunk-item-meta-dot">•</span><span>📍 Room ${escapeHtml(
-              //       b.venue,
-              //     )}</span>`
-              //   : ""
-              // }
+              <span class="bunk-item-meta-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                ${escapeHtml(b.time || "Period")}
+              </span>
             </div>
 
-            <div class="bunk-item-content">
-              <div class="bunk-item-title">📌 ${escapeHtml(
-                b.title || "No Reason Specified",
-              )}</div>
-              ${
-                b.description ?
-                  `<div class="bunk-item-desc">💬 ${escapeHtml(
-                    b.description,
-                  )}</div>`
-                : ""
-              }
-            </div>
+            ${
+              b.title || b.description ?
+                `<div class="bunk-item-content">
+                  ${
+                    b.title ?
+                      `<div class="bunk-item-title">${escapeHtml(b.title)}</div>`
+                    : ""
+                  }
+                  ${
+                    b.description ?
+                      `<div class="bunk-item-desc">${escapeHtml(b.description)}</div>`
+                    : ""
+                  }
+                </div>`
+              : ""
+            }
 
             <div class="bunk-item-actions">
-              <button type="button" class="bunk-action-btn edit-bunk-btn">✏️ Edit</button>
-              <button type="button" class="bunk-action-btn delete delete-bunk-btn">✕ Remove</button>
+              <button type="button" class="bunk-action-btn edit-bunk-btn">Edit</button>
+              <button type="button" class="bunk-action-btn delete delete-bunk-btn">Remove</button>
             </div>
           `;
 
@@ -1094,7 +1105,7 @@ function status(list, d) {
         venue: "Campus",
         target: null,
         prefix: "",
-        sub: "Day off 🎉",
+        sub: "Day off",
       };
     }
     return {
@@ -1102,11 +1113,11 @@ function status(list, d) {
       badge: "DAY COMPLETE",
       pill: "ALL DONE",
       title: "No classes scheduled today",
-      time: "See you tomorrow!",
+      time: "See you tomorrow",
       venue: "Campus",
       target: null,
       prefix: "",
-      sub: "Enjoy your day! 🎉",
+      sub: "Enjoy your day off",
     };
   }
 
@@ -1147,7 +1158,7 @@ function status(list, d) {
     return {
       kind: "break",
       badge: "BREAK TIME",
-      pill: "RELAX",
+      pill: "BREAK",
       title: br[2],
       time: `${br[0]}–${br[1]}`,
       venue: "Cafeteria / Campus",
@@ -1178,11 +1189,11 @@ function status(list, d) {
     badge: "DAY COMPLETE",
     pill: "ALL DONE",
     title: "No more classes today",
-    time: "See you tomorrow!",
+    time: "See you tomorrow",
     venue: "Campus",
     target: null,
     prefix: "",
-    sub: "Have a great evening! 🎉",
+    sub: "Have a good evening",
   };
 }
 
@@ -1238,7 +1249,16 @@ function addBreak(b) {
       <span>${escapeHtml(s)}</span>
       <span>${escapeHtml(e)}</span>
     </div>
-    <div class="break-card">☕ ${escapeHtml(l)} (${escapeHtml(s)}–${escapeHtml(e)})</div>
+    <div class="break-card">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: -2px; margin-right: 5px;">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+        <line x1="6" y1="1" x2="6" y2="4"></line>
+        <line x1="10" y1="1" x2="10" y2="4"></line>
+        <line x1="14" y1="1" x2="14" y2="4"></line>
+      </svg>
+      <span>${escapeHtml(l)} (${escapeHtml(s)}–${escapeHtml(e)})</span>
+    </div>
   `;
   classesEl.appendChild(i);
 }
@@ -1258,7 +1278,7 @@ function render(d, scroll = false) {
 
   todayBadgeEl.textContent =
     li >= 0 ? "● LIVE NOW"
-    : st?.kind === "break" ? "☕ BREAK"
+    : st?.kind === "break" ? "BREAK"
     : "Today";
   todayBadgeEl.classList.toggle("live-badge", li >= 0);
   todayBadgeEl.classList.toggle("break-badge", li < 0 && st?.kind === "break");
@@ -1286,9 +1306,9 @@ function render(d, scroll = false) {
           list.length > 0);
       dayBunkBtn.classList.toggle("is-bunked", isAllBunked);
       if (isAllBunked) {
-        dayBunkText.textContent = "🏖️ Full Day Bunked (Manage)";
+        dayBunkText.textContent = "Full Day Bunked (Manage)";
       } else {
-        dayBunkText.textContent = "🚷 Bunk Full Day";
+        dayBunkText.textContent = "Bunk Full Day";
       }
       dayBunkBtn.onclick = () => openDayBunkModal(d);
     }
@@ -1300,8 +1320,13 @@ function render(d, scroll = false) {
   if (list === null) {
     classesEl.innerHTML = `
       <div class="empty">
-        <div style="font-size:36px;margin-bottom:8px">🚀</div>
-        <strong style="font-size:16px;color:var(--text)">Coming Soon!!</strong><br>
+        <div class="empty-icon-box" style="margin-bottom:12px;color:var(--accent);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <strong style="font-size:16px;color:var(--text)">Coming Soon</strong><br>
         <span style="font-size:12px;margin-top:6px;display:inline-block">Timetable data for ${escapeHtml(currentBranch)} - ${escapeHtml(currentSection)} will be updated shortly!</span>
       </div>`;
     return;
@@ -1310,8 +1335,16 @@ function render(d, scroll = false) {
   if (!list.length) {
     classesEl.innerHTML = `
       <div class="empty">
+        <div class="empty-icon-box" style="margin-bottom:12px;color:var(--text-muted);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
         <strong style="font-size:16px;color:var(--text)">No classes scheduled</strong><br>
-        <span style="font-size:12px;margin-top:6px;display:inline-block">Enjoy your day! 🎉</span>
+        <span style="font-size:12px;margin-top:6px;display:inline-block">Enjoy your day off</span>
       </div>`;
     return;
   }
@@ -1353,13 +1386,29 @@ function render(d, scroll = false) {
     const startStr = parts[0] ? parts[0].trim() : t;
     const endStr = parts[1] ? parts[1].trim() : "";
 
-    const codeHtml = c ? `<div class="code">📘 ${escapeHtml(c)}</div>` : "";
-    const roomHtml = r ? `<div class="code">📍 ${escapeHtml(r)}</div>` : "";
-    const teacherHtml =
-      tr ? `<div class="code">👨‍🏫 ${escapeHtml(tr)}</div>` : "";
-    const groupHtml =
-      grpStr ?
-        `<div class="code" style="color:var(--accent);font-weight:700">👥 Groups: ${escapeHtml(grpStr)}</div>`
+    const codeHtml = c
+      ? `<div class="code">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span>${escapeHtml(c)}</span>
+        </div>`
+      : "";
+    const roomHtml = r
+      ? `<div class="code">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>${escapeHtml(r)}</span>
+        </div>`
+      : "";
+    const teacherHtml = tr
+      ? `<div class="code">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>${escapeHtml(tr)}</span>
+        </div>`
+      : "";
+    const groupHtml = grpStr
+      ? `<div class="code" style="color:var(--accent);font-weight:700">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Groups: ${escapeHtml(grpStr)}</span>
+        </div>`
       : "";
 
     const cardBunkClass = isBunked ? ` bunked bunk-${bunkType}` : "";
@@ -1368,9 +1417,9 @@ function render(d, scroll = false) {
         ${
           isBunked ?
             bunkType === "intentional" ?
-              "🎯 Bunked"
-            : "📋 OD"
-          : "+ Bunk"
+              "Bunked"
+            : "OD / Leave"
+          : "+ Log Bunk"
         }
       </button>
     `;
@@ -1379,8 +1428,8 @@ function render(d, scroll = false) {
     if (isBunked) {
       const typeLabel =
         bunkType === "intentional" ?
-          "🎯 INTENTIONAL BUNK"
-        : "📋 UNINTENTIONAL / OD";
+          "PERSONAL BUNK"
+        : "OFFICIAL DUTY / MEDICAL";
       const metaLabel = (
         bunkData.classType ||
         item.type ||
